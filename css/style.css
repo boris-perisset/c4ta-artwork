@@ -112,7 +112,6 @@
 
 main {
     padding: 4vw;
-    background-color: rgb(44, 37, 75);
 }
 
 .collection {
@@ -129,7 +128,7 @@ main {
 .collection-item {
     width: 100%;
     margin-bottom: 3vw;
-    min-height: 50vw;
+    min-height: 40vw;
     position: relative;
 }
 
