@@ -132,8 +132,11 @@ main {
 
 .collection-item-container {
     position: relative;
-    min-height: 40vw;
     margin-bottom: 1em;
+}
+
+.collection-min-height {
+    min-height: 40vw;
 }
 
 .responsiveIframe {
