@@ -1,0 +1,26 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'VT323', monospace;
+    background-color: black;
+    color: rgb(0, 255, 76);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4em;
+
+  }
+  canvas {
+    display: block;
+  }
+
+  .game-frame {
+    width: 600px;
+    height: 500px;
+    border:rgb(0, 255, 76);
+    border-style: solid;
+    margin: 2vw;
+    filter: drop-shadow(0 0 40px rgba(0, 255, 76, 0.6));
+  }
