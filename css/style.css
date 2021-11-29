@@ -63,11 +63,15 @@
 }
 
 /* NAVIGATION */
-.navigation {
-    padding: 2vw;
+.header {
+    padding: 0.5em;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    width: 100%;
+    position: fixed;
+    margin-top: -6vw;
+    z-index: 10;
 }
 
 .logo {
@@ -81,8 +85,9 @@
 
 .navBar {
     display: flex;
-    padding: 2vw;
+    padding: 0.5em;
     padding-left: 0vw;
+    padding-right: 2em;
     font-family: Palo;
     font-size: 1.4em;
     font-weight: 200;
@@ -112,6 +117,7 @@
 
 main {
     padding: 4vw;
+    margin-top: 6vw;
 }
 
 .collection {

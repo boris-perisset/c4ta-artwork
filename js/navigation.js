@@ -1,35 +1,47 @@
+// Navigation Array
+
 let nav = [
     {
         name: "DrawBot",
-        url: "/drawbot.html"
+        url: "./index.html"
     },
     {
         name: "P5",
-        url: "/p5.html"
+        url: "./p5.html"
     },
     {
         name: "Vanilla",
-        url: "/vanilla.html"
+        url: "./vanilla.html"
     },
 ]
 
+// Header Logo Link
+let logoLink = document.createElement('a')
+logoLink.setAttribute("id", "logoLinkId")
+logoLink.setAttribute("href", "./index.html")
+document.getElementById('headerId').appendChild(logoLink)
 
-document.write("<div>");
+//Header Logo Image
+let logo = document.createElement('img')
+logo.setAttribute("class", "logo")
+logo.setAttribute("src", "./images/design/atelier-perisset-logo-icon-weiss.svg")
+logo.setAttribute("alt", "Atelier Périsset Logo")
+document.getElementById('logoLinkId').appendChild(logo)
 
-var navbar = document.createElement('div')
 
-document.body.appendChild(navbar);               // Append <button> to <body>
-// navbar.parent('navigation')
-navbar.setAttribute("id", "mainNav")
+// Navbar Loop
+let navbar = document.createElement('div')
+navbar.setAttribute("id", "navBarId")
 navbar.setAttribute("class", "navBar")
+document.getElementById('headerId').appendChild(navbar);
 
-for (var i=0; i<=nav.length; i++){
-    var navItem = document.createElement("a");   // Create a <button> element
-    navItem.innerHTML = "nav.name[i]]";  
-    navItem.setAttribute("href", "nav.url[i]")                 // Insert text
-    // document.body.appendChild(btn);               // Append <button> to <body>
-    // document.createElement('div')
-        // document.write(nav[i]);
+for (let i = 0; i < nav.length; i++){
+    let navItem = document.createElement('a')
+    navItem.innerHTML = nav[i].name;
+    navItem.setAttribute("href", nav[i].url)
+    navItem.setAttribute("class", "navItem")
+
+    // console.log(navItem);
+    document.getElementById('navBarId').appendChild(navItem);
 }
 
-document.write("</div>");
