@@ -1,9 +1,10 @@
 // Navigation Array
 
-let subnavArray = [
+let grid = [
     {
         name: "Ping Kong",
-        url: "./p5-files/ping-kong-game/index.html"
+        url: "./p5-files/ping-kong-game/index.html",
+        img_src: ""
     },
     {
         name: "Fractal Tree",
@@ -19,10 +20,10 @@ subnav.setAttribute("id", "subnavId")
 subnav.setAttribute("class", "subnav")
 document.getElementById('subheaderId').appendChild(subnav);
 
-for (let i = 0; i < subnavArray.length; i++){
+for (let i = 0; i < grid.length; i++){
     let subNavItem = document.createElement('a')
-    subNavItem.innerHTML = subnavArray[i].name;
-    subNavItem.setAttribute("href", subnavArray[i].url)
+    subNavItem.innerHTML = grid[i].name;
+    subNavItem.setAttribute("href", grid[i].url)
     subNavItem.setAttribute("class", "subNavItem")
 
     // console.log(subNavItem);
