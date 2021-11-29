@@ -1,9 +1,9 @@
 /* GLOBAL */
 
 :root {
-    --primaryColor: rgb(44, 37, 75);
-    --HighlightColor: #ff0;
-    --SecondaryColor: #fff;
+    --primaryColor: #0b1466;
+    --HighlightColor:  #fff;
+    --SecondaryColor: #ffc568;
 
 }
 
@@ -84,7 +84,7 @@
     padding: 2vw;
     padding-left: 0vw;
     font-family: Palo;
-    font-size: 1em;
+    font-size: 1.4em;
     font-weight: 200;
     text-transform: uppercase;
     
@@ -128,8 +128,12 @@ main {
 .collection-item {
     width: 100%;
     margin-bottom: 3vw;
-    min-height: 40vw;
+}
+
+.collection-item-container {
     position: relative;
+    min-height: 40vw;
+    margin-bottom: 1em;
 }
 
 .responsiveIframe {
@@ -142,13 +146,10 @@ main {
     margin-bottom: 1em;
 }
 
-
 .collection-description {
     background-color: var(--SecondaryColor);
     color: var(--primaryColor);
 }
-
-
 
 
 /* RESPONSIVENESS */
