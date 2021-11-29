@@ -156,6 +156,12 @@ main {
 .collection-item {
     width: 100%;
     margin-bottom: 3vw;
+    text-decoration: none;
+    transition: color 400ms ease-out;
+}
+
+.collection-item::hover {
+    color: var(--HighlightColor);
 }
 
 .collection-item-container {
