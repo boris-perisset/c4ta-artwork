@@ -63,8 +63,8 @@ function preload(){
 
 function setup() {
   
-  const width = 300;
-  const height = 250;
+  const width = 600;
+  const height = 500;
 
   /*
   getAudioContext().suspend();
