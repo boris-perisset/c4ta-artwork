@@ -35,7 +35,7 @@ function branch(len) {
 
 function setup() {
   var canvas = createCanvas(width, height);
-  canvas.parent('fractal-tree');
+  canvas.parent('pi5-canvas');
 
   //createSliderSyntax = (min, max, [DefaulValue(optional)], [step])
   createP("Mindest Ast Grösse")

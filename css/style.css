@@ -4,7 +4,7 @@
     --primaryColor: #0b1466;
     --HighlightColor:  #fff;
     --SecondaryColor: #ffc568;
-
+    --navHeight: 3rem;
 }
 
 @font-face {
@@ -70,8 +70,8 @@
     justify-content: space-between;
     width: 100%;
     position: fixed;
-    margin-top: -6vw;
     z-index: 10;
+    height: var(--navHeight);
 }
 
 .logo {
@@ -95,29 +95,51 @@
     
 }
 
-.navItem {
+.navItem, .subNavItem {
     padding-left: 2em;
     text-decoration: none;
     transition: color 1400ms ease-out;
     transition: font-size 400ms ease-out;
 }
 
-.navItem:hover {
+.navItem:hover, .subNavItem:hover {
     color: var(--HighlightColor);
     font-size: 0.8em;
     )
 }
 
-.navItem:active {
+.navItem:active, .subNavItem:active {
     color: var(--HighlightColor);
     )
+}
+
+.subheader {
+    padding: 0.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.subnav {
+    display: flex;
+    padding: 0.5em;
+    padding-left: 0vw;
+    padding-right: 2em;
+    font-family: Palo;
+    font-size: 1.4em;
+    font-weight: 200;
+    text-transform: uppercase;
+    color: var(--HighlightColor); 
 }
 
 /* LAYOUT */ 
 
 main {
     padding: 4vw;
-    margin-top: 6vw;
+    /* margin-top: 6vw; */
+    position: relative;
+    top: var(--navHeight);
 }
 
 .collection {
@@ -153,6 +175,16 @@ main {
 .drawbot-image {
     max-width: 100%;
     margin-bottom: 1em;
+    mix-blend-mode: overlay;
+    transition: all 800ms ease;
+    filter: blur(6px);
+}
+
+.drawbot-image:hover {
+    mix-blend-mode: unset;
+    filter: blur(0px);
+
+
 }
 
 .collection-description {
