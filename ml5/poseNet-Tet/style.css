@@ -34,11 +34,14 @@ html, body {
     background-color: rgb(27, 18, 91);
   }
 
-  button, input[type=file] {
+  /* input[type=button], .custom-file-upload */
+
+  button, input  {
       /* display: block; */
       background-color: rgb(252, 130, 130);
       border: 0px;
-      font-size: 1.1em;
+      font-size: 0.9em;
+      text-transform: uppercase;
       padding: 0.4em 0.9em 0.4em 0.9em ;
       border-radius: 0.15em;
       transition: background 200ms;
@@ -46,6 +49,10 @@ html, body {
 
       color:rgb(34, 43, 142)
   }
+
+  /* input[type="file"] {
+    display: none;
+} */
 
   button:hover {
       background-color: aquamarine;
@@ -60,6 +67,11 @@ html, body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+  }
+
+  .predictions {
+      display: inline;
+      margin-left: 1em;
   }
   canvas {
     /* overflow: scroll; */

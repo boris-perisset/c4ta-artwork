@@ -15,25 +15,28 @@
     	<div class="pi5-canvas" id="pi5-canvas"></div>
 	</main>
 		<div class="buttons" id="buttons">
-			<p id="status">brushing up gif cats</p>
+			<p id="status">brushing up gif cats </p>
+			<div class="predictions">
+				<p> Class: <span id="result">... </span></p>
+				<p> Confidence: <span id="confidence">... </span></p>
+			</div>
 			<div class ="emotionBox">
-			<button id="Happy">Happy <span class="number" id="HappyImages"> 0 </span></button>
-			
+				<button id="Happy">Happy <span class="number" id="HappyImages"> 0 </span></button>
+				
 
-			<button id="Surprised">Surprised <span class="number" id="SurprisedImages"> 0 </span></button>
-			
+				<button id="Surprised">Surprised <span class="number" id="SurprisedImages"> 0 </span></button>
+				
 
-			<button id="Neutral">Neutral <span class="number" id="NeutralImages"> 0 </span></button>
+				<button id="Neutral">Neutral <span class="number" id="NeutralImages"> 0 </span></button>
 			</div>
 
 			<button id="Train">Train <span class="number" id="loss"> 0 </span></button>
 			
 			<button id="Predict">Predict</button>
-			<p> Class: <span id="result">...</span></p>
-			<p> Confidence: <span id="confidence">...</span></p>
+
 			
 			<button id="saveModel">Save Model</button>
-			<p>Load Model </p> <input class="button" type="file" id="loadModel" multiple>
+			<p>Load Model </p> <input class="custom-file-upload" type="file" id="loadModel" multiple>
 		</div>
 	
 	<script src="sketch.js"></script>
