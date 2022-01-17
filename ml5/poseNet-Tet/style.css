@@ -43,7 +43,6 @@ html, body {
       font-size: 0.9em;
       text-transform: uppercase;
       padding: 0.4em 0.9em 0.4em 0.9em ;
-      border-radius: 0.15em;
       transition: background 200ms;
       margin: 1vw;
 
@@ -56,6 +55,14 @@ html, body {
 
   button:hover {
       background-color: aquamarine;
+  }
+
+  .buttonRadius {
+    border-radius: 0.2em 0em 0em 0.2em;
+  }
+
+  .buttonRadiusFull {
+    border-radius: 0.2em;
   }
 
   .number {
@@ -73,6 +80,23 @@ html, body {
       display: inline;
       margin-left: 1em;
   }
+  
+  .minus {
+    margin-left:-0.8em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    border-radius: 0em 0.2em 0.2em 0em;
+
+    background: rgb(127, 255, 212);
+    color:rgb(27, 18, 91);
+    transition: background 200ms;
+}
+
+.minus:hover {
+    background: rgb(34, 43, 142); 
+    color: rgb(252, 130, 130);
+}
+
   canvas {
     /* overflow: scroll; */
     /* position: relative; */

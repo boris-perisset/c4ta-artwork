@@ -3,8 +3,10 @@ let classifier
 
 let video
 
-let classes = ["Happy", "Surprised", "Neutral"]
-let buttons = ["buttonHappy", "buttonSurprised", "buttonNeural"]
+let classes = ["Happy", "Surprised", "Neutral", "Angry", "Sad"]
+let buttons = ["buttonHappy", "buttonSurprised", "buttonNeural", "buttonAngry", "buttonSad"]
+let removeButtons = ["removeHappy", "removeSurprised", "removeNeural", "removeAngry", "removeSad"]
+
 
 let w = 400
 let h = 400
@@ -26,10 +28,10 @@ function setup() {
   video.size(w, h)
   video.hide()
 
-  const options = {numLabels: 3}
+  const options = {numLabels: 5}
 
   mobileNet = ml5.featureExtractor("MobileNet", modelReady)
-  classifier = mobileNet.classification(video, options)
+  classifier = mobileNet.classification(video, options )
 
   const detectionOptions = {
     withLandmarks: true,
@@ -38,8 +40,8 @@ function setup() {
   // Initialize the magicFeature
   faceapi = ml5.faceApi(video, detectionOptions, modelLoaded);
 
-
   initializeButtons()
+  removeImageButton()
 }
 
 
@@ -53,7 +55,10 @@ function draw() {
 
   if(detections.length >= 1) {
     drawBox(detections)
+    hideFace()
   }
+
+  
 }
 /////////////////////////// AFTER DRAW ///////////////////////
 
@@ -101,6 +106,9 @@ function initializeButtons() {
   predict = select("#Predict")
   predict.mousePressed(classify)
 
+  noface = select("#NoFace")
+  noface.mousePressed(hideFace)
+
   saveModel = select("#saveModel")
   saveModel.mousePressed(function() {
     classifier.save()
@@ -115,6 +123,31 @@ function initializeButtons() {
     classifier.load(loadModel.elt.files)
   })
 
+}
+
+function removeImageButton() {
+  
+  for (let i = 0; i < classes.length; i++) {
+    let className = classes[i].toString()
+    removeButtons[i] = select("#" + className + "ImagesRemove")
+    removeButtons[i].mousePressed(function() {
+      // classifier.addImage(className)
+      let span = document.getElementById(className + "Images")
+      let numImages = parseInt(span.innerHTML)
+      
+      if(numImages > 0) {
+        numImages--
+      }
+
+      span.innerHTML = numImages
+    })    
+  }
+}
+
+function hideFace() {
+  if (!mouseIsPressed){
+  drawLandmarks(detections)
+  }
 }
 
 function classify() {
@@ -141,6 +174,9 @@ function detectFaces(error, result) {
 }
 
 function drawBox(detections) {
+  noFill()
+  strokeWeight(4)
+  stroke(127, 255, 212)
 
   for(let i= 0; i < detections.length; i++) {
     let faceBox = detections[i].alignedRect
@@ -149,9 +185,45 @@ function drawBox(detections) {
     let boxW = faceBox._box._width
     let boxH = faceBox._box._height
     
-    noFill()
-    strokeWeight(4)
-    stroke(127, 255, 212)
+
     rect(x, y, boxW, boxH)
+  }
+}
+
+
+function drawLandmarks(detections) {
+  noFill();
+  stroke(127, 255, 212);
+  strokeWeight(4);
+
+  for (let i = 0; i < detections.length; i += 1) {
+    const mouth = detections[i].parts.mouth;
+    const nose = detections[i].parts.nose;
+    const leftEye = detections[i].parts.leftEye;
+    const rightEye = detections[i].parts.rightEye;
+    const rightEyeBrow = detections[i].parts.rightEyeBrow;
+    const leftEyeBrow = detections[i].parts.leftEyeBrow;
+
+    drawPart(mouth, true);
+    drawPart(nose, false);
+    drawPart(leftEye, true);
+    drawPart(leftEyeBrow, false);
+    drawPart(rightEye, true);
+    drawPart(rightEyeBrow, false);
+  }
+}
+
+function drawPart(feature, closed) {
+  beginShape();
+  for (let i = 0; i < feature.length; i += 1) {
+    const x = feature[i]._x;
+    const y = feature[i]._y;
+    vertex(x, y);
+  }
+
+  if (closed === true) {
+    endShape(CLOSE);
+  } else {
+    endShape();
   }
 }

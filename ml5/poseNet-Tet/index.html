@@ -15,27 +15,35 @@
     	<div class="pi5-canvas" id="pi5-canvas"></div>
 	</main>
 		<div class="buttons" id="buttons">
+			
 			<p id="status">brushing up gif cats </p>
 			<div class="predictions">
 				<p> Class: <span id="result">... </span></p>
 				<p> Confidence: <span id="confidence">... </span></p>
 			</div>
 			<div class ="emotionBox">
-				<button id="Happy">Happy <span class="number" id="HappyImages"> 0 </span></button>
+				<button class="buttonRadius" id="Happy">Happy <span class="number" id="HappyImages"> 0 </span></button><button class="minus" id="HappyImagesRemove">-</button>
 				
 
-				<button id="Surprised">Surprised <span class="number" id="SurprisedImages"> 0 </span></button>
+				<button class="buttonRadius" id="Surprised">Surprised <span class="number" id="SurprisedImages"> 0 </span></button><button class="minus" id="SurprisedImagesRemove">-</button>
 				
 
-				<button id="Neutral">Neutral <span class="number" id="NeutralImages"> 0 </span></button>
+				<button class="buttonRadius" id="Neutral">Neutral <span class="number" id="NeutralImages"> 0 </span></button><button class="minus" id="NeutralImagesRemove">-</button>
+
+
+				<button class="buttonRadius" id="Angry">Angry <span class="number" id="AngryImages"> 0 </span></button><button class="minus" id="AngryImagesRemove">-</button>
+				
+
+				<button class="buttonRadius" id="Sad">Sad <span class="number" id="SadImages"> 0 </span></button><button class="minus" id="SadImagesRemove">-</button>
 			</div>
 
-			<button id="Train">Train <span class="number" id="loss"> 0 </span></button>
+			<button class="buttonRadiusFull" id="Train">Train <span class="number" id="loss"> 0 </span></button>
 			
-			<button id="Predict">Predict</button>
+			<button class="buttonRadiusFull" id="Predict">Predict</button>
+			<!-- <button class="buttonRadiusFull" id="NoFace">NoFace</button> -->
 
 			
-			<button id="saveModel">Save Model</button>
+			<button class="buttonRadiusFull" id="saveModel">Save Model</button>
 			<p>Load Model </p> <input class="custom-file-upload" type="file" id="loadModel" multiple>
 		</div>
 	
