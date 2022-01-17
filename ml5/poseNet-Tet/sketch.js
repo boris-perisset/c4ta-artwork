@@ -1,12 +1,17 @@
 let mobileNet
 let classifier
-
+let cnv
 let video
 
 let classes = ["Happy", "Surprised", "Neutral", "Angry", "Sad"]
 let buttons = ["buttonHappy", "buttonSurprised", "buttonNeural", "buttonAngry", "buttonSad"]
 let removeButtons = ["removeHappy", "removeSurprised", "removeNeural", "removeAngry", "removeSad"]
 
+let happyImages = []
+let surprisedImages = []
+let neutralImages = []
+let angryImages = []
+let sadImages = []
 
 let w = 400
 let h = 400
@@ -21,7 +26,7 @@ function setup() {
   w = 800
   h = 600
 
-  const cnv = createCanvas(w, h)
+  cnv = createCanvas(w, h)
   cnv.parent('pi5-canvas')
 
   video = createCapture(VIDEO)
@@ -79,20 +84,40 @@ function modelLoaded() {
 
 function initializeButtons() {
   
+  // initialize
   for (let i = 0; i < classes.length; i++) {
     let className = classes[i].toString()
     buttons[i] = select("#" + className)
     buttons[i].mousePressed(function() {
-      classifier.addImage(className)
+      // classifier.addImage(className)
+      let img = cnv.elt.toDataURL("image/jpeg", 1.0)
+
+      if (className == "Happy") {
+        happyImages.push(img) 
+      } else if (className == "Surprised") {
+        surprisedImages.push(img)  
+      } else if (className == "Neutral") {
+        neutralImages.push(img) 
+      } else if (className == "Angry") {
+        angryImages.push(img) 
+      } else if (className == "Sad") {
+       sadImages.push(img)  
+      }
+
       let span = document.getElementById(className + "Images")
       let numImages = parseInt(span.innerHTML)
       numImages++
       span.innerHTML = numImages
     })    
   }
+console.log(happyImages,surprisedImages)
 
   train = select("#Train")
-  train.mousePressed(function() {
+  train.mousePressed(async function() {
+
+    await addImagesToClassifier()
+
+
     classifier.train(function(lossValue) {
       if(lossValue) {
         loss = lossValue
@@ -106,8 +131,8 @@ function initializeButtons() {
   predict = select("#Predict")
   predict.mousePressed(classify)
 
-  noface = select("#NoFace")
-  noface.mousePressed(hideFace)
+  // noface = select("#NoFace")
+  // noface.mousePressed(hideFace)
 
   saveModel = select("#saveModel")
   saveModel.mousePressed(function() {
@@ -132,11 +157,28 @@ function removeImageButton() {
     removeButtons[i] = select("#" + className + "ImagesRemove")
     removeButtons[i].mousePressed(function() {
       // classifier.addImage(className)
+      
+      if (className == "Happy") {
+        // happyImages.splice(0,1) //happyImages.length
+        happyImages.pop() //happyImages.length
+      } else if (className == "Surprised") {
+        // surprisedImages.splice(0,1) //happyImages.length
+        surprisedImages.pop()
+      } else if (className == "Neutral") {
+        // neutraldImages.splice(0,1) //happyImages.length
+        neutralImages.pop()
+      } else if (className == "Angry") {
+        // angryImages.splice(0,1) //happyImages.length
+        angryImages.pop()
+      } else if (className == "Sad") {
+        // sadImages.splice(0,1) //happyImages.length
+        sadImages.pop() //happyImages.length
+      }
+
       let span = document.getElementById(className + "Images")
       let numImages = parseInt(span.innerHTML)
-      
+
       if(numImages > 0) {
-        numImages--
       }
 
       span.innerHTML = numImages
@@ -226,4 +268,28 @@ function drawPart(feature, closed) {
   } else {
     endShape();
   }
+}
+
+function addImagesToClassifier() {
+  
+  for (let i = 0; i < happyImages.length; i++) {
+    classifier.addImage(happyImages[i], "Happy")
+  }
+
+  for (let i = 0; i < surprisedImages.length; i++) {
+    classifier.addImage(surprisedImages[i], "Surprised")
+  }
+
+  for (let i = 0; i < neutralImages.length; i++) {
+    classifier.addImage(neutralImages[i], "Neutral")
+  }
+
+  for (let i = 0; i < angryImages.length; i++) {
+    classifier.addImage(angryImages[i], "Angry")
+  }
+
+  for (let i = 0; i < sadImages.length; i++) {
+    classifier.addImage(sadImages[i], "Sad")
+  }
+
 }

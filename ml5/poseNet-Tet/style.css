@@ -49,13 +49,20 @@ html, body {
       color:rgb(34, 43, 142)
   }
 
-  /* input[type="file"] {
-    display: none;
-} */
+  .buttons > input[type="file"] {
+ /* display: none; */
+  }
 
   button:hover {
       background-color: aquamarine;
   }
+
+  .buttons .custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
 
   .buttonRadius {
     border-radius: 0.2em 0em 0em 0.2em;
