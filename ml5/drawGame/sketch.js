@@ -99,7 +99,7 @@ function draw() {
 /////////////////////////// AFTER DRAW ///////////////////////
 
 function modelReady() {
-  select("#status").html("Sketch is ready")
+  select("#status").html("Guess the Sketch")
   counter = 0
   waiting = false
   startDrawing()
