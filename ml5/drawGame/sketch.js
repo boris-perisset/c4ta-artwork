@@ -26,6 +26,9 @@ let waiting = false
 let a = 0.0;
 let inc = 0
 
+let nextSketch = false
+let restartGame = false
+
 /////////////////////////// SETUP ///////////////////////
 function setup() {
   inc = TWO_PI / 120.0;
@@ -132,6 +135,7 @@ function keyPressed() {
   }
 
   if (key == "n" | key == "N") {
+      if (nextSketch === true){
       drawingArray.splice(0,drawingArray.length)
 
       for (let i = 0; i < buttons.length; i++) {
@@ -143,10 +147,12 @@ function keyPressed() {
       select("#status").html("Next Sketch is loading")
       modelRNN = ml5.sketchRNN(drawing, modelReady)
       
-      Nextclicked = true  
+      Nextclicked = true 
+    }
   }
 
   if (key == "r" | key == "R") {
+      if (restartGame === true) {
       totalScore = 0
 
       drawingArray.splice(0,drawingArray.length)
@@ -159,6 +165,7 @@ function keyPressed() {
       select("#status").html("New Game is loading")
       modelRNN = ml5.sketchRNN(drawing, modelReady)
       resetClicked = true
+    }
   }
 }
 
@@ -201,6 +208,8 @@ function gameCheck() {
         text ( `${drawing} was right.`, w/2, h/2 + 30 )
         fill(white)
         text ( "press N for new sketch", w/2, h/2 + 60 )
+        nextSketch = true
+        restartGame = false
 
         stroke(0)
         totalScore += 10
@@ -213,6 +222,8 @@ function gameCheck() {
         text ( `the right answer was: ${drawing}`, w/2, h/2 + 30 )
         fill(white)
         text ("press R to restart", w/2, h/2 + 60)
+        nextSketch = false
+        restartGame = true
       }
 
     })
