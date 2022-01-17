@@ -8,6 +8,7 @@ let x, y;
 let strokePath;
 let clicked = false
 let resetClicked = false
+let Nextclicked = false
 
 // let button = {
 //   id: b,
@@ -24,8 +25,15 @@ let red = ("#fc8282")
 let turkis = ("#7fffd4")
 let white = ("#ffffff")
 
+let waiting = false
+let a = 0.0;
+let inc = 0
+
+
 /////////////////////////// SETUP ///////////////////////
 function setup() {
+  inc = TWO_PI / 120.0;
+
   w = 800
   h = 600
 
@@ -56,6 +64,8 @@ function setup() {
 /////////////////////////// DRAW ///////////////////////
 
 function draw() {
+  
+
   strokeCap(ROUND)
   strokeJoin(ROUND)
   // If something new to draw
@@ -85,15 +95,22 @@ function draw() {
     text("YOU WON", w/2, h - 150)
     text ("press R to restart", w/2, h - 100) 
   }
-
+  if (waiting === true) {
+    noStroke()
+    background(34, 43, 142);
+    fill(turkis)
+    circle(w/2 + cos(a) * 40 ,h/2 + sin(a) * 40, 3)
+    a = a + inc
+  }
   // console.log(drawing)
-
 }
 
 /////////////////////////// AFTER DRAW ///////////////////////
 
 function modelReady() {
   select("#status").html("modelRNN is ready")
+  counter = 0
+  waiting = false
   startDrawing()
 }
 
@@ -109,6 +126,7 @@ function keyPressed() {
       }
 
       drawing = random(drawingArray)
+      waiting = true
       select("#status").html("modelRNN is loading")
       modelRNN = ml5.sketchRNN(drawing, modelReady)
       
@@ -124,25 +142,24 @@ function keyPressed() {
         buttons[i].html(drawingArray[i].toString())
       }
       drawing = random(drawingArray)
-      select("#status").html("modelRNN am Laden")
+      waiting = true
+      select("#status").html("modelRNN is loading")
       modelRNN = ml5.sketchRNN(drawing, modelReady)
       
-      clicked = true  
+      Nextclicked = true  
   }
 
   if (key == "r" | key == "R") {
       totalScore = 0
 
       drawingArray.splice(0,drawingArray.length)
-      // clear()
 
       for (let i = 0; i < buttons.length; i++) {
         drawingArray.push(random(models))
         buttons[i].html(drawingArray[i].toString())
       }
       drawing = random(drawingArray)
-      // return drawing
-
+      select("#status").html("modelRNN is loading")
       modelRNN = ml5.sketchRNN(drawing, modelReady)
       resetClicked = true
   }
@@ -168,18 +185,6 @@ function startDrawing() {
 function gotStroke(err, s) {
   strokePath = s;
 }
-
-// function buttonsSetup() {
-
-//   for (let i = 0; i < buttons.length; i++) {
-//     let buttonName = buttons[i].toString()
-//     drawingArray.push(random(models))
-//     // console.log(drawingArray[i])
-
-//     buttons[i] = select("#" + buttonName)
-//     buttons[i].html(drawingArray[i].toString())
-//   }
-// }
 
 function gameCheck() {
 
