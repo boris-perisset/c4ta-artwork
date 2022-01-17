@@ -20,6 +20,7 @@ let totalScore = 0
 let red = ("#fc8282")
 let turkis = ("#7fffd4")
 let white = ("#ffffff")
+let dark = ("#1b125b")
 
 let waiting = false
 let a = 0.0;
@@ -38,11 +39,13 @@ function setup() {
   noStroke()
   textAlign(CENTER, CENTER)
   textFont("Helvetica")
-  textSize(20)
+  textSize(17)
+  fill(dark)
+  rect(w/2 - 150, h/2- 60, 300, 150)
   fill(white)
-  text("Guess the Sketch", w/2, h - 150)
+  text("Guess the Sketch", w/2, h/2)
   fill (red)
-  text("press S to start", w/2, h - 100)
+  text("press S to start", w/2, h/2 + 30)
   fill (white)
 
   // buttonsSetup()
@@ -83,9 +86,11 @@ function draw() {
 
   if (totalScore > 80) {
     clear()
+    fill(dark)
+    rect(w/2 - 150, h/2- 60, 300, 150)
     fill(turkis)
-    text("YOU WON", w/2, h - 150)
-    text ("press R to restart", w/2, h - 125) 
+    text("YOU WON", w/2, h/2)
+    text ("press R to restart", w/2, h/2 + 30) 
   }
   if (waiting === true) {
     noStroke()
@@ -189,21 +194,25 @@ function gameCheck() {
         // drawing = random(drawingArray)
         // modelRNN = ml5.sketchRNN(drawing, modelReady)
         noStroke()
+        fill(dark)
+        rect(w/2 - 150, h/2- 50, 300, 150)
         fill(turkis)
-        text("CORRECT", w/2, h -150 )
-        text ( `${drawing} was right.`, w/2, h - 125 )
+        text("CORRECT", w/2, h/2 )
+        text ( `${drawing} was right.`, w/2, h/2 + 30 )
         fill(white)
-        text ( "press N for new sketch", w/2, h - 100 )
+        text ( "press N for new sketch", w/2, h/2 + 60 )
 
         stroke(0)
         totalScore += 10
       } else {
         noStroke()
+        fill(dark)
+        rect(w/2 - 150, h/2- 50, 300, 150)
         fill(red)
-        text ("Game Over", w/2, h - 150)
-        text ( `the right answer was: ${drawing}`, w/2, h - 125 )
+        text ("Game Over", w/2, h/2)
+        text ( `the right answer was: ${drawing}`, w/2, h/2 + 30 )
         fill(white)
-        text ("press R to restart", w/2, h - 100)
+        text ("press R to restart", w/2, h/2 + 60)
       }
 
     })

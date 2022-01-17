@@ -44,6 +44,15 @@ html, body {
       color:rgb(34, 43, 142)
   }
 
+  a {
+    color: #fc8282;
+    transition: color 300ms ease-in-out;
+  }
+
+  a:hover {
+    color: #7fffd4;
+  }
+
   /* input[type="file"] {
     display: none;
 } */
@@ -58,6 +67,11 @@ html, body {
 
   .buttonRadiusFull {
     border-radius: 0.2em;
+  }
+
+  .overlay {
+  background-color: #222b8e;
+  color: #ffffff;
   }
 
   .number {
