@@ -93,7 +93,7 @@ function draw() {
     clear()
     fill(turkis)
     text("YOU WON", w/2, h - 150)
-    text ("press R to restart", w/2, h - 100) 
+    text ("press R to restart", w/2, h - 125) 
   }
   if (waiting === true) {
     noStroke()
@@ -198,16 +198,19 @@ function gameCheck() {
         noStroke()
         fill(turkis)
         text("CORRECT", w/2, h -150 )
-        text ( `${drawing} was right. press N for new sketch`, w/2, h - 100 )
+        text ( `${drawing} was right.`, w/2, h - 125 )
+        fill(white)
+        text ( "press N for new sketch", w/2, h - 100 )
+
         stroke(0)
         totalScore += 10
       } else {
         noStroke()
         fill(red)
-        text ("Game Over", w/2, h - 200)
-        text ("press R to restart", w/2, h - 150)
+        text ("Game Over", w/2, h - 150)
+        text ( `the right answer was: ${drawing}`, w/2, h - 125 )
         fill(white)
-        text ( `the right answer was: ${drawing}`, w/2, h - 100 )
+        text ("press R to restart", w/2, h - 100)
       }
 
     })
