@@ -93,7 +93,7 @@ function draw() {
 /////////////////////////// AFTER DRAW ///////////////////////
 
 function modelReady() {
-  select("#status").html("modelRNN ist Bereit")
+  select("#status").html("modelRNN is ready")
   startDrawing()
 }
 
@@ -109,7 +109,7 @@ function keyPressed() {
       }
 
       drawing = random(drawingArray)
-      select("#status").html("modelRNN am Laden")
+      select("#status").html("modelRNN is loading")
       modelRNN = ml5.sketchRNN(drawing, modelReady)
       
       clicked = true
