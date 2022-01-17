@@ -28,8 +28,8 @@ let inc = 0
 function setup() {
   inc = TWO_PI / 120.0;
 
-  w = 800
-  h = 600
+  w = windowWidth * 0.8
+  h = windowHeight * 0.8
 
   const cnv = createCanvas(w, h)
   cnv.parent('pi5-canvas')
