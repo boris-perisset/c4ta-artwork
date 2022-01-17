@@ -14,6 +14,7 @@ let buttons = ["Word1", "Word2", "Word3", "Word4", "Word5"]
 let drawing
 let drawingArray = []
 
+let scoreText = 0
 let totalScore = 0
 
 let red = ("#fc8282")
@@ -159,10 +160,11 @@ function keyPressed() {
 // Reset the drawing
 function startDrawing() {
   background(34, 43, 142);
-  
-  text ("Total Score", w - 100, 20)
-  text (totalScore, w - 115, 60)
-  text ("/ 80", w - 80, 60)
+  select("#score").html(`Your Score ${totalScore}/80.`)
+  // score.html(scoreText.toString())
+
+  // text (totalScore, w - 115, 60)
+  // text ("/ 80", w - 80, 60)
   // Start in the middle
   x = width / 2;
   y = height / 2;

@@ -1,7 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
-    background: rgb(34, 43, 142);
+    background: #222b8e;
     color: white;
     width: 100vw;
     height: 100vh;
@@ -19,19 +19,14 @@ html, body {
       /* background:black; */
   }
   .buttons {
-    position: fixed;
-    left: 0%;
-    top: auto;
-    right: 0%;
-    bottom: 0%;
-    z-index: 200;
+    
     padding: 2vw;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    background-color: rgb(27, 18, 91);
+    background-color: #1b125b;
   }
 
   /* input[type=button], .custom-file-upload */
@@ -87,7 +82,7 @@ html, body {
     padding-right: 0.5em;
     border-radius: 0em 0.2em 0.2em 0em;
 
-    background: rgb(127, 255, 212);
+    background: #7fffd4;
     color:rgb(27, 18, 91);
     transition: background 200ms;
 }
@@ -97,6 +92,31 @@ html, body {
     color: rgb(252, 130, 130);
 }
 
+.gui {
+  position: fixed;
+  left: 0%;
+  top: auto;
+  right: 0%;
+  bottom: 0%;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.infobox {
+background-color: #0d063f ;
+padding: 0.3em 1.2em 0.3em 1.2em;
+position: relative;
+bottom: -1em;
+text-align: center;
+
+}
+#score {
+color: #7fffd4;
+font-size: 1.2em;
+font-weight: 800;
+text-transform: uppercase;
+}
   canvas {
     /* overflow: scroll; */
     /* position: relative; */
