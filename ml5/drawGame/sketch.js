@@ -37,7 +37,7 @@ function setup() {
   noStroke()
   textAlign(CENTER, CENTER)
   textFont("Helvetica")
-  textSize(24)
+  textSize(20)
   fill(white)
   text("Guess the Sketch", w/2, h - 150)
   fill (red)
