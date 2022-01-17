@@ -9,11 +9,6 @@ let strokePath;
 let clicked = false
 let resetClicked = false
 let Nextclicked = false
-
-// let button = {
-//   id: b,
-//   name: model
-// }
 let buttonName
 let buttons = ["Word1", "Word2", "Word3", "Word4", "Word5"]
 let drawing
@@ -29,7 +24,6 @@ let waiting = false
 let a = 0.0;
 let inc = 0
 
-
 /////////////////////////// SETUP ///////////////////////
 function setup() {
   inc = TWO_PI / 120.0;
@@ -39,8 +33,6 @@ function setup() {
 
   const cnv = createCanvas(w, h)
   cnv.parent('pi5-canvas')
-  // console.log(modelRNNs)
-
 
   noStroke()
   textAlign(CENTER, CENTER)
@@ -64,7 +56,6 @@ function setup() {
 /////////////////////////// DRAW ///////////////////////
 
 function draw() {
-  
 
   strokeCap(ROUND)
   strokeJoin(ROUND)
@@ -108,7 +99,7 @@ function draw() {
 /////////////////////////// AFTER DRAW ///////////////////////
 
 function modelReady() {
-  select("#status").html("modelRNN is ready")
+  select("#status").html("Sketch is ready")
   counter = 0
   waiting = false
   startDrawing()
@@ -127,7 +118,7 @@ function keyPressed() {
 
       drawing = random(drawingArray)
       waiting = true
-      select("#status").html("modelRNN is loading")
+      select("#status").html("First Sketch is loading")
       modelRNN = ml5.sketchRNN(drawing, modelReady)
       
       clicked = true
@@ -143,7 +134,7 @@ function keyPressed() {
       }
       drawing = random(drawingArray)
       waiting = true
-      select("#status").html("modelRNN is loading")
+      select("#status").html("Next Sketch is loading")
       modelRNN = ml5.sketchRNN(drawing, modelReady)
       
       Nextclicked = true  
@@ -159,7 +150,7 @@ function keyPressed() {
         buttons[i].html(drawingArray[i].toString())
       }
       drawing = random(drawingArray)
-      select("#status").html("modelRNN is loading")
+      select("#status").html("New Game is loading")
       modelRNN = ml5.sketchRNN(drawing, modelReady)
       resetClicked = true
   }
