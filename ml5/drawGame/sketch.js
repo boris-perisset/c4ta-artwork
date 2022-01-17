@@ -86,7 +86,7 @@ function draw() {
     text ("press R to restart", w/2, h - 100) 
   }
 
-  console.log(drawing)
+  // console.log(drawing)
 
 }
 
