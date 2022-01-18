@@ -23,7 +23,8 @@ let white = ("#ffffff")
 let dark = ("#1b125b")
 
 let waiting = false
-let a = 0.001;
+let a = 0.001
+let b = 0.001
 let inc = 0
 let inc2 = 0
 
@@ -117,12 +118,20 @@ function draw() {
     // winAnim[i].x = winAnim[i].x  + updateX
     // winAnim[i].y = winAnim[i].y  + updateY
     }
-    updateWinBalls()
+    for (let i = 0; i < winAnim.length-2; i++) {
+      fill(winAnim[i].col)
+      circle(winAnim[i+1].x + cos(b) * -i, winAnim[i].y+ sin(a) * 40, sin(b) * 4)
+      circle(winAnim[i+2].x + sin(a) * i, winAnim[i].y+ cos(b) * -i*2, cos(a) * i/2)
 
-    //+ cos(a) * sin(a) * winAnim[i].spin * random(-10,10)
-    // + cos(a)* winAnim[i].spin * random(-10,10)
-    
+      }
+
+    updateWinBalls()
     a = a + inc2
+    b = b + inc
+    //
+    // 
+    
+    
   // console.log(winAnim)
   }
   if (waiting === true) {
