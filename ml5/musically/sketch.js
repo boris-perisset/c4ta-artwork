@@ -54,8 +54,7 @@ function setup() {
 
   envelope = new p5.Envelope()
   envelope.setADSR(0.05, 0.1, 0.7, 1)
-  envelope.setRange(1.2, 0)
-
+  envelope.setRange(1.2, 0) 
 
   wave = new p5.Oscillator()
   wave.setType("sine")
@@ -63,7 +62,7 @@ function setup() {
   wave.freq(300)
   wave.amp(envelope)
 
-  for (let i = 50; i > h; i+= 10) {
+  for (let i = 50; i < h; i+= 100) {
     midPoint = createVector(w/2, i)
     strings.push(new GuitarString(1, midPoint))
   }
@@ -72,7 +71,6 @@ function setup() {
     distToMid = dist(mouseX, mouseY, string.mid.x, string.mid.y)
     strokeWeight(1)
     stroke(turkis)
-    string.update()
     string.draw()
   }
 }
@@ -223,12 +221,9 @@ function gotResults(error, result) {
   envelope.play()
 
   for(let string of strings){
-    strokeWeight(1)
-    stroke(turkis)
-    distToMid = dist(mouseX, mouseY, string.mid.x, string.mid.y)
-
+    distToMid = dist(mouseX, mouseY, string.mid.x, string.mid.y)  
     if (distToMid < 50) {
-      string.setVal(floor(frequency))/100
+      string.setVal(floor(frequency)) // 100
       string.pluck()
     }
   }

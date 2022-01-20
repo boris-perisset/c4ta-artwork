@@ -46,4 +46,8 @@ class GuitarString {
     this.amp = 1;
     this.framesSincePluck = 0;
   }
+
+  setVal(freq) {
+      this.freq = freq
+  }
 }
