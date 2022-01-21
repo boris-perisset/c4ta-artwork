@@ -26,7 +26,6 @@ let blue = "#222b8e"
 let turkis = "#7fffd4"
 let red = "#fc8282"
 
-
 /////////////////////////// SETUP ///////////////////////
 function setup() {
   getAudioContext().suspend();
@@ -99,15 +98,18 @@ function draw() {
   }
 }
 
+
 /////////////////////////// FUNCTIONS ///////////////////////
 
 
 function setupButtons() {
-
+  // if (getAudioContext().state !== 'running') {
   buttonSound = createButton("Sound On")
   buttonSound.position(w+(w*0.05),00)
-  // buttonSound.state("disabled", "disabled");
-
+  // } else {
+  buttonSoundOff = createButton("Sound Off")
+  buttonSoundOff.position(w+(w*0.15),00)
+  // }
 
   buttonA = createButton("Add A Note")
   buttonA.position(w+(w*0.05),40)
@@ -146,8 +148,15 @@ function setupButtons() {
   })
 
   buttonSound.mousePressed(function(){
-    userStartAudio();
+    userStartAudio()
+    console.log("Running?",getAudioContext().state)
   })
+
+  buttonSoundOff.mousePressed(function(){
+    // getAudioContext().pause()
+    getAudioContext().suspend();
+    console.log("Pause?",getAudioContext().state)
+  }) 
 
   saveModelButton.mousePressed(function(){
     model.save()
