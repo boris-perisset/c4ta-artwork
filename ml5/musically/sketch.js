@@ -29,7 +29,7 @@ let red = "#fc8282"
 
 /////////////////////////// SETUP ///////////////////////
 function setup() {
-
+  getAudioContext().suspend();
 
   w = windowWidth - (windowWidth*0.25)
   h = windowHeight
@@ -104,6 +104,11 @@ function draw() {
 
 function setupButtons() {
 
+  buttonSound = createButton("Sound On")
+  buttonSound.position(w+(w*0.05),00)
+  // buttonSound.state("disabled", "disabled");
+
+
   buttonA = createButton("Add A Note")
   buttonA.position(w+(w*0.05),40)
 
@@ -137,8 +142,11 @@ function setupButtons() {
       epochs: 70,
     }
 
-
     model.train(options, whileTraining, doneTraining)
+  })
+
+  buttonSound.mousePressed(function(){
+    userStartAudio();
   })
 
   saveModelButton.mousePressed(function(){
@@ -190,6 +198,8 @@ function mousePressed() {
   }
 
   if ( state === "collection") {
+    noStroke()
+    fill(turkis)
     let targetFrequency = notes[targetLabel]
     let output = {
       frequency: targetFrequency
