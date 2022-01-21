@@ -6,7 +6,7 @@ class GuitarString {
     this.freq = freq;
     this.amp = 0;
     this.framesSincePluck = 0;
-    this.length = 100;
+    this.length = w;
     this.mid = midPoint;
     
   }

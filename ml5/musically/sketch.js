@@ -31,7 +31,7 @@ let red = "#fc8282"
 function setup() {
 
 
-  w = windowWidth
+  w = windowWidth - (windowWidth*0.25)
   h = windowHeight
 
   const cnv = createCanvas(w, h)
@@ -105,29 +105,29 @@ function draw() {
 function setupButtons() {
 
   buttonA = createButton("Add A Note")
-  buttonA.position(20,40)
+  buttonA.position(w+(w*0.05),40)
 
   buttonE = createButton("Add E Note")
-  buttonE.position(20,80)
+  buttonE.position(w+(w*0.05),80)
 
   buttonG = createButton("Add G Note")
-  buttonG.position(20,120) 
+  buttonG.position(w+(w*0.05),120) 
 
   saveButton = createButton("Save Data")
-  saveButton.position(20,240)
+  saveButton.position(w+(w*0.05),240)
 
   loadButton = createButton("Load Data")
-  loadButton.position(20,280)
+  loadButton.position(w+(w*0.05),280)
 
   saveModelButton = createButton("Save Model")
-  saveModelButton.position(20,320)
+  saveModelButton.position(w+(w*0.05),320)
 
   loadModelButton = createButton("Load Model")
-  loadModelButton.position(20,360)
+  loadModelButton.position(w+(w*0.05),360)
 
 
   trainButton = createButton("Train Model")
-  trainButton.position(20,h-100)
+  trainButton.position(w+(w*0.05),h-100)
   
   trainButton.mousePressed(function(){
     console.log("Start Training")
