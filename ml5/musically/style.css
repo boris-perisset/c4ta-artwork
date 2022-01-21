@@ -1,7 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
-    background: #222b8e;
+    background: hsl(235, 61%, 35%);
     color: rgb(170, 192, 250);
     width: 100vw;
     height: 100vh;
@@ -45,12 +45,12 @@ html, body {
   }
 
   a {
-    color: #fc8282;
+    color: hsl(0, 95%, 75%);
     transition: color 300ms ease-in-out;
   }
 
   a:hover {
-    color: #7fffd4;
+    color: hsl(160, 100%, 75%);
   }
 
   /* input[type="file"] {

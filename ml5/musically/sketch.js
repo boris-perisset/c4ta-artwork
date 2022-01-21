@@ -22,6 +22,7 @@ const modelInfo = {
 
 let strings = []
 
+let colorSwitch = 235
 let blue = "#222b8e"
 let turkis = "#7fffd4"
 let red = "#fc8282"
@@ -29,6 +30,11 @@ let red = "#fc8282"
 /////////////////////////// SETUP ///////////////////////
 function setup() {
   getAudioContext().suspend();
+
+  colorMode(HSL, 360, 100, 100, 1)
+  blue = color(colorSwitch, 61, 35) //"#222b8e"
+  turkis = color(160, 100, 75) //"#7fffd4"
+  red = color(0, 95, 75) //"#fc8282"
 
   w = windowWidth - (windowWidth*0.25)
   h = windowHeight
@@ -79,7 +85,7 @@ function setup() {
 function draw() {
 
   if(state === "prediction"){
-    background(blue)
+    updateBackgrond()
     fill(turkis)
 
     for(let string of strings){
@@ -90,7 +96,10 @@ function draw() {
       string.draw()
 
       if(distToMid < 50) {
+        colorSwitch = floor(frequency)
+        red = color(frequency, 95, 75) //"#fc8282"
         fill(red)
+
         circle(string.mid.x, string.mid.y, 20)
         text(str(frequency).slice(0, 6), mouseX, mouseY)
       }
@@ -251,4 +260,10 @@ function gotResults(error, result) {
 
 function dataLoaded(){
   console.log("Data Loaded")
+}
+
+function updateBackgrond() {
+  colorSwitch = floor(frequency)
+  blue = color(colorSwitch, 61, 35) //"#222b8e"
+  background(blue)
 }
