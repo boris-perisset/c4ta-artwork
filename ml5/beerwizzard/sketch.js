@@ -4,21 +4,21 @@ let blue = "#222b8e"
 let turkis = "#7fffd4"
 let red = "#fc8282"
 
-let alcohol = 50
-  let bitterness = 50
-  let sweetness = 50
-  let sourness = 50
-  let saltyness = 50
-  let hoppyness = 50
-  let spiceyness = 50
-  let maltyness = 50
+let alcohol = 80
+let bitterness = 80
+let sweetness = 80
+let sourness = 80
+let saltyness = 80
+let hoppyness = 80
+let spiceyness = 80
+let maltyness = 80
 
 /////////////////////////// SETUP ///////////////////////
 function setup() {
   // w = windowWidth - (windowWidth*0.25)
   // h = windowHeight
 
-  
+
   const cnv = createCanvas(0, 0)
   cnv.parent('pi5-canvas')
 

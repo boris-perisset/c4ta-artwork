@@ -178,8 +178,8 @@ text-transform: uppercase;
     -webkit-appearance: none;
     appearance: none;
     border-radius: 3em;
-    width: 3em;
-    height: 3em;
+    width: 2.8em;
+    height: 2.8em;
     box-shadow: #1b125b 2px 4px 3vw;
     background: #fc8282;
     cursor: pointer;
@@ -188,8 +188,8 @@ text-transform: uppercase;
   }
   
   .slider::-moz-range-thumb {
-    width: 3em;
-    height: 3em;
+    width: 2.8em;
+    height: 2.8em;
     background: #fc8282;
     box-shadow: #1b125b 2px 4px 3vw;
     transition: width 600ms ease-out ;
