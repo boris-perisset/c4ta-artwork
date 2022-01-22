@@ -190,6 +190,7 @@ text-transform: uppercase;
   }
 
   .result-box {
+    width: 80%;
     padding: 3vw;
     background-color: #1b125b;
   }
