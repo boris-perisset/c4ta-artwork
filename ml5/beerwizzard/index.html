@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Datasets</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
+    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+	
+</head>
+
+<body>
+    <div class="pi5-canvas-class" id="pi5-canvas"></div>
+	<script src="sketch.js"></script>
+	<h1>Check your Homebrew</h1>
+	<h2>This is a AI based Beer Wizzard.</h2>
+	<h3>Brew your own Beer.</h3>
+	<p>Left = None, Right = a Lot</p>
+		<div class="slidecontainer">
+			<p>Alkohol</p>
+			<input type="range" min="0" max="200" value="50" class="slider" id="Alcohol" class="slider">
+			<p>Bitterness</p>
+			<input type="range" min="1" max="200" value="50" class="slider" id="Bitter" class="slider">
+			<p>Sweetness</p>
+			<input type="range" min="1" max="200" value="50" class="slider" id="Sweet" class="slider">
+			<p>Sourness</p>
+			<input type="range" min="1" max="200" value="50" class="slider" id="Sour" class="slider">
+			<p>Saltyness</p>
+			<input type="range" min="1" max="200" value="50" class="slider" id="Salty" class="slider">
+			<p>Fruityness</p>
+			<input type="range" min="1" max="200" value="50" class="slider" id="Fruits" class="slider">
+			<p>Hoppyness</p>
+			<input type="range" min="1" max="200" value="50" class="slider" id="Hoppy" class="slider">
+			<p>Spiceyness</p>
+			<input type="range" min="1" max="200" value="50" class="slider" id="Spices" class="slider">
+			<p>Maltyness</p>
+			<input type="range" min="1" max="200" value="50" class="slider" id="Malty" class="slider">
+		  </div>
+	
+	<p> <label> Review Style: </label>
+		<select id="review">
+			<option value="review_aroma">Aroma</option>
+			<option value="review_appearance">Appearance</option>
+			<option value="review_taste">Taste</option>
+			<option value="review_overall">Overall</option>
+		</select>
+	</p>
+
+	
+	<p>
+		<button id="train">Train Model</button>
+		<button id="predict">predict</button>
+	</p>
+	<div>
+		<h2>Results</h2>
+		<h3>Review Prediction</h3>
+		<p id = "result"></p>
+		<h3>Name of your Beer</h3>
+		<p id="Name"></p>
+		<h3>Beer Style</h3>
+		<p id="Style"></p>
+		<h3>Name of your Brewery</h3>
+		<p id="Brewery"></p>
+	</div>
+</body>
+
+</html>
