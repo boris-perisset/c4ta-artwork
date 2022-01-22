@@ -31,7 +31,7 @@ html, body {
 
   /* input[type=button], .custom-file-upload */
 
-  button, input  {
+  button  {
       /* display: block; */
       background-color: #fc8282;
       border: 0px;
@@ -180,4 +180,11 @@ text-transform: uppercase;
     height: 25px;
     background: #04AA6D;
     cursor: pointer;
+  }
+
+  input {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1em;
   }

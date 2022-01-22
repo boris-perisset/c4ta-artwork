@@ -115,6 +115,26 @@ function gotResults(error, result){
   }
   console.log(result)
   model.predict(inputs, gotResults)
+}
 
-
+function updateTextInput(val, id) {
+  if (id === "Alcohol"){
+    document.getElementById('alc-value').value=val; 
+  } else if (id === "Bitter"){
+    document.getElementById('bitter-value').value=val; 
+  } else if (id === "Sweet"){
+    document.getElementById('sweet-value').value=val; 
+  } else if (id === "Sour"){
+    document.getElementById('sour-value').value=val; 
+  } else if (id === "Salty"){
+    document.getElementById('salt-value').value=val; 
+  } else if (id === "Fruits"){
+    document.getElementById('fruit-value').value=val; 
+  } else if (id === "Hoppy"){
+    document.getElementById('hoppy-value').value=val; 
+  } else if (id === "Spices"){
+    document.getElementById('spices-value').value=val; 
+  } else if (id === "Malty"){
+    document.getElementById('malty-value').value=val; 
+  }
 }
