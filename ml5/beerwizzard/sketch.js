@@ -4,7 +4,6 @@ let blue = "#222b8e"
 let turkis = "#7fffd4"
 let red = "#fc8282"
 
-
 let alcohol = 50
   let bitterness = 50
   let sweetness = 50
