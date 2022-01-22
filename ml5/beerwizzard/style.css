@@ -163,22 +163,37 @@ text-transform: uppercase;
   .slider:hover {
     opacity: 1;
   }
-  
+ 
+  .slider::-webkit-slider-thumb:hover {
+    width: 4em;
+    height: 4em;
+  }
+
+  .slider::-moz-range-thumb:hover {
+    width: 4em;
+    height: 4em;
+  }
+
   .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     border-radius: 3em;
-    width: 4em;
-    height: 4em;
+    width: 3em;
+    height: 3em;
     box-shadow: #1b125b 2px 4px 3vw;
     background: #fc8282;
     cursor: pointer;
+    transition: width 600ms ease-out ;
+    transition: height 600ms ease-out ;
   }
   
   .slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
-    background: #04AA6D;
+    width: 3em;
+    height: 3em;
+    background: #fc8282;
+    box-shadow: #1b125b 2px 4px 3vw;
+    transition: width 600ms ease-out ;
+    transition: height 600ms ease-out ;
     cursor: pointer;
   }
 
