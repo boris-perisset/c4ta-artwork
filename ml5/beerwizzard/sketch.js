@@ -1,6 +1,5 @@
 let model
 
-let colorSwitch = 235
 let blue = "#222b8e"
 let turkis = "#7fffd4"
 let red = "#fc8282"
@@ -17,10 +16,6 @@ let alcohol = 50
 
 /////////////////////////// SETUP ///////////////////////
 function setup() {
-  getAudioContext().suspend();
-
-
-
   // w = windowWidth - (windowWidth*0.25)
   // h = windowHeight
 
@@ -31,9 +26,11 @@ function setup() {
   // textSize(24)
 
   let options = {
-    dataUrl: "beers.csv",
-    input: ["Name", "Style", "Brewery", "Alcohol", "Bitter", "Sweet", "Sour", "Salty", "Fruits", "Hoppy", "Spices", "Malty","review_aroma", "review_appearance", "review_taste", "review_overall", "number_of_reviews" ],
-    outputs: ["prediction"],
+    dataUrl: "new-beerlist.csv",
+    input: ["Alcohol", "Bitter", "Sweet", "Sour", "Salty", "Fruits", "Hoppy", "Spices", "Malty"],
+
+    // input: ["Name", "Style", "Brewery", "Alcohol", "Bitter", "Sweet", "Sour", "Salty", "Fruits", "Hoppy", "Spices", "Malty","review_aroma", "review_appearance", "review_taste", "review_overall", "number_of_reviews" ],
+    outputs: [ "review_aroma", "review_appearance", "review_taste", "review_overall", "number_of_reviews" ],
     task: "classification",
     debug: true,
     learningRate: 0.1
@@ -114,7 +111,7 @@ function gotResults(error, result){
     return
   }
   console.log(result)
-  model.predict(inputs, gotResults)
+  // model.predict(inputs, gotResults)
 }
 
 function updateTextInput(val, id) {
