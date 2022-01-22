@@ -188,3 +188,8 @@ text-transform: uppercase;
     color: white;
     font-size: 1em;
   }
+
+  .result-box {
+    padding: 3vw;
+    background-color: #1b125b;
+  }
