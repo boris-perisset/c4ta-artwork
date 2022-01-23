@@ -146,15 +146,11 @@ text-transform: uppercase;
     width: 50%;
     text-align: center;
   }
-
-
-  
-  }
   
   .slider {
     -webkit-appearance: none;
     width: 100%;
-    height: 25px;
+    height: 2em;
     border-radius: 3em;
     background: #1b125b;
     outline: none;
@@ -226,5 +222,5 @@ text-transform: uppercase;
 
   @media screen and (max-width:720px) {
     .slidecontainer {
-      width: 100%;
+      width: 86%;
     }
