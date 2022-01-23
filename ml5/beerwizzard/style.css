@@ -3,8 +3,7 @@ html, body {
     padding: 4vw;
     background: hsl(235, 61%, 35%);
     color: rgb(170, 192, 250);
-    width: 100vw;
-    height: 100vh;
+    width: 92%;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 100%;
   }
