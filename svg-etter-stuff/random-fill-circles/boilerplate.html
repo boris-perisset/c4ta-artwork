@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <title>Stuff circles in a Warehouse</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-size: 0;
+            font-family: sans-serif;
+            color: #fff;
+            background-color: #000;
+            user-select: none;
+        }
+
+        stage,
+        svg,
+        path {
+            position: fixed;
+            overflow: visible;
+        }
+    </style>
+
+</head>
+
+<body>
+</body>
+
+<script>
+
+    //CODE
+
+    let engine = {};
+
+
+    //COORDINATES
+
+    engine.scale = function ({ width, height }) {
+        if (width) {
+            engine.width = width;
+            engine.res = window.innerWidth / engine.width;
+            engine.height = window.innerHeight / engine.res;
+        } else if (height) {
+            engine.height = height;
+            engine.res = window.innerHeight / engine.height;
+            engine.width = window.innerWidth / engine.res;
+        }
+        engine.center = { x: engine.width / 2, y: engine.height / 2 };
+    }
+    engine.scale({ height: 120 });
+
+
+    //SVG
+
+    let svg = {};
+
+    svg.nameSpace = "http://www.w3.org/2000/svg";
+
+    svg.path = function (ia) {
+
+        let output = "M ";
+        for (var i = 0; i < ia.length; i++) {
+            output += ia[i].x * engine.res + " " + ia[i].y * engine.res + " ";
+        }
+        output += "z";
+
+        return output;
+    };
+
+    svg.makeLayer = function ({ parent, id, x = 0, y = 0 }) {
+        dom[id] = document.createElementNS(svg.nameSpace, "svg");
+        dom[id].id = id;
+        dom[id].style.transform = "translateX(" + (x * engine.res) + "px) translateY(" + (y * engine.res) + "px)";
+        parent.appendChild(dom[id]);
+    };
+
+    svg.makeLine = function ({ parent, id, d = "", color = "#ff00ff", stroke = 1, cap = "butt", join = "round" }) {
+        dom[id] = document.createElementNS(svg.nameSpace, "path");
+        dom[id].setAttributeNS(null, "fill", "none");
+        dom[id].setAttributeNS(null, "d", d);
+        dom[id].setAttributeNS(null, "stroke-width", stroke * engine.res);
+        dom[id].setAttributeNS(null, "stroke", color);
+        dom[id].setAttributeNS(null, "stroke-linecap", cap);
+        dom[id].setAttributeNS(null, "stroke-join", join);
+        dom[id].id = id;
+        parent.appendChild(dom[id]);
+    };
+
+    svg.makeShape = function ({ parent, id, d = "", color = "#ff00ff" }) {
+        dom[id] = document.createElementNS(svg.nameSpace, "path");
+        dom[id].setAttributeNS(null, "fill", color);
+        dom[id].setAttributeNS(null, "d", d);
+        dom[id].id = id;
+        parent.appendChild(dom[id]);
+    };
+
+
+    //DOM
+
+    let dom = {};
+
+    //stage
+    dom.stage = document.createElement("stage");
+    dom.stage.style.transform = "translateX(" + (engine.center.x * engine.res) + "px) translateY(" + (engine.center.y * engine.res) + "px)";
+    dom.stage.id = "stage";
+    document.body.appendChild(dom.stage);
+
+    //svg layer
+    svg.makeLayer({ parent: dom.stage, id: "svgLayer", x: 0, y: 0 });
+
+    //drawing
+
+    engine.getDistance = function (a, b) {
+        let aa = a.x - b.x
+        let bb = a.y - b.y
+
+        return Math.sqrt(aa * aa + bb * bb)
+    }
+
+    engine.noCollision = function ({ a = { x: 1, y: 1, r: 10},{ b = { x: 2, y: 2, r: 10}}) {
+        if(engine.getDistance(a, b) > a.r + b.r) {
+            return true
+        }
+    } else {
+        return false
+    }
+
+    let max = 20
+    let count = 0
+
+    let points = {
+        random = {id: "circle" + count, x: -50 + Math.random() * 100, y: -50 + Math.random() * 100, r: Math.random() * 20}
+    }
+
+    while (count < max) {
+
+        let random = {id: "circle" + count, x: -50 + Math.random() * 100, y: -50 + Math.random() * 100, r: Math.random() * 20}
+
+        for (let punkt in points) {
+            if(engine.noCollision(random, points[punkt]))
+            points[random.id] = random
+            svg.makeLine({ parent: dom.svgLayer, id: "circle", cap: "round", stroke: random.r, color: "#ff0", d: svg.path([{ x: random.x, y: -random.y}]) })
+        }
+        count ++
+    }
+
+</script>
+
+</html>

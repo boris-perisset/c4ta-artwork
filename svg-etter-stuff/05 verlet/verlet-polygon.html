@@ -1,0 +1,233 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <title>verlet</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+
+    <script language="javascript" type="text/javascript" src="simplex-noise.min.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-size: 0;
+            font-family: sans-serif;
+            color: #fff;
+            background-color: #000;
+            user-select: none;
+        }
+
+        stage,
+        svg,
+        path {
+            position: fixed;
+            overflow: visible;
+        }
+    </style>
+
+</head>
+
+<body>
+</body>
+
+<script>
+
+    //CODE
+
+    let twrk = {};
+
+
+    //COORDINATES
+
+    twrk.scale = function ({ width, height }) {
+        if (width) {
+            twrk.width = width;
+            twrk.res = window.innerWidth / twrk.width;
+            twrk.height = window.innerHeight / twrk.res;
+        } else if (height) {
+            twrk.height = height;
+            twrk.res = window.innerHeight / twrk.height;
+            twrk.width = window.innerWidth / twrk.res;
+        }
+        twrk.center = { x: twrk.width / 2, y: twrk.height / 2 };
+    }
+    twrk.scale({ height: 120 });
+
+
+    //SVG
+
+    let svg = {};
+
+    svg.nameSpace = "http://www.w3.org/2000/svg";
+
+    // eine Funktion die ein Array [] erhält und daraus einen SVG Vector String macht.
+    svg.path = function (ia) {
+        let output = "M ";
+        for (var i = 0; i < ia.length; i++) {
+            output += ia[i].x * twrk.res + " " + ia[i].y * twrk.res + " ";
+        }
+        if(ia.length == 1) output += "z";
+        
+        return output;
+    };
+
+    // Eine Funktion die aus mehreren SVG Pfaden, einen Pfad macht.
+    svg.paths = function (ia) {
+        let output = "";
+        for (var i = 0; i < ia.length; i++) {
+            output += svg.path(ia[i]);
+        }
+        return output;
+    };
+
+    svg.makeLayer = function ({ parent, id, x = 0, y = 0 }) {
+        dom[id] = document.createElementNS(svg.nameSpace, "svg");
+        dom[id].id = id;
+        dom[id].style.transform = "translateX(" + (x * twrk.res) + "px) translateY(" + (y * twrk.res) + "px)";
+        parent.appendChild(dom[id]);
+    };
+
+    svg.makeLine = function ({ parent, id, d = "", color = "#ff00ff", stroke = 0.5, cap = "butt", join = "bevel" }) {
+        dom[id] = document.createElementNS(svg.nameSpace, "path");
+        dom[id].setAttributeNS(null, "fill", "none");
+        dom[id].setAttributeNS(null, "d", d);
+        dom[id].setAttributeNS(null, "stroke-width", stroke * twrk.res);
+        dom[id].setAttributeNS(null, "stroke", color);
+        dom[id].setAttributeNS(null, "stroke-linecap", cap);
+        dom[id].setAttributeNS(null, "stroke-join", join);
+        dom[id].id = id;
+        parent.appendChild(dom[id]);
+    };
+
+    svg.makeShape = function ({ parent, id, d = "", color = "#ff00ff" }) {
+        dom[id] = document.createElementNS(svg.nameSpace, "path");
+        dom[id].setAttributeNS(null, "fill", color);
+        dom[id].setAttributeNS(null, "d", d);
+        dom[id].id = id;
+        parent.appendChild(dom[id]);
+    };
+
+
+    // COLORS
+    let randomRed = function () {
+        let h = 0 + Math.floor(Math.random() * 40)
+        let s = 30 + Math.floor(Math.random() * 100)
+        let l = 30 + Math.floor(Math.random() * 10)
+        return "hsl(" + h + ", " + s + "%, " + l + "%)";
+    }
+
+    //PHYSICS
+
+    let physics = {};
+
+    // Hier werden die Punkte generiert, die auf die Physik reagieren,
+    physics.makePoint = function ({ position = { x: 0, y: 0 }, drag = 0.9, acceleration = { x: 0, y: 0 }, id, parent, color }) {
+        parent[id] = {};
+        parent[id].id = id;
+        parent[id].position = position;
+        parent[id].drag = drag;
+        parent[id].acceleration = acceleration;
+        parent[id].color = color;
+    };
+
+    // Hier berechnet sich die Beschleunigung und den Widerstand(drag) sowie die Kraft welche auf das Objekt wirken.
+    physics.calculate = function ({ point, force = { x: 0, y: 0 } }) {
+        point.acceleration = { x: point.acceleration.x * point.drag, y: point.acceleration.y * point.drag };
+        point.acceleration = { x: point.acceleration.x + force.x, y: point.acceleration.y + force.y };
+        point.position = { x: point.position.x + point.acceleration.x, y: point.position.y + point.acceleration.y };
+    };
+
+
+    physics.verlet = function ({ a, b, distance, stiffness }) {
+
+        let difference = { x: a.position.x - b.position.x, y: a.position.y - b.position.y };
+        let dot = Math.sqrt(difference.x * difference.x) + (difference.y * difference.y);
+
+        if (dot == 0) {
+            dot = 0.001;
+        }
+
+        let scalar = (distance - dot) / dot * stiffness * 0.5;
+        let move = { x: difference.x * scalar, y: difference.y * scalar };
+
+        a.position = { x: a.position.x + move.x, y: a.position.y + move.y };
+        b.position = { x: b.position.x - move.x, y: b.position.y - move.y };
+    };
+
+    //make physics dots
+    let dots = {};
+    for (let i = 0; i < 10; i++) {
+        physics.makePoint({ 
+            id: "dot" + i, 
+            position: { x: -50 + Math.random() * 50, y: Math.random() * 100 },
+            parent: dots,
+            color: randomRed()
+        });
+    }
+    console.log(dots)
+
+    //DOM
+
+    let dom = {};
+
+    //stage
+    dom.stage = document.createElement("stage");
+    dom.stage.style.transform = "translateX(" + (twrk.center.x * twrk.res) + "px) translateY(" + (twrk.center.y * twrk.res) + "px)";
+    dom.stage.id = "stage";
+    document.body.appendChild(dom.stage);
+
+    //svg layer
+    svg.makeLayer({ parent: dom.stage, id: "svgLayer", x: 0, y: 0 });
+    svg.makeLine({ parent: dom.svgLayer, id: "rope", join: "bevel", cap: "round", stroke: 0.5, color: randomRed() });
+    svg.makeLine({ parent: dom.svgLayer, id: "circles", stroke: 4, color: "#ff0", cap: "round" });
+
+    svg.makeShape({parent: dom.svgLayer, id: "triangle", color: randomRed()});
+
+    //LOOP
+
+    function loop(time) {
+
+
+        let path = []
+
+        //triangle
+        for (let i = 0; i < dots.length-1; i++) {
+            physics.verlet({a: dots[i].position, b: dots[i+1].position, distance: 200 * Math.random(), stiffness: 0.3, color: randomRed() })
+            path.push[dots[i].position]
+        }
+
+        dots[0].position = {x: 0, y: -50}
+
+        for (let i = 0; i < dots.length; i++){
+
+            physics.calculate({ point: dots.id[i], force: { x: 0.005, y: 0.05}});
+
+            if (dot.position.y > 50) {
+                dot.acceleration.y = -8 * Math.random();
+            }
+
+            if (dot.position.x > 49) {
+                dot.acceleration.x = -20 * Math.random();
+            }
+        }
+        
+        dom.triangle.setAttributeNS(null, "d", svg.path(path))
+
+        console.log("late dots", dots)
+
+        requestAnimationFrame(loop);
+    };
+
+    loop(0);
+
+
+
+</script>
+
+</html>

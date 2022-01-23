@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <title>Perlinset Sirob</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+
+    <script language="javascript" type="text/javascript" src="simplex-noise.min.js"></script>
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-size: 0;
+            font-family: sans-serif;
+            color: #fff;
+            background-color: rgb(17, 10, 83);
+            user-select: none;
+        }
+
+        stage,
+        svg,
+        path {
+            position: fixed;
+            overflow: visible;
+        }
+    </style>
+
+</head>
+
+<body>
+</body>
+
+<script>
+
+    //CODE
+
+    let engine = {};
+
+
+    //COORDINATES
+
+    engine.scale = function ({ width, height }) {
+        if (width) {
+            engine.width = width;
+            engine.res = window.innerWidth / engine.width;
+            engine.height = window.innerHeight / engine.res;
+        } else if (height) {
+            engine.height = height;
+            engine.res = window.innerHeight / engine.height;
+            engine.width = window.innerWidth / engine.res;
+        }
+        engine.center = { x: engine.width / 2, y: engine.height / 2 };
+    }
+    engine.scale({ height: 120 });
+
+
+    //SVG
+
+    let svg = {};
+
+    svg.nameSpace = "http://www.w3.org/2000/svg";
+
+    svg.path = function (ia) {
+
+        let output = "M ";
+        for (var i = 0; i < ia.length; i++) {
+            output += ia[i].x * engine.res + " " + ia[i].y * engine.res + " ";
+        }
+        output += "z";
+
+        return output;
+    };
+
+    svg.makeLayer = function ({ parent, id, x = 0, y = 0 }) {
+        dom[id] = document.createElementNS(svg.nameSpace, "svg");
+        dom[id].id = id;
+        dom[id].style.transform = "translateX(" + (x * engine.res) + "px) translateY(" + (y * engine.res) + "px)";
+        parent.appendChild(dom[id]);
+    };
+
+    svg.makeLine = function ({ parent, id, d = "", color = "#ff00ff", stroke = 1, cap = "butt", join = "round" }) {
+        dom[id] = document.createElementNS(svg.nameSpace, "path");
+        dom[id].setAttributeNS(null, "fill", "none");
+        dom[id].setAttributeNS(null, "d", d);
+        dom[id].setAttributeNS(null, "stroke-width", stroke * engine.res);
+        dom[id].setAttributeNS(null, "stroke", color);
+        dom[id].setAttributeNS(null, "stroke-linecap", cap);
+        dom[id].setAttributeNS(null, "stroke-join", join);
+        dom[id].id = id;
+        parent.appendChild(dom[id]);
+    };
+
+    svg.makeShape = function ({ parent, id, d = "", color = "#ff00ff" }) {
+        dom[id] = document.createElementNS(svg.nameSpace, "path");
+        dom[id].setAttributeNS(null, "fill", color);
+        dom[id].setAttributeNS(null, "d", d);
+        dom[id].id = id;
+        parent.appendChild(dom[id]);
+    };
+
+    //Drehung
+    lineRotation = function ({ point, distance, rotation}) {
+        return [
+            {x: point.x, y: point.y}, {x: point.x + Math.sin(rotation) * distance, y: point.y + Math.cos(rotation) * distance}
+            ]
+    }
+
+    //DOM
+
+    let dom = {};
+
+    //stage
+    dom.stage = document.createElement("stage");
+    dom.stage.style.transform = "translateX(" + (engine.center.x * engine.res) + "px) translateY(" + (engine.center.y * engine.res) + "px)";
+    dom.stage.id = "stage";
+    document.body.appendChild(dom.stage);
+
+    //svg layer
+    svg.makeLayer({ parent: dom.stage, id: "svgLayer", x: 0, y: 0 });
+
+    let simplex = new SimplexNoise();
+
+    //drawing
+
+    let amount = 100
+    let step = 1
+    let position = { x: -50, y: -50 }
+    let resolution = 0.03
+    
+
+    for (let y = 0; y < amount; y++) {
+        for (let x = 0; x < amount; x++) {
+            let radian = simplex.noise2D(x * resolution, y * resolution) * Math.PI
+            let noiseY = simplex.noise2D(y * resolution, x * resolution/2) * 5
+            let color = Math.random()*255
+
+
+            svg.makeLine({
+                parent: dom.svgLayer, cap: "round", stroke: 0.1, color: "rgb(" + 50 + "," + 50 + "," + color + ")", d: svg.path(lineRotation({
+                    point: { x: position.x + x * step, y: position.y + y * step },
+                    rotation: radian,
+                    distance: noiseY*2
+                }))
+            })
+        }
+    }
+ 
+
+</script>
+
+</html>

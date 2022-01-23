@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Audio API Autoplay</title>
+</head>
+<body>
+
+  <button>play</button>
+  
+</body>
+<script>
+// Sound in Google Chrome erlauben:
+// Siehe: https://www.youtube.com/watch?v=sLXcuCrBL-M
+
+const playButton = document.querySelector("button")
+playButton.addEventListener('click', function () {
+  // statt einer anonymen Funktion wäre hier
+  // auch eine ‘Arrow Function’ möglich (siehe Video)
+  let audioCtx = new(window.AudioContext || window.webKitAudioContext)()
+
+  let osc = audioCtx.createOscillator()
+  osc.connect(audioCtx.destination)
+  osc.start(0)
+  osc.stop(2)
+  audioCtx.resume()
+})
+
+// siehe auch ‘MDN, Autoplay guide for media and Web Audio APIs’
+// https://developer.mozilla.org/en-US/docs/Web/Media/Autoplay_guide
+// und ‘MDN, Cross-browser audio basics’
+// https://developer.mozilla.org/en-US/docs/Web/Guide/Audio_and_video_delivery/Cross-browser_audio_basics
+
+</script>
+</html>

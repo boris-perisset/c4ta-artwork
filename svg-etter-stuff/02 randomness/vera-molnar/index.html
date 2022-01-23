@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <title>Carrés en 2 positions 4</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-size: 0;
+            font-family: sans-serif;
+            color: #000;
+            background-color: rgb(223, 223, 223);
+            user-select: none;
+        }
+
+        stage,
+        svg,
+        path {
+            position: fixed;
+            overflow: visible;
+        }
+    </style>
+
+</head>
+
+<body>
+</body>
+
+<script>
+
+    //CODE
+
+    let twerk = {};
+
+
+    //COORDINATES
+
+    twerk.scale = function ({ width, height }) {
+        if (width) {
+            twerk.width = width;
+            twerk.res = window.innerWidth / twerk.width;
+            twerk.height = window.innerHeight / twerk.res;
+        } else if (height) {
+            twerk.height = height;
+            twerk.res = window.innerHeight / twerk.height;
+            twerk.width = window.innerWidth / twerk.res;
+        }
+        twerk.center = { x: twerk.width / 2, y: twerk.height / 2 };
+    }
+    twerk.scale({ height: 120 });
+
+
+    //SVG
+
+    let svg = {};
+
+    svg.nameSpace = "http://www.w3.org/2000/svg";
+
+    svg.path = function (ia) {
+
+        let output = "M ";
+        for (var i = 0; i < ia.length; i++) {
+            output += ia[i].x * twerk.res + " " + ia[i].y * twerk.res + " ";
+        }
+        output += "z";
+
+        return output;
+    };
+
+    svg.makeLayer = function ({ parent, id, x = 0, y = 0 }) {
+        dom[id] = document.createElementNS(svg.nameSpace, "svg");
+        dom[id].id = id;
+        dom[id].style.transform = "translateX(" + (x * twerk.res) + "px) translateY(" + (y * twerk.res) + "px)";
+        parent.appendChild(dom[id]);
+    };
+
+    svg.makeLine = function ({ parent, id, d = "", color = "#ff00ff", stroke = 1, cap = "butt", join = "round" }) {
+        dom[id] = document.createElementNS(svg.nameSpace, "path");
+        dom[id].setAttributeNS(null, "fill", "none");
+        dom[id].setAttributeNS(null, "d", d);
+        dom[id].setAttributeNS(null, "stroke-width", stroke * twerk.res);
+        dom[id].setAttributeNS(null, "stroke", color);
+        dom[id].setAttributeNS(null, "stroke-linecap", cap);
+        dom[id].setAttributeNS(null, "stroke-join", join);
+        dom[id].id = id;
+        parent.appendChild(dom[id]);
+    };
+
+    svg.makeShape = function ({ parent, id, d = "", color = "#ff00ff" }) {
+        dom[id] = document.createElementNS(svg.nameSpace, "this.path");
+        dom[id].setAttributeNS(null, "fill", color);
+        dom[id].setAttributeNS(null, "d", d);
+        dom[id].id = id;
+        parent.appendChild(dom[id]);
+    };
+
+
+    //DOM
+
+    let dom = {};
+
+    //stage
+    dom.stage = document.createElement("stage");
+    dom.stage.style.transform = "translateX(" + (twerk.center.x * twerk.res) + "px) translateY(" + (twerk.center.y * twerk.res) + "px)";
+    dom.stage.id = "stage";
+    document.body.appendChild(dom.stage);
+
+    //svg layer
+    svg.makeLayer({ parent: dom.stage, id: "svgLayer", x: 0, y: 0 });
+
+    //drawing
+    let square = 5;
+    let distance = 5;
+    let cells = 4;
+    let offset = -cells / 2 * distance + distance * 0.5; 
+    let carrePosition = []
+
+
+    class Carre {
+        constructor() {
+            this.i = [0];
+            this.j = [0];
+            this.xpos = offset + this.i * distance;
+            this.ypos = offset + this.j * distance; 
+        }
+
+        show() {
+            this.path = [
+                { x: this.xpos - square / 2, y: this.ypos - square / 2},
+                { x: this.xpos + square / 2, y: this.ypos - square / 2},
+                { x: this.xpos + square / 2, y: this.ypos + square / 2},
+                { x: this.xpos - square / 2, y: this.ypos + square / 2}
+            ]
+            svg.makeShape({ parent: dom.svgLayer, id: "punkt", cap: "round", stroke: 1, color: "#f0f", d: svg.path(this.path) })
+        }
+    }
+
+    //nested loop
+    for (let i = 0; i < cells; i++) {
+        for (let j = 0; j < cells; j++) {
+            let quad = new Carre();
+            quad.i = [i];
+            quad.j = [j];
+            carrePosition.push(quad);
+
+            quad.show();
+            console.log(quad.this.i, quad.ypos)
+
+        }
+    }
+
+
+</script>
+
+</html>
+
+
+<!––
+
+let xpos = offset + i * distance;
+            let ypos = offset + j * distance;
+
+            let path = [
+                { x: xpos - square / 2, y: ypos - square / 2},
+                { x: xpos + square / 2, y: ypos - square / 2},
+                { x: xpos + square / 2, y: ypos + square / 2},
+                { x: xpos - square / 2, y: ypos + square / 2}
+            ];
+
+            svg.makeShape({ parent: dom.svgLayer, id: "punkt", cap: "round", stroke: 0.2, color: "#000", d: svg.path(path) })
+            ––>

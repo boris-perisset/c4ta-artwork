@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>popping physics sounds</title>
+
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover"
+    />
+
+    <script
+      language="javascript"
+      type="text/javascript"
+      src="simplex-noise.min.js"
+    ></script>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        font-size: 0;
+        font-family: sans-serif;
+        color: #fff;
+        background-color: rgb(185, 126, 233);
+        user-select: none;
+      }
+
+      stage,
+      svg,
+      path {
+        position: fixed;
+        overflow: visible;
+      }
+
+      #svgLayer {
+        filter: drop-shadow(0px 20px 6px #9e56ce);
+
+      }
+
+      button {
+        background-color: #ffffff; /* Green */
+        border: none;
+        color: rgb(5, 5, 5);
+        padding: 1em 2em;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+      }
+
+      button:hover {
+        background-color: #e693ff;
+      }
+      
+      .menu {
+        /* width: 25vw;
+        display: flex;
+        flex-direction: column; */
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="menu">
+    <button>Start Sound</button>
+    <button>Pause</button>
+    <button>New Balls</button>
+  </div>
+  </body>
+
+  <script>
+    //CODE
+
+    let twrk = {};
+
+    //COORDINATES
+
+    twrk.scale = function ({ width, height }) {
+      if (width) {
+        twrk.width = width;
+        twrk.res = window.innerWidth / twrk.width;
+        twrk.height = window.innerHeight / twrk.res;
+      } else if (height) {
+        twrk.height = height;
+        twrk.res = window.innerHeight / twrk.height;
+        twrk.width = window.innerWidth / twrk.res;
+      }
+      twrk.center = { x: twrk.width / 2, y: twrk.height / 2 };
+    };
+    twrk.scale({ height: 120 });
+
+    //SVG
+
+    let svg = {};
+
+    svg.nameSpace = "http://www.w3.org/2000/svg";
+
+    svg.path = function (ia) {
+      let output = "M ";
+      for (var i = 0; i < ia.length; i++) {
+        output += ia[i].x * twrk.res + " " + ia[i].y * twrk.res + " ";
+      }
+      output += "z";
+      return output;
+    };
+
+    svg.paths = function (ia) {
+      let output = "";
+      for (var i = 0; i < ia.length; i++) {
+        output += svg.path(ia[i]);
+      }
+      return output;
+    };
+
+    svg.makeLayer = function ({ parent, id, x = 0, y = 0 }) {
+      dom[id] = document.createElementNS(svg.nameSpace, "svg");
+      dom[id].id = id;
+      dom[id].style.transform =
+        "translateX(" + x * twrk.res + "px) translateY(" + y * twrk.res + "px)";
+      parent.appendChild(dom[id]);
+    };
+
+    svg.makeLine = function ({
+      parent,
+      id,
+      d = "",
+      color = "#ff00ff",
+      stroke = 1,
+      cap = "butt",
+      join = "round",
+    }) {
+      dom[id] = document.createElementNS(svg.nameSpace, "path");
+      dom[id].setAttributeNS(null, "fill", "none");
+      dom[id].setAttributeNS(null, "d", d);
+      dom[id].setAttributeNS(null, "stroke-width", stroke * twrk.res);
+      dom[id].setAttributeNS(null, "stroke", color);
+      dom[id].setAttributeNS(null, "stroke-linecap", cap);
+      dom[id].setAttributeNS(null, "stroke-join", join);
+      dom[id].id = id;
+      parent.appendChild(dom[id]);
+    };
+
+    svg.makeShape = function ({ parent, id, d = "", color = "#ff00ff" }) {
+      dom[id] = document.createElementNS(svg.nameSpace, "path");
+      dom[id].setAttributeNS(null, "fill", color);
+      dom[id].setAttributeNS(null, "d", d);
+      dom[id].id = id;
+      parent.appendChild(dom[id]);
+    };
+
+    // COLORS
+    let randomBlue = function () {
+      let h = 200 + Math.floor(Math.random() * 130);
+      let s = 30 + Math.floor(Math.random() * 100);
+      let l = 30 + Math.floor(Math.random() * 40);
+      return "hsl(" + h + ", " + s + "%, " + l + "%)";
+    };
+
+    //PHYSICS
+
+    let physics = {};
+
+    // Hier werden die Punkte generiert, die auf die Physik reagieren,
+    physics.makePoint = function ({
+      position = { x: 0, y: 0 },
+      drag = 0.9,
+      acceleration = { x: 0, y: 0 },
+      id,
+      parent,
+      color,
+    }) {
+      parent[id] = {};
+      parent[id].id = id;
+      parent[id].position = position;
+      parent[id].drag = drag;
+      parent[id].acceleration = acceleration;
+      parent[id].color = color;
+    };
+
+    // Hier berechnet sich die Beschleunigung und den Widerstand(drag) sowie die Kraft welche auf das Objekt wirken.
+    physics.calculate = function ({ point, force = { x: 0, y: 0 } }) {
+      point.acceleration = {
+        x: point.acceleration.x * point.drag,
+        y: point.acceleration.y * point.drag,
+      };
+      point.acceleration = {
+        x: point.acceleration.x + force.x,
+        y: point.acceleration.y + force.y,
+      };
+      point.position = {
+        x: point.position.x + point.acceleration.x,
+        y: point.position.y + point.acceleration.y,
+      };
+    };
+
+    // Hier werden die Punkte generiert
+    let dots = {};
+
+    let amount = Math.floor(20 * Math.random());
+
+    let audioCtx;
+    AudioContext = window.AudioContext || window.webkitAudioContext;
+    audioCtx = new AudioContext();
+
+    let oscillators = {
+      osc: [],
+      gainNode: [],
+    };
+
+    for (let i = 0; i < amount; i++) {
+      physics.makePoint({
+        id: "dot" + i,
+        position: { x: -50, y: -50 },
+        parent: dots,
+        color: randomBlue(),
+      });
+      oscillators.osc.push(audioCtx.createOscillator());
+      oscillators.gainNode.push(audioCtx.createGain());
+      oscillators.osc[i].connect(oscillators.gainNode[i]);
+      oscillators.gainNode[i].connect(audioCtx.destination);
+      oscillators.osc[i].type = "triangle";
+      oscillators.gainNode[i].gain.value = 0.2;
+    }
+
+    //SOUND
+
+    // CODE FROM MDN: https://github.com/mdn/webaudio-examples/blob/master/audiocontext-states/index.html
+
+    //Damit es auch in Chrome abspielbar ist, braucht es eine User-Interaction vor dem Sound.
+
+    const startBtn = document.querySelector("button:nth-of-type(1)");
+    const susresBtn = document.querySelector("button:nth-of-type(2)");
+    const reloadBtn = document.querySelector('button:nth-of-type(3)');
+
+    // const timeDisplay = document.querySelector('p');
+    susresBtn.setAttribute("disabled", "disabled");
+
+    startBtn.onclick = function () {
+      startBtn.setAttribute("disabled", "disabled");
+      susresBtn.removeAttribute("disabled");
+
+      for (let i = 0; i < amount; i++) {
+        oscillators.osc[i].start();
+        // console.log("startSound", audioCtx.state);
+      }
+      audioCtx.onstatechange = function () {
+        console.log(audioCtx.state);
+      };
+    };
+
+    reloadBtn.onclick = function () {
+      location.reload();
+    }
+
+    // suspend/resume the audiocontext
+    susresBtn.onclick = function () {
+      if (audioCtx.state === "running") {
+        audioCtx.suspend().then(function () {
+          susresBtn.textContent = "Resume";
+        });
+      } else if (audioCtx.state === "suspended") {
+        audioCtx.resume().then(function () {
+          susresBtn.textContent = "Pause";
+        });
+      }
+    };
+    //DOM
+    let dom = {};
+
+    //stage
+    dom.stage = document.createElement("stage");
+    dom.stage.style.transform =
+      "translateX(" +
+      twrk.center.x * twrk.res +
+      "px) translateY(" +
+      twrk.center.y * twrk.res +
+      "px)";
+    dom.stage.id = "stage";
+    document.body.appendChild(dom.stage);
+
+    //svg layer
+    svg.makeLayer({ parent: dom.stage, id: "svgLayer", x: 0, y: 0 });
+
+    // hier wird der Punkt definiert.
+    for (let id in dots) {
+      svg.makeLine({
+        parent: dom.svgLayer,
+        id: id,
+        stroke: 3,
+        color: randomBlue(),
+        cap: "round",
+      });
+    }
+    // console.log("Check Single osc", oscillators.osc[1]);
+
+    //LOOP
+    function loop(time) {
+      for (let id in dots) {
+        let dot = dots[id];
+
+        physics.calculate({
+          point: dot,
+          force: { x: Math.random() / 10, y: 0.2 },
+        });
+        if (dot.position.y > 50) {
+          dot.acceleration.y = -12 * Math.random();
+        }
+
+        dom[id].setAttributeNS(null, "d", svg.path([dot.position]));
+
+        if (dot.position.x >= 50) {
+          dot.acceleration.x = -15 * Math.random();
+          dot.stroke = 30 * Math.random();
+        }
+
+        dom[id].setAttributeNS(null, "d", svg.path([dot.position]));
+      }
+      // console.log("dots", dots);
+      for (let i = 0; i < amount; i++) {
+
+        // oscillators.osc[i].frequency.value = 50 + Math.abs(dots.dot.acceleration.y) * 100;
+        oscillators.osc[i].frequency.value = (50 + dots["dot" + i].acceleration.y * 140) * (i/15);
+        oscillators.gainNode[i].value = (dots["dot" + i].position.y * 0.05) * (i/1000);
+
+      }
+      // console.log(frequencyLog)
+
+      // osc2.frequency.setValueAtTime(Math.sin(time/4000)*200, audioCtx.currentTime);
+
+      requestAnimationFrame(loop);
+    }
+
+    loop();
+  </script>
+</html>
