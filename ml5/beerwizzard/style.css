@@ -170,8 +170,8 @@ text-transform: uppercase;
   }
 
   .slider::-moz-range-thumb:hover {
-    width: 4em;
-    height: 4em;
+    width: 3.8em;
+    height: 3.8em;
   }
 
   .slider::-webkit-slider-thumb {

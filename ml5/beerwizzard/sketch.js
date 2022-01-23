@@ -4,14 +4,14 @@ let blue = "#222b8e"
 let turkis = "#7fffd4"
 let red = "#fc8282"
 
-let alcohol = 50
-let bitterness = 50
-let sweetness = 50
-let sourness = 50
-let saltyness = 50
-let hoppyness = 50
-let spiceyness = 50
-let maltyness = 50
+let alcohol = 30
+let bitterness = 30
+let sweetness = 30
+let sourness = 30
+let saltyness = 30
+let hoppyness = 30
+let spiceyness = 30
+let maltyness = 30
 
 /////////////////////////// SETUP ///////////////////////
 function setup() {
