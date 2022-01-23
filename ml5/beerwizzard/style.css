@@ -210,5 +210,11 @@ text-transform: uppercase;
 
 
   .slider-value {
-    display: inline-block;
+    /* display: inline; */
+    width: 2ch;
+  }
+
+  .slider-value-2 {
+    /* display: inline; */
+    width: 3ch;
   }

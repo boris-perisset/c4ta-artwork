@@ -20,23 +20,23 @@
 	<h3>Brew your own Beer and predict it's review rating.</h3>
 	<p>Left = None, Right = a Lot</p>
 		<div class="slidecontainer">
-			<p>Alkohol <input type="text" id="alc-value" value="" class="slider-val"> ‰</p>
+			<p>Alkohol <input type="text" id="alc-value" value="4" class="slider-value"> ‰</p>
 			<input type="range" min="0" max="40" value="4" class="slider" id="Alcohol" class="slider" onchange="updateTextInput(this.value, this.id);">
-			<p>Bitterness <input type="text" id="bitter-value" value=""></p>
-			<input type="range" min="1" max="180" value="50" class="slider" id="Bitter" class="slider" onchange="updateTextInput(this.value, this.id);">
-			<p>Sweetness <input type="text" id="sweet-value" value=""></p>
+			<p>Bitterness <input type="text" id="bitter-value" value="20" class="slider-value-2">IBU</p>
+			<input type="range" min="5" max="150" value="20" class="slider" id="Bitter" class="slider" onchange="updateTextInput(this.value, this.id);">
+			<p>Sweetness <input type="text" id="sweet-value" value="4" class="slider-value-2"></p>
 			<input type="range" min="1" max="180" value="50" class="slider" id="Sweet" class="slider" onchange="updateTextInput(this.value, this.id);">
-			<p>Sourness <input type="text" id="sour-value" value=""></p>
-			<input type="range" min="1" max="180" value="50" class="slider" id="Sour" class="slider" onchange="updateTextInput(this.value, this.id);">
-			<p>Saltyness <input type="text" id="salt-value" value=""></p>
-			<input type="range" min="1" max="180" value="50" class="slider" id="Salty" class="slider" onchange="updateTextInput(this.value, this.id);">
-			<p>Fruityness <input type="text" id="fruit-value" value=""></p>
+			<p>Sourness <input type="text" id="sour-value" value="22" class="slider-value-2">SUs</p>
+			<input type="range" min="0" max="90" value="22" class="slider" id="Sour" class="slider" onchange="updateTextInput(this.value, this.id);">
+			<p>Saltyness <input type="text" id="salt-value" value="12" class="slider-value-2">mg??</p>
+			<input type="range" min="1" max="100" value="12" class="slider" id="Salty" class="slider" onchange="updateTextInput(this.value, this.id);">
+			<p>Fruityness <input type="text" id="fruit-value" value="50" class="slider-value-2"></p>
 			<input type="range" min="1" max="180" value="50" class="slider" id="Fruits" class="slider" onchange="updateTextInput(this.value, this.id);">
-			<p>Hoppyness <input type="text" id="hoppy-value" value=""></p>
+			<p>Hoppiness <input type="text" id="hoppy-value" value="50" class="slider-value-2"></p>
 			<input type="range" min="1" max="180" value="50" class="slider" id="Hoppy" class="slider" onchange="updateTextInput(this.value, this.id);">
-			<p>Spiceyness <input type="text" id="spices-value" value=""></p>
+			<p>Spiceyness <input type="text" id="spices-value" value="50" class="slider-value-2"></p>
 			<input type="range" min="1" max="180" value="50" class="slider" id="Spices" class="slider" onchange="updateTextInput(this.value, this.id);">
-			<p>Maltyness <input type="text" id="malty-value" value=""></p>
+			<p>Maltyness <input type="text" id="malty-value" value="50" class="slider-value-2"></p>
 			<input type="range" min="1" max="180" value="50" class="slider" id="Malty" class="slider" onchange="updateTextInput(this.value, this.id);">
 		  </div>
 	
