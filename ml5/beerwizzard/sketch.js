@@ -1,5 +1,5 @@
 let model
-
+let table 
 let blue = "#222b8e"
 let turkis = "#7fffd4"
 let red = "#fc8282"
@@ -18,31 +18,11 @@ let vec = 0
 let dots = []
 let lineMaxDist = 100;
 
-class Bubbles {
-  constructor(x, y){
-    this.size = 6
-    this.vec = new p5.Vector(x, y)
-    this.speedX = random(-1,1) * 2.2
-    this.speedY = random(-1,1) * 2.2
-  }
 
-  showDot() {
-    stroke("#af740d")
-    noFill()
-    circle(this.vec.x, this.vec.y, this.size)
-  }
-
-  updatePos(){
-    this.vec.x += this.speedX + random(-0.5,0.5)
-    this.vec.y += this.speedY + random(-1,-5)
-
-    if (this.vec.x <= 0) this.speedX *= -1
-    if (this.vec.x > w) this.speedX *= -1
-    if (this.vec.y <= 0) this.vec.y = h
-    if (this.vec.y > h) this.speedY *= -1
-  }
+//loading the original table. And change the rating of number values into a string.
+function preload() {
+  table = loadTable('new-beerlist.csv', 'csv', 'header')
 }
-
 
 /////////////////////////// SETUP ///////////////////////
 function setup() {
@@ -56,20 +36,23 @@ function setup() {
   // background (blue)
   // textSize(24)
 
-  let options = {
-    dataUrl: "new-beerlist.csv",
-    input: ["Alcohol", "Bitter", "Sweet", "Sour", "Salty", "Fruits", "Hoppy", "Spices", "Malty"],
+  changeTable()
 
+
+  let options = {
+    dataUrl: "csv-sets/new_beers.csv",
+    input: ["Alcohol", "Bitter", "Sweet", "Sour", "Salty", "Fruits", "Hoppy", "Spices", "Malty"],
     // input: ["Name", "Style", "Brewery", "Alcohol", "Bitter", "Sweet", "Sour", "Salty", "Fruits", "Hoppy", "Spices", "Malty","review_aroma", "review_appearance", "review_taste", "review_overall", "number_of_reviews" ],
-    outputs: [ "review_aroma", "review_appearance", "review_taste", "review_overall", "number_of_reviews" ],
+    outputs: ["review_overall"],
     task: "classification",
     debug: true,
-    learningRate: 0.1
+    // learningRate: 0.1
   }
   
   model = ml5.neuralNetwork(options, modelReady)
   setupButtons()
 
+  //Create Background Bubbles
   for (i = 0; i < amount; i++) {
     let x = random(0,w)
     let y = random(0,h)
@@ -82,25 +65,35 @@ function setup() {
 
 function draw() {
   // console.log("Salty", saltyness)
+
+  //Bubbles bubbeling in the background
   background("#fff07a")
 
   for(let i = 0; i < dots.length; i++) {
     fill(0)
     dots[i].showDot()
     dots[i].updatePos()  
-    // dots[i].repel()  
   }
 }
-
 /////////////////////////// FUNCTIONS ///////////////////////
 
 
 function setupButtons() {
 
+  loadButton = select("#load")
+  loadButton.mousePressed(function(){
+    model.loadData("csv-sets/new_beers.csv", dataLoaded)
+  })
+
+  saveButton = select("#save")
+  saveButton.mousePressed(function(){
+     saveTable(table, 'new_beer.csv')
+  })
+
   trainButton = select("#train")
   trainButton.mousePressed( function(){
      let trainingOptions = {
-       epoch: 40
+       epoch: 40,
      }
 
      model.train(trainingOptions, whileTraining, doneTraining)
@@ -111,7 +104,7 @@ function setupButtons() {
 }
 
 function modelReady() {
-  console.log("Model Loaded")
+  console.log("Beerlist Loaded")
   model.normalizeData()
 }
 
@@ -135,7 +128,7 @@ function classify() {
   hoppyness = parseInt(select("#Hoppy").value())
   spiceyness = parseInt(select("#Spices").value())
   maltyness = parseInt(select("#Malty").value())
-  reviewStyle = parseInt(select("#review").value().elt.value)
+  // reviewStyle = parseInt(select("#review").value().elt.value)
 
   let userInputs = {
     alcohol: alcohol,
@@ -157,6 +150,9 @@ function gotResults(error, result){
     return
   }
   console.log(result)
+  rating = result[0].value
+  document.getElementById('result').html(rating); 
+
   // model.predict(inputs, gotResults)
 }
 
@@ -180,4 +176,36 @@ function updateTextInput(val, id) {
   } else if (id === "Malty"){
     document.getElementById('malty-value').value=val; 
   }
+}
+
+
+function changeTable() {
+  
+  let col = table.getColumn('review_overall')
+  for (let j = 0; j < col.length; j++) {
+
+    let rows = table.getRows();
+    for (let r = 0; r < rows.length; r++) {
+      let rating = rows[r].getString('review_overall');
+      rows[r].setString('review_overall', rating);
+
+      if (rating >= 1 && rating < 2) {
+        rows[r].setString('review_overall', "like piss. Not even drunk pirates will drink that shit!");
+        // setString( i, 'review_overall', "like piss")
+      } else if (rating >= 2  && rating < 3) {
+        rows[r].setString('review_overall', "terrible brew dude. Try again.");
+        // setString( i, 'review_overall', "terrible")
+      } else if (rating >= 3  && rating < 4) {
+        rows[r].setString('review_overall', "alrighty. Sell it cheap, that could work.");
+        // setString( i, 'review_overall', "alrighty")
+      } else if (rating >= 4  && rating < 5) {
+        rows[r].setString('review_overall', "savvy mate! even sober people will love it.");
+        // setString( i, 'review_overall', "awesome")
+      }
+    }
+  }
+}
+
+function dataLoaded(){
+  console.log("New Beerlist Loaded")
 }
