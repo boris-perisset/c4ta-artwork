@@ -130,7 +130,7 @@ function draw() {
   //Bubbles bubbeling in the background
   // background("#fff07a")
   setGradient(0, 0, w, h, b1, b2, Y_AXIS);
-  setGradient(width / 2, 0, w, h, b2, b1, Y_AXIS);
+  setGradient(w, 0, w, h, b2, b1, Y_AXIS);
 
   for(let i = 0; i < dots.length; i++) {
     fill(0)
