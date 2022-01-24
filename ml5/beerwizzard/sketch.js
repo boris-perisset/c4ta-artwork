@@ -1,8 +1,6 @@
 let model
 let table 
-let blue = "#222b8e"
-let turkis = "#7fffd4"
-let red = "#fc8282"
+let rating
 
 let alcohol = 30
 let bitterness = 30
@@ -33,15 +31,12 @@ function setup() {
   const cnv = createCanvas(w, h)
   cnv.parent('pi5-canvas')
 
-  // background (blue)
-  // textSize(24)
-
   changeTable()
-
 
   let options = {
     dataUrl: "csv-sets/new_beers.csv",
-    input: ["Alcohol", "Bitter", "Sweet", "Sour", "Salty", "Fruits", "Hoppy", "Spices", "Malty"],
+    input: ["Alcohol", "Bitter", "Sour"],
+    // input: ["Alcohol", "Bitter", "Sweet", "Sour", "Salty", "Fruits", "Hoppy", "Spices", "Malty"],
     // input: ["Name", "Style", "Brewery", "Alcohol", "Bitter", "Sweet", "Sour", "Salty", "Fruits", "Hoppy", "Spices", "Malty","review_aroma", "review_appearance", "review_taste", "review_overall", "number_of_reviews" ],
     outputs: ["review_overall"],
     task: "classification",
@@ -85,8 +80,8 @@ function setupButtons() {
     model.loadData("csv-sets/new_beers.csv", dataLoaded)
   })
 
-  saveButton = select("#save")
-  saveButton.mousePressed(function(){
+  savingButton = select("#save")
+  savingButton.mousePressed(function(){
      saveTable(table, 'new_beer.csv')
   })
 
@@ -119,41 +114,53 @@ function doneTraining() {
 }
 
 function classify() {
-  alcohol = parseInt(select("#Alcohol").value())
-  bitterness = parseInt(select("#Bitter").value())
-  sweetness = parseInt(select("#Sweet").value())
-  sourness = parseInt(select("#Sour").value())
-  saltyness = parseInt(select("#Salty").value())
-  fruityness = parseInt(select("#Fruits").value())
-  hoppyness = parseInt(select("#Hoppy").value())
-  spiceyness = parseInt(select("#Spices").value())
-  maltyness = parseInt(select("#Malty").value())
-  // reviewStyle = parseInt(select("#review").value().elt.value)
+  alcohol = parseFloat(select("#Alcohol").value())
+  bitterness = parseFloat(select("#Bitter").value())
+  sourness = parseFloat(select("#Sour").value())
+
+  // alcohol = parseFloat(select("#Alcohol").value())
+  // bitterness = parseFloat(select("#Bitter").value())
+  // sweetness = parseFloat(select("#Sweet").value())
+  // sourness = parseFloat(select("#Sour").value())
+  // saltyness = parseFloat(select("#Salty").value())
+  // fruityness = parseFloat(select("#Fruits").value())
+  // hoppyness = parseFloat(select("#Hoppy").value())
+  // spiceyness = parseFloat(select("#Spices").value())
+  // maltyness = parseFloat(select("#Malty").value())
+  // reviewStyle = parseFloat(select("#review").value().elt.value)
 
   let userInputs = {
     alcohol: alcohol,
     bitter: bitterness,
-    sweet: sweetness,
     sour: sourness,
-    salty: saltyness,
-    fruits: fruityness,
-    hoppy: hoppyness,
-    spicey: spiceyness,
-    malty: maltyness,
+
+    // alcohol: alcohol,
+    // bitter: bitterness,
+    // sweet: sweetness,
+    // sour: sourness,
+    // salty: saltyness,
+    // fruits: fruityness,
+    // hoppy: hoppyness,
+    // spicey: spiceyness,
+    // malty: maltyness,
   }
   model.classify(userInputs, gotResults)
+  console.log("UserInput Alcohol",userInputs.alcohol)
 }
 
 function gotResults(error, result){
   if(error){
-    console.log(error)
+    console.error(error)
     return
-  }
-  console.log(result)
-  rating = result[0].value
-  document.getElementById('result').html(rating); 
+  } 
 
-  // model.predict(inputs, gotResults)
+    // if(result[0].label ==)
+    console.log(result)
+    rating = options.outputs
+    // rating = result[0].value
+    document.getElementById('result').html(rating); 
+    // model.predict(inputs, gotResults)
+  
 }
 
 function updateTextInput(val, id) {

@@ -1,6 +1,6 @@
 class Bubbles {
     constructor(x, y){
-      this.size = 6
+      this.size = random(4, 10)
       this.vec = new p5.Vector(x, y)
       this.speedX = random(-1,1) * 2.2
       this.speedY = random(-1,1) * 2.2
@@ -22,10 +22,14 @@ class Bubbles {
   
     //Minus Values to let the bubbles rise up to the top
     updatePos(){
-      this.vec.x += this.speedX + random(-0.5,0.5)
-      this.vec.y += this.speedY + random(-1,-7)
-  
-      
+
+        if(this.size > 7) {
+        this.vec.x += this.speedX + random(-0.5,0.5)
+        this.vec.y += this.speedY + random(-1,-3)
+        } else {
+            this.vec.x += this.speedX + random(-0.5,0.5)
+            this.vec.y += this.speedY + random(-1,-10)
+        }
       if (this.vec.x <= 0) this.speedX *= -1
       if (this.vec.x > w) this.speedX *= -1
       //if a bubbles reaches the top, the start again from the bottom
