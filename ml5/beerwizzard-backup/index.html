@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Beer Rating Wizzard</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
+    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+	
+</head>
+
+<body>
+    <div class="pi5-canvas-class" id="pi5-canvas"></div>
+	<script src="sketch.js"></script>
+	<div class="main">
+	<h1>Check your Homebrew</h1>
+	<h2>This is an AI based Beer Rating Wizzard.</h2>
+	<h3>Brew your own Beer and predict it's review rating from a pool of more than 3000 beers.</h3>
+	<p>Left = None, Right = a Lot</p>
+		<div class="slidecontainer">
+			<p>Alkohol <input type="text" id="alc-value" value="4" class="slider-value"> ‰</p>
+			<input type="range" min="0" max="40" value="4" class="slider" id="Alcohol" class="slider" onchange="updateTextInput(this.value, this.id);">
+			<p>Bitterness <input type="text" id="bitter-value" value="20" class="slider-value-2">IBU</p>
+			<input type="range" min="5" max="150" value="20" class="slider" id="Bitter" class="slider" onchange="updateTextInput(this.value, this.id);">
+			<p>Sweetness <input type="text" id="sweet-value" value="4" class="slider-value-2"></p>
+			<input type="range" min="1" max="180" value="50" class="slider" id="Sweet" class="slider" onchange="updateTextInput(this.value, this.id);">
+			<p>Sourness <input type="text" id="sour-value" value="22" class="slider-value-2">SUs</p>
+			<input type="range" min="0" max="90" value="22" class="slider" id="Sour" class="slider" onchange="updateTextInput(this.value, this.id);">
+			<p>Saltyness <input type="text" id="salt-value" value="12" class="slider-value-2">mg??</p>
+			<input type="range" min="1" max="100" value="12" class="slider" id="Salty" class="slider" onchange="updateTextInput(this.value, this.id);">
+			<p>Fruityness <input type="text" id="fruit-value" value="50" class="slider-value-2"></p>
+			<input type="range" min="1" max="180" value="50" class="slider" id="Fruits" class="slider" onchange="updateTextInput(this.value, this.id);">
+			<p>Hoppiness <input type="text" id="hoppy-value" value="50" class="slider-value-2"></p>
+			<input type="range" min="1" max="180" value="50" class="slider" id="Hoppy" class="slider" onchange="updateTextInput(this.value, this.id);">
+			<p>Spiceyness <input type="text" id="spices-value" value="50" class="slider-value-2"></p>
+			<input type="range" min="1" max="180" value="50" class="slider" id="Spices" class="slider" onchange="updateTextInput(this.value, this.id);">
+			<p>Maltyness <input type="text" id="malty-value" value="50" class="slider-value-2"></p>
+			<input type="range" min="1" max="180" value="50" class="slider" id="Malty" class="slider" onchange="updateTextInput(this.value, this.id);">
+		  </div>
+	
+	<p> <label> Review Style: </label>
+		<select id="review">
+			<option value="review_aroma">Aroma</option>
+			<option value="review_appearance">Appearance</option>
+			<option value="review_taste">Taste</option>
+			<option value="review_overall">Overall</option>
+		</select>
+	</p>
+
+	
+	<p>
+		<button id="train">Train Model</button>
+		<button id="predict">predict</button>
+	</p>
+	<div class="result-box">
+		<h2>Results</h2>
+		<h3>Review Prediction</h3>
+		<p id = "result"></p>
+		<h3>Similiar Beer Name</h3>
+		<p id="Name"></p>
+		<h3>Similar Beer Style</h3>
+		<p id="Style"></p>
+		<h3>Similar Brewery</h3>
+		<p id="Brewery"></p>
+	</div>
+</div>
+</body>
+
+</html>
