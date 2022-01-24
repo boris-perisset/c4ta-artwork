@@ -35,8 +35,9 @@ html, body {
   }
   .pi5-canvas-class {
       /* background:black; */
+      width: 100vw;
       position: fixed;
-      margin: -8vw;
+      /* margin: -2vw; */
       top: 0px;
       z-index: 0px;
   }
@@ -184,7 +185,7 @@ text-transform: uppercase;
   width: 2.8em;
   height: 2.8em;
   box-shadow: var(--dark-color) 2px 4px 3vw;
-  background: var(--primary-color);
+  background: var(--white);
   cursor: pointer;
   transition: width, height 600ms ease-out ;
 }

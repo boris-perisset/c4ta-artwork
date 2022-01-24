@@ -2,6 +2,11 @@ let model
 let table 
 let table2
 
+//gradient background
+let b1, b2, c1, c2;
+const Y_AXIS = 1;
+const X_AXIS = 2;
+
 let rating
 
 let alcohol = 30
@@ -85,6 +90,9 @@ function setup() {
   w = displayWidth
   h = displayWidth
 
+  b1 = color(244, 193, 23);
+  b2 = color(255, 242, 108);
+
 
   const cnv = createCanvas(w, h)
   cnv.parent('pi5-canvas')
@@ -120,7 +128,9 @@ function draw() {
   // console.log("Salty", saltyness)
 
   //Bubbles bubbeling in the background
-  background("#fff07a")
+  // background("#fff07a")
+  setGradient(0, 0, w, h, b1, b2, Y_AXIS);
+  setGradient(width / 2, 0, w, h, b2, b1, Y_AXIS);
 
   for(let i = 0; i < dots.length; i++) {
     fill(0)
@@ -297,3 +307,26 @@ function dataLoaded(){
 // function getUniqueValues(array) {
 //   let newarray = array.filter((element, index, array) => array.indexOf(element) === index)
 // }
+
+
+function setGradient(x, y, w, h, c1, c2, axis) {
+  noFill();
+
+  if (axis === Y_AXIS) {
+    // Top to bottom gradient
+    for (let i = y; i <= y + h; i++) {
+      let inter = map(i, y, y + h, 0, 1);
+      let c = lerpColor(c1, c2, inter);
+      stroke(c);
+      line(x, i, x + w, i);
+    }
+  } else if (axis === X_AXIS) {
+    // Left to right gradient
+    for (let i = x; i <= x + w; i++) {
+      let inter = map(i, x, x + w, 0, 1);
+      let c = lerpColor(c1, c2, inter);
+      stroke(c);
+      line(i, y, i, y + h);
+    }
+  }
+}
