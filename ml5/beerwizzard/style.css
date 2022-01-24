@@ -1,11 +1,21 @@
+:root {
+  --bg-color: #fff07a;
+  --dark-color: hsl(247, 67%, 21%);
+  --primary-color: hsl(46, 100%, 50%);
+  --highlight-color: hsl(44, 66%, 47%);
+  --font-color: hsl(38, 85%, 30%);
+  --white: hsl(28, 100%, 23%);
+}
+
 html, body {
     margin: 0;
     padding: 4vw;
-    background: hsl(235, 61%, 35%);
-    color: rgb(170, 192, 250);
+    background: var(--bg-color);
+    color: var(--font-color);
     width: 92%;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 100%;
+    position: relative;
   }
   .frame {
     width: 100%;
@@ -16,6 +26,19 @@ html, body {
   }
   .pi5-canvas-class {
       /* background:black; */
+      position: fixed;
+      top: 0px;
+      z-index: 0px;
+  }
+  canvas {
+    position: fixed;
+    top: 0;
+    z-index: 0;
+  }
+
+  .main {
+    position: absolute;
+    z-index: 100px;
   }
   .buttons {
     
@@ -25,14 +48,14 @@ html, body {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    background-color: #1b125b;
+    background-color: var(--dark-color);
   }
 
   /* input[type=button], .custom-file-upload */
 
   button  {
       /* display: block; */
-      background-color: #fc8282;
+      background-color: var(--primary-color);
       border: 0px;
       font-size: 0.9em;
       text-transform: uppercase;
@@ -40,16 +63,16 @@ html, body {
       transition: background 200ms;
       margin: 1vw;
 
-      color:rgb(34, 43, 142)
+      color:var(--dark-color)
   }
 
   a {
-    color: hsl(0, 95%, 75%);
+    color: var(--primary-color);
     transition: color 300ms ease-in-out;
   }
 
   a:hover {
-    color: hsl(160, 100%, 75%);
+    color: var(--highlight-color);
   }
 
   /* input[type="file"] {
@@ -57,7 +80,7 @@ html, body {
 } */
 
   button:hover {
-      background-color: #7fffd4;
+      background-color: var(--highlight-color);
   }
 
   .buttonRadius {
@@ -69,12 +92,12 @@ html, body {
   }
 
   .overlay {
-  background-color: #222b8e;
-  color: #ffffff;
+  background-color: var(--dark-color);
+  color: var(--white);
   }
 
   .number {
-      color: #ffffff;
+      color: var(--white);
   }
   .emotionBox {
     width: 100%;
@@ -95,14 +118,14 @@ html, body {
     padding-right: 0.5em;
     border-radius: 0em 0.2em 0.2em 0em;
 
-    background: #7fffd4;
-    color:rgb(27, 18, 91);
+    background: var(--highlight-color);
+    color:var(--bg-color);
     transition: background 200ms;
 }
 
 .minus:hover {
-    background: #222b8e; 
-    color: #fc8282;
+    background: var(--dark-color); 
+    color: var(--primary-color);
 }
 
 .gui {
@@ -117,7 +140,7 @@ html, body {
   align-items: center;
 }
 .infobox {
-background-color: #0d063f ;
+background-color: var(--dark-color) ;
 padding: 0.3em 1.2em 0.3em 1.2em;
 position: relative;
 bottom: -1em;
@@ -125,7 +148,7 @@ text-align: center;
 
 }
 #score {
-color: #7fffd4;
+color: var(--highlight-color);
 font-size: 1.2em;
 font-weight: 800;
 text-transform: uppercase;
@@ -151,7 +174,7 @@ text-transform: uppercase;
     width: 100%;
     height: 2em;
     border-radius: 3em;
-    background: #1b125b;
+    background: var(--highlight-color);
     outline: none;
     opacity: 0.5;
     -webkit-transition: .2s;
@@ -179,8 +202,8 @@ text-transform: uppercase;
     border-radius: 3em;
     width: 2.8em;
     height: 2.8em;
-    box-shadow: #1b125b 2px 4px 3vw;
-    background: #fc8282;
+    box-shadow: var(--dark-color) 2px 4px 3vw;
+    background: var(--primary-color);
     cursor: pointer;
     transition: width, height 600ms ease-out ;
   }
@@ -188,8 +211,8 @@ text-transform: uppercase;
   .slider::-moz-range-thumb {
     width: 2.8em;
     height: 2.8em;
-    background: #fc8282;
-    box-shadow: #1b125b 2px 4px 3vw;
+    background: var(--primary-color);
+    box-shadow: var(--dark-color) 2px 4px 3vw;
     transition: width,height 600ms ease-out ;
     cursor: pointer;
   }
@@ -197,14 +220,14 @@ text-transform: uppercase;
   input {
     background: transparent;
     border: none;
-    color: white;
+    color: var(--white);
     font-size: 1em;
   }
 
   .result-box {
     width: 80%;
     padding: 3vw;
-    background-color: #1b125b;
+    background-color: var(--dark-color);
   }
 
 

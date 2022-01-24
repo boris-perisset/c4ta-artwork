@@ -13,13 +13,44 @@ let hoppyness = 30
 let spiceyness = 30
 let maltyness = 30
 
+let amount = 1200
+let vec = 0
+let dots = []
+let lineMaxDist = 100;
+
+class Bubbles {
+  constructor(x, y){
+    this.size = 6
+    this.vec = new p5.Vector(x, y)
+    this.speedX = random(-1,1) * 2.2
+    this.speedY = random(-1,1) * 2.2
+  }
+
+  showDot() {
+    stroke(255)
+    noFill()
+    circle(this.vec.x, this.vec.y, this.size)
+  }
+
+  updatePos(){
+    this.vec.x += this.speedX + random(-1,1)
+    this.vec.y += this.speedY + random(-1,-3)
+
+    if (this.vec.x <= 0) this.speedX *= -1
+    if (this.vec.x > w) this.speedX *= -1
+    if (this.vec.y <= 0) this.vec.y = h
+    if (this.vec.y > h) this.speedY *= -1
+  }
+}
+
+
 /////////////////////////// SETUP ///////////////////////
 function setup() {
-  // w = windowWidth - (windowWidth*0.25)
-  // h = windowHeight
+  w = windowWidth - (windowWidth*0.25)
+  h = windowHeight
 
 
-  const cnv = createCanvas(0, 0)
+  const cnv = createCanvas(w, h)
   cnv.parent('pi5-canvas')
 
   // background (blue)
@@ -38,12 +69,27 @@ function setup() {
   
   model = ml5.neuralNetwork(options, modelReady)
   setupButtons()
+
+  for (i = 0; i < amount; i++) {
+    let x = random(0,w)
+    let y = random(0,h)
+    dots[i] = new Bubbles(x, y)
+  }
 }
+
 
 /////////////////////////// DRAW ///////////////////////
 
 function draw() {
   // console.log("Salty", saltyness)
+  background("#fff07a")
+
+  for(let i = 0; i < dots.length; i++) {
+    fill(0)
+    dots[i].showDot()
+    dots[i].updatePos()  
+    // dots[i].repel()  
+  }
 }
 
 /////////////////////////// FUNCTIONS ///////////////////////
