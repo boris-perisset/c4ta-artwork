@@ -27,12 +27,12 @@
 				<button id="load">Load New Beerlist</button>
 				<button id="save">Save Current Beerlist</button>
 			</p>
-			<p>Left = None, Right = a Lot</p>
 	
 		</div>
 		<div class="slidecontainer">
+			<!-- Die Alkoholspalte ist mit irgendwelchen Zahlen bestückt -->
 			<p>Alkohol <input type="text" id="alc-value" value="4" class="slider-value"> vol%</p>
-			<input type="range" min="0" max="40" value="4" class="slider" id="Alcohol" class="slider" onchange="updateTextInput(this.value, this.id);">
+			<input type="range" min="0" max="150" value="4" class="slider" id="Alcohol" class="slider" onchange="updateTextInput(this.value, this.id);">
 			<p>Bitterness <input type="text" id="bitter-value" value="20" class="slider-value-2">IBU</p>
 			<input type="range" min="5" max="150" value="20" class="slider" id="Bitter" class="slider" onchange="updateTextInput(this.value, this.id);">	
 			<p>Sourness <input type="text" id="sour-value" value="22" class="slider-value-2">SUs</p>
@@ -75,9 +75,11 @@
 		<div>
 			<button id="train">Train Model</button>
 			<button id="predict">predict</button>
+			<button id="saveModel">save Prediction Data</button>
+			<button id="loadModel">load Prediction Data</button>
 			</div>
 		<div>
-			<h2>Review: "<span class="font-white" id ="result">This is your Rating</span>"</h2>
+			<h2>Review: "<span class="font-white" id ="result"></span>"</h2>
 			<!-- <h3>Similiar Beer Name</h3>
 			<p id="Name"></p>
 			<h3>Similar Beer Style</h3>

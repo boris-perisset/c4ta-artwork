@@ -11,12 +11,12 @@ class Bubbles {
         stroke("#af740d")
         // push()
         noFill()
-        circle(this.vec.x, this.vec.y, this.size)
+        ellipse(this.vec.x, this.vec.y, this.size, this.size/1.2)
         noStroke()
         fill("#fff9ba")
-        circle(this.vec.x, this.vec.y+1, this.size/1.3)
+        ellipse(this.vec.x, this.vec.y+1, this.size/1.3, this.size/1.6)
         fill("#c79d29")
-        circle(this.vec.x, this.vec.y-2, this.size/2)
+        ellipse(this.vec.x, this.vec.y-2, this.size/2, this.size/2.4)
         // pop()
     }
   

@@ -1,5 +1,7 @@
 let model
 let table 
+let table2
+
 let rating
 
 let alcohol = 30
@@ -11,16 +13,72 @@ let hoppyness = 30
 let spiceyness = 30
 let maltyness = 30
 
-let amount = 1200
+let amount = 400
 let vec = 0
 let dots = []
 let lineMaxDist = 100;
 
+let beerTypes = []
+
+const modelInfo = {
+  model: 'path/to/beerlist.json',
+  metadata: 'path/to/beerlist_meta.json',
+  weights: 'path/to/beerlist.weights.bin',
+};
+
+/////////////////////////// PREPARATION  ///////////////////////
 
 //loading the original table. And change the rating of number values into a string.
 function preload() {
   table = loadTable('new-beerlist.csv', 'csv', 'header')
 }
+
+//refine the ratings to get funier and more results.
+function changeTable() {
+  
+  let col = table.getColumn('review_overall')
+
+  for (let j = 0; j < col.length; j++) {
+
+    let rows = table.getRows();
+    for (let r = 0; r < rows.length; r++) {
+      let rating = rows[r].getString('review_overall');
+      rows[r].setString('review_overall', rating);
+
+      if (rating >= 0 && rating < 1) {
+        rows[r].setString('review_overall', "A waste of time. It stinks! 0/8");
+        // setString( i, 'review_overall', "like piss")
+      } else if (rating >= 1 && rating < 1.5) {
+        rows[r].setString('review_overall', "Like piss. Not even drunk pirates will drink that shit! 1/8");
+        // setString( i, 'review_overall', "like piss")
+      } else if (rating >= 1.5 && rating < 2) {
+        rows[r].setString('review_overall', "Good Lord! What an ugly soup you brew! 2/8");
+        // setString( i, 'review_overall', "like piss")
+      }  else if (rating >= 2 && rating < 2.5) {
+        rows[r].setString('review_overall', "Terrible brew dude. Try again. 3/8");
+        // setString( i, 'review_overall', "like piss")
+      } else if (rating >= 2.5  && rating < 3) {
+        rows[r].setString('review_overall', "Well. Sometimes you just have a bad day. Next time... 4/8");
+        // setString( i, 'review_overall', "terrible")
+      } else if (rating >= 3  && rating < 3.5) {
+        rows[r].setString('review_overall', "Alrighty. Sell it cheap, that could work. 5/8");
+        // setString( i, 'review_overall', "alrighty")
+      } else if (rating >= 3.5  && rating < 4) {
+        rows[r].setString('review_overall', "If I'm drunk. This shit's gonna flow heavily! 6/8");
+        // setString( i, 'review_overall', "terrible")
+      } else if (rating >= 4  && rating < 4.5) {
+        rows[r].setString('review_overall', "Not Bad old chap! A decent beer you brew 7/8");
+        // setString( i, 'review_overall', "terrible")
+      }  else if (rating >= 4.5  && rating <= 5) {
+        rows[r].setString('review_overall', "Savvy mate! even sober people will love it. 8/8");
+        // setString( i, 'review_overall', "awesome")
+      }
+    }
+  }
+}
+
+
+
 
 /////////////////////////// SETUP ///////////////////////
 function setup() {
@@ -35,13 +93,13 @@ function setup() {
 
   let options = {
     dataUrl: "csv-sets/new_beers.csv",
-    input: ["Alcohol", "Bitter", "Sour"],
+    inputs: ["Alcohol", "Bitter", "Sour"],
     // input: ["Alcohol", "Bitter", "Sweet", "Sour", "Salty", "Fruits", "Hoppy", "Spices", "Malty"],
     // input: ["Name", "Style", "Brewery", "Alcohol", "Bitter", "Sweet", "Sour", "Salty", "Fruits", "Hoppy", "Spices", "Malty","review_aroma", "review_appearance", "review_taste", "review_overall", "number_of_reviews" ],
     outputs: ["review_overall"],
     task: "classification",
     debug: true,
-    // learningRate: 0.1
+    learningRate: 0.1
   }
   
   model = ml5.neuralNetwork(options, modelReady)
@@ -82,20 +140,35 @@ function setupButtons() {
 
   savingButton = select("#save")
   savingButton.mousePressed(function(){
-     saveTable(table, 'new_beer.csv')
+     saveTable(table, 'new_beers.csv')
   })
 
   trainButton = select("#train")
   trainButton.mousePressed( function(){
      let trainingOptions = {
-       epoch: 40,
+       epochs: 40,
+       batchSize: 32
      }
 
      model.train(trainingOptions, whileTraining, doneTraining)
+     console.log(model.data)
   })
   predictButton = select("#predict")
   predictButton.mousePressed(classify)
   predictButton.hide()
+
+  saveModelButton = select("#saveModel")
+  saveModelButton.hide()
+  saveModelButton.mousePressed(function(){
+    
+
+    model.save()
+  })
+
+  loadModelButton = select("#loadModel")
+  loadModelButton.mousePressed(function(){
+    model.load(modelInfo)
+  })
 }
 
 function modelReady() {
@@ -105,12 +178,16 @@ function modelReady() {
 
 function whileTraining(epoch, loss) {
   console.log(epoch, loss)
+  let meanwhile = select("#train")
+  meanwhile.html("fetching drunk sailors")
 }
 
 function doneTraining() {
   predictButton.show()
+  saveModelButton.show()
+  loadModelButton.hide()
   trainButton.hide()
-  console.log("Training done")
+ // console.log("Training done")
 }
 
 function classify() {
@@ -130,9 +207,9 @@ function classify() {
   // reviewStyle = parseFloat(select("#review").value().elt.value)
 
   let userInputs = {
-    alcohol: alcohol,
-    bitter: bitterness,
-    sour: sourness,
+    Alcohol: alcohol,
+    Bitter: bitterness,
+    Sour: sourness,
 
     // alcohol: alcohol,
     // bitter: bitterness,
@@ -145,7 +222,7 @@ function classify() {
     // malty: maltyness,
   }
   model.classify(userInputs, gotResults)
-  console.log("UserInput Alcohol",userInputs.alcohol)
+  console.log("UserInput Alcohol",userInputs.Alcohol)
 }
 
 function gotResults(error, result){
@@ -156,9 +233,13 @@ function gotResults(error, result){
 
     // if(result[0].label ==)
     console.log(result)
-    rating = options.outputs
-    // rating = result[0].value
-    document.getElementById('result').html(rating); 
+    //rating = options.outputs
+    //result[0] > The array index [0] is the top choice of the machine learning model training.
+    console.log(result[0].label)
+    rating = result[0].label
+    let phrase = select("#result")
+    phrase.html(rating)
+    // document.getElementById('result').html(rating); 
     // model.predict(inputs, gotResults)
   
 }
@@ -186,33 +267,33 @@ function updateTextInput(val, id) {
 }
 
 
-function changeTable() {
-  
-  let col = table.getColumn('review_overall')
-  for (let j = 0; j < col.length; j++) {
 
-    let rows = table.getRows();
-    for (let r = 0; r < rows.length; r++) {
-      let rating = rows[r].getString('review_overall');
-      rows[r].setString('review_overall', rating);
-
-      if (rating >= 1 && rating < 2) {
-        rows[r].setString('review_overall', "like piss. Not even drunk pirates will drink that shit!");
-        // setString( i, 'review_overall', "like piss")
-      } else if (rating >= 2  && rating < 3) {
-        rows[r].setString('review_overall', "terrible brew dude. Try again.");
-        // setString( i, 'review_overall', "terrible")
-      } else if (rating >= 3  && rating < 4) {
-        rows[r].setString('review_overall', "alrighty. Sell it cheap, that could work.");
-        // setString( i, 'review_overall', "alrighty")
-      } else if (rating >= 4  && rating < 5) {
-        rows[r].setString('review_overall', "savvy mate! even sober people will love it.");
-        // setString( i, 'review_overall', "awesome")
-      }
-    }
-  }
-}
 
 function dataLoaded(){
   console.log("New Beerlist Loaded")
 }
+
+// function getBeerTypes() {
+//   let selection = creatSelection()
+//   selection.position(0,220, 300)
+
+//   let rows2 = table2.getRows();
+
+//     for (let r = 0; r < rows2.length; r++) {
+//       let style = rows2[r].getString('Style');
+
+//       for (let j = 0; j < style.length; j++) {
+//       beerTypes.push(styles[j]);
+//       }
+//     }
+
+//     let uniqueValues = getUniqueValues(beerTypes) {
+//       for (let j = 0; j > uniqueValues.length; j++) {
+//         selection.option(uniqueValues[j])
+//       }
+//     }
+// }
+
+// function getUniqueValues(array) {
+//   let newarray = array.filter((element, index, array) => array.indexOf(element) === index)
+// }

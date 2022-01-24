@@ -1,0 +1,299 @@
+Name,Style,Brewery,Alcohol,Bitter,Sweet,Sour,Salty,Fruits,Hoppy,Spices,Malty,review_aroma,review_appearance,review_taste,review_overall,number_of_reviews
+Finlandia Sahti,Farmhouse Ale - Sahti,Finlandia Sahti Ky,9,12,61,20,0,25,17,6,19,4.5,3,3.5,"alrighty. Sell it cheap, that could work.",2
+La Clef Des Champs,Gruit / Ancient Herbed Ale,Brasserie Dieu Du Ciel,1,2,3,1,0,1,17,1,11,4.5,3,3.5,"alrighty. Sell it cheap, that could work.",1
+Smoked Porter,Porter - Smoked,Spring House Brewing Company,20,37,33,13,0,12,25,131,75,4.366667,4.133333,4.166667,"alrighty. Sell it cheap, that could work.",15
+The Waldos' Special Ale,IPA - Imperial,Lagunitas Brewing Company,40,72,86,53,1,69,102,13,55,4.3,3.9,3.8,"alrighty. Sell it cheap, that could work.",5
+Crème Brûlée Java Stout,Stout - American,Kuhnhenn Brewing Company,13,105,78,9,2,2,22,35,134,4.3,3.96,3.885,"alrighty. Sell it cheap, that could work.",100
+Pumking,Pumpkin Beer,Southern Tier Brewing Company,16,17,20,7,3,65,20,51,47,4.292773,3.868732,4.02913,"alrighty. Sell it cheap, that could work.",1356
+Deviant Dale's IPA,IPA - American,Oskar Blues Grill & Brew,10,71,44,48,0,55,110,14,75,4.28125,3.8125,4.03125,"alrighty. Sell it cheap, that could work.",16
+Mokah,Stout - American Imperial,Southern Tier Brewing Company,17,70,87,2,0,1,18,8,126,4.261029,4,4.160846,"alrighty. Sell it cheap, that could work.",544
+Aecht Schlenkerla Rauchbier Urbock,Lager - Rauchbier,Brauerei Heller-Trum / Schlenkerla,11,20,45,4,2,6,17,78,80,4.253484,4.05662,4.162892,"alrighty. Sell it cheap, that could work.",574
+Rahr's Blonde,Lager - Helles,Rahr & Sons Brewing Company,6,18,18,18,1,14,26,4,40,4.25,3.75,3.5,"alrighty. Sell it cheap, that could work.",2
+Hallerndorfer Raiterla Rauchbier,Lager - Rauchbier,Brauerei Gasthof Rittmayer,6,8,16,2,3,3,10,34,27,4.25,3.75,4.125,"alrighty. Sell it cheap, that could work.",4
+Bamberg Rauchbier,Lager - Rauchbier,Micro Cervejaria Bamberg,5,2,7,3,0,2,2,23,20,4.25,3.5,3.5,"alrighty. Sell it cheap, that could work.",2
+Tilquin Jonge Lambic,Lambic - Traditional,Gueuzerie Tilquin,1,1,5,5,0,5,2,0,0,4.25,3.75,4,"alrighty. Sell it cheap, that could work.",2
+Hogwash,Smoked Beer,Jackie O's Pub & Brewery,6,2,25,4,1,4,43,32,25,4.222222,4,3.777778,"alrighty. Sell it cheap, that could work.",9
+Schneider Aventinus Eisbock,Bock - Eisbock,Weisses Bräuhaus G. Schneider & Sohn GmbH,60,26,118,29,0,85,14,18,85,4.215352,3.941365,4.267591,"alrighty. Sell it cheap, that could work.",938
+Dark Island Reserve,Scottish Ale,Orkney Brewery,82,35,96,31,1,50,15,50,105,4.209302,3.930233,4.046512,"alrighty. Sell it cheap, that could work.",43
+White IPA,IPA - Belgian,Blue Point Brewing Company,14,76,30,61,0,77,115,56,36,4.208333,3.875,3.916667,"alrighty. Sell it cheap, that could work.",12
+Aecht Schlenkerla Rauchbier Märzen,Lager - Rauchbier,Brauerei Heller-Trum / Schlenkerla,6,30,26,5,4,2,26,124,64,4.207537,4.021372,4.065804,"alrighty. Sell it cheap, that could work.",889
+Backwoods Bastard,Scotch Ale / Wee Heavy,Founders Brewing Company,84,21,76,13,0,26,15,36,102,4.207353,3.965686,4.238725,"alrighty. Sell it cheap, that could work.",1020
+Imperial Spruce India Pilsner,Pilsner - Imperial,Short's Brewing Company,15,25,11,8,2,17,95,2,19,4.201681,4.033613,4.05042,"alrighty. Sell it cheap, that could work.",119
+Alt-eration Ale,Altbier,Hops & Grain,3,54,54,7,0,10,60,9,111,5,4,4,savvy mate! even sober people will love it.,1
+Jonge Lambik,Lambic - Traditional,Brouwerij Drie Fonteinen,0,2,5,33,0,14,4,2,3,5,4,4,savvy mate! even sober people will love it.,1
+Oude Lambik,Lambic - Traditional,Brouwerij Drie Fonteinen,2,1,5,22,0,9,1,2,1,5,4.5,4.5,savvy mate! even sober people will love it.,1
+De Troch Oude Gueuze,Lambic - Gueuze,Brouwerij De Troch,5,14,49,200,7,96,8,14,30,4.75,4.25,4.75,savvy mate! even sober people will love it.,2
+Pseudo Sue,Pale Ale - American,Toppling Goliath Brewing Company,6,67,36,84,1,120,84,0,23,4.75,4,4.5,savvy mate! even sober people will love it.,2
+Rodenbach Caractère Rouge,Sour - Flanders Red Ale,Brouwerij Rodenbach N.V.,14,3,172,146,2,175,10,12,14,4.75,4,4.75,savvy mate! even sober people will love it.,2
+Pliny The Younger,IPA - Imperial,Russian River Brewing Company,14,73,29,40,0,49,106,4,19,4.72377,4.482787,4.72459,savvy mate! even sober people will love it.,610
+Framboos,Lambic - Fruit,Brouwerij Drie Fonteinen,4,4,97,95,0,94,8,0,8,4.7,4.5,4.75,savvy mate! even sober people will love it.,10
+Heady Topper,IPA - New England,The Alchemist,18,91,40,55,0,76,117,2,30,4.660981,4.163113,4.608742,savvy mate! even sober people will love it.,469
+Pliny The Elder,IPA - Imperial,Russian River Brewing Company,9,58,51,49,0,80,85,1,32,4.612188,4.388603,4.630985,savvy mate! even sober people will love it.,2527
+Adam From The Wood,Old Ale,Hair of the Dog Brewing Company / Brewery and Tasting Room,47,22,127,25,0,76,8,35,88,4.608333,4.175,4.666667,savvy mate! even sober people will love it.,60
+Wooden Hell,Barleywine - English,Flossmoor Station Restaurant & Brewery,90,35,134,28,0,78,44,51,143,4.605263,4.177632,4.605263,savvy mate! even sober people will love it.,76
+The 1100 Wheat Wine,Wheat Beer - Wheatwine,Fitger's Brewhouse,26,4,34,14,0,38,9,12,30,4.6,4.2,4.6,savvy mate! even sober people will love it.,5
+Double Sunshine,IPA - Imperial,Lawson's Finest Liquids,23,82,54,67,1,109,102,4,30,4.594118,4.317647,4.552941,savvy mate! even sober people will love it.,85
+Trappist Westvleteren 12,Quadrupel (Quad),Brouwerij Westvleteren (Sint-Sixtusabdij van Westvleteren),49,14,86,21,0,53,5,12,57,4.583333,4.454009,4.718553,savvy mate! even sober people will love it.,1272
+BBADL (Bourbon Barrel Aged Dark Lord Imperial Stout),Stout - Russian Imperial,Three Floyds Brewing Co. & Brewpub,53,15,78,8,0,15,2,12,85,4.577465,4.457746,4.591549,savvy mate! even sober people will love it.,142
+KBS (Kentucky Breakfast Stout),Stout - American Imperial,Founders Brewing Company,102,79,77,4,0,4,31,20,183,4.570393,4.37707,4.626294,savvy mate! even sober people will love it.,1932
+Birth Of Tragedy,Porter - Imperial,Hill Farmstead Brewery,49,46,67,8,0,11,11,33,123,4.568966,3.965517,4.637931,savvy mate! even sober people will love it.,29
+Ephraim,IPA - New England,Hill Farmstead Brewery,14,68,32,49,1,58,91,7,29,4.566434,4.304196,4.48951,savvy mate! even sober people will love it.,143
+Opal,Farmhouse Ale - Saison,Firestone Walker Brewing Co.,14,49,41,78,2,75,82,50,45,4.5625,4.375,4.375,savvy mate! even sober people will love it.,8
+CBS (Canadian Breakfast Stout),Stout - American Imperial,Founders Brewing Company,57,47,112,4,1,8,18,21,150,4.558085,4.457614,4.697017,savvy mate! even sober people will love it.,637
+Bourbon County Brand Coffee Stout,Stout - American Imperial,Goose Island Beer Co.,28,82,48,3,0,8,9,26,143,4.555921,4.256579,4.620614,savvy mate! even sober people will love it.,456
+Fourth Dementia - Bourbon Barrel-Aged,Old Ale,Kuhnhenn Brewing Company,58,30,134,14,0,57,18,32,124,4.555556,3.941919,4.638889,savvy mate! even sober people will love it.,198
+Pumpkinator,Pumpkin Beer,Saint Arnold Brewing Company,22,24,43,2,3,71,7,111,67,4.554054,4.027027,4.364865,savvy mate! even sober people will love it.,37
+Matt,Strong Ale - American,Hair of the Dog Brewing Company / Brewery and Tasting Room,54,13,87,34,0,50,8,36,70,4.551515,3.875758,4.506061,savvy mate! even sober people will love it.,165
+Zombie Dust,Pale Ale - American,Three Floyds Brewing Co. & Brewpub,14,79,48,72,4,92,115,8,64,4.543257,4.215013,4.492366,savvy mate! even sober people will love it.,393
+Sang Noir,Wild Ale,Cascade Brewing / Raccoon Lodge & Brewpub,38,1,47,98,0,72,3,19,47,4.538462,4.307692,4.923077,savvy mate! even sober people will love it.,13
+Blåbær Lambik,Lambic - Fruit,Brasserie Cantillon,6,5,99,119,0,113,12,0,8,4.528846,4.644231,4.628205,savvy mate! even sober people will love it.,156
+Mother Of All Storms,Barleywine - English,Pelican Pub & Brewery,86,37,156,34,1,77,12,27,168,4.519305,4.206564,4.523166,savvy mate! even sober people will love it.,259
+Bourbon Barrel Aged Plead The 5th,Stout - Russian Imperial,Dark Horse Brewing Company,49,45,70,11,0,17,19,32,117,4.505682,4.295455,4.5,savvy mate! even sober people will love it.,88
+Abrasive Ale,IPA - Imperial,Surly Brewing Company,16,78,73,69,0,111,103,7,47,4.500888,4.24778,4.446714,savvy mate! even sober people will love it.,563
+Helldorado,Barleywine American,Firestone Walker Brewing Co.,56,25,101,23,5,45,48,21,134,4.5,4,4.5,savvy mate! even sober people will love it.,1
+Bravo 2017,Brown Ale - American,Firestone Walker Brewing Co.,45,20,71,16,2,22,15,20,95,4.5,4.0625,4.4375,savvy mate! even sober people will love it.,8
+Fire Escape,Chile Beer,Asheville Brewing Company,17,9,16,9,5,9,16,50,26,4.5,4,4.333333,savvy mate! even sober people will love it.,3
+Abbey Dubbel,Dubbel,Flying Fish Brewing Company,13,20,95,14,0,49,13,18,65,4.5,4,4.5,savvy mate! even sober people will love it.,1
+Cucumber Saison,Fruit and Field Beer,Cigar City Brewing,8,17,21,41,3,36,21,11,13,4.5,3.75,4.125,savvy mate! even sober people will love it.,4
+Big Eye,IPA - American,Ballast Point Brewing Company,9,68,42,53,2,68,103,4,43,4.5,4,3.833333,savvy mate! even sober people will love it.,3
+Boon Oude Lambic,Lambic - Traditional,Brouwerij Boon,2,5,20,48,0,25,7,5,5,4.5,4,4.5,savvy mate! even sober people will love it.,1
+Lambiek De Cam,Lambic - Traditional,De Cam Geuzestekerij,2,3,9,27,0,17,6,0,2,4.5,3,4.5,savvy mate! even sober people will love it.,1
+Mogli,Porter - Imperial,Caldera Brewing Company,30,31,104,4,0,4,14,23,108,4.5,4.25,4.5,savvy mate! even sober people will love it.,10
+Mourning Wood,Red Ale - American Amber / Red,Local Option,11,100,44,8,0,2,24,12,140,4.5,3.5,3.5,savvy mate! even sober people will love it.,1
+Speedway Stout - Bourbon Barrel-Aged,Stout - American Imperial,AleSmith Brewing Company,63,60,70,12,0,11,16,12,147,4.5,4.326291,4.492958,savvy mate! even sober people will love it.,213
+Gingerbread Stout,Stout - Sweet / Milk,Hardywood Park Craft Brewery,27,22,71,15,2,10,6,127,124,4.5,4.5,4.642857,savvy mate! even sober people will love it.,7
+Trippel,Tripel,New Belgium Brewing,24,17,42,34,0,47,27,31,26,4.5,3,4,savvy mate! even sober people will love it.,1
+Pilgrim's Dole,Wheat Beer - Wheatwine,New Holland Brewing Company,68,24,119,41,0,62,20,27,119,4.5,4,4,savvy mate! even sober people will love it.,1
+Umami,Wheat Beer - Wheatwine,The Livery,2,0,4,0,0,0,0,0,4,4.5,3.5,4.5,savvy mate! even sober people will love it.,1
+Imperial Eclipse Stout - Elijah Craig (12 Year),Stout - American Imperial,FiftyFifty Brewing Co.,38,24,75,4,0,5,4,11,109,4.493902,4.042683,4.542683,savvy mate! even sober people will love it.,82
+Chocolate Rain,Stout - American Imperial,The Bruery,51,27,69,7,0,14,5,25,88,4.481132,4.080189,4.396226,savvy mate! even sober people will love it.,106
+Black Tuesday,Stout - American Imperial,The Bruery,95,25,106,17,1,43,3,30,126,4.47769,4.301837,4.510499,savvy mate! even sober people will love it.,381
+Great,Barleywine American,Alpine Beer Company,36,14,81,14,0,35,10,10,76,4.470588,3.890756,4.5,savvy mate! even sober people will love it.,119
+Choklat (Blackwater Series),Stout - American Imperial,Southern Tier Brewing Company,18,39,110,4,0,10,20,17,158,4.467028,4.111853,4.321786,savvy mate! even sober people will love it.,1198
+Dreadnaught IPA,IPA - Imperial,Three Floyds Brewing Co. & Brewpub,21,45,51,62,2,93,59,0,46,4.459824,4.251857,4.457461,savvy mate! even sober people will love it.,1481
+B-Bomb (Bourbon Abominable Winter Ale),Strong Ale - American,Fremont Brewing Company,82,42,93,11,0,41,20,48,153,4.458333,4,4.333333,savvy mate! even sober people will love it.,12
+Hoponius Union,Lager - India Pale Lager (IPL),Jack's Abby Brewing,16,87,35,52,3,56,106,10,54,4.454545,4.136364,4.272727,savvy mate! even sober people will love it.,22
+Samuel Adams UtopiasBoston Beer Company (Samuel Adams),Strong Ale - American,Boston Beer Company (Samuel Adams),64,30,108,18,0,76,13,42,107,4.453521,4.198592,4.467606,savvy mate! even sober people will love it.,355
+Old Backus Barleywine,Barleywine American,Free State Brewing Co.,45,56,127,39,1,49,62,4,108,4.446429,4.116071,4.491071,savvy mate! even sober people will love it.,56
+Fou' Foune,Lambic - Fruit,Brasserie Cantillon,2,4,66,112,1,107,16,1,5,4.445848,4.191336,4.453069,savvy mate! even sober people will love it.,277
+The Abyss,Stout - American Imperial,Deschutes Brewery,28,64,65,8,0,30,18,7,115,4.443343,4.593484,4.588173,savvy mate! even sober people will love it.,1412
+Bligh's Barleywine Ale,Barleywine - English,Dry Dock Brewing Co.,64,13,123,31,0,46,7,18,96,4.44,4.07,4.5,savvy mate! even sober people will love it.,50
+Nelson,IPA - American,Alpine Beer Company,7,60,50,85,2,128,78,13,49,4.436603,4.157895,4.357656,savvy mate! even sober people will love it.,418
+Bourbon County Brand Stout,Stout - American Imperial,Goose Island Beer Co.,69,41,83,9,0,36,8,24,134,4.43538,4.20117,4.482164,savvy mate! even sober people will love it.,1710
+Supplication,Wild Ale,Russian River Brewing Company,9,5,26,123,3,72,20,7,9,4.431624,4.291548,4.566002,savvy mate! even sober people will love it.,1053
+Bourbon County Brand Vanilla Stout,Stout - American Imperial,Goose Island Beer Co.,68,33,74,3,1,4,16,79,133,4.429739,4.147059,4.413399,savvy mate! even sober people will love it.,306
+Wee Heavy - Barrel-Aged,Scotch Ale / Wee Heavy,AleSmith Brewing Company,123,11,93,16,0,30,11,35,171,4.427711,3.951807,4.36747,savvy mate! even sober people will love it.,83
+Sexual Chocolate - Barrel-Aged,Stout - Russian Imperial,Foothills Brewing Company,63,35,77,5,1,11,11,9,146,4.426471,4.253676,4.408088,savvy mate! even sober people will love it.,136
+Trappist Westvleteren 8 (VIII)Brouwerij Westvleteren (Sint-Sixtusabdij van Westvleteren),Dubbel,Brouwerij Westvleteren (Sint-Sixtusabdij van Westvleteren),23,37,115,25,0,77,48,22,75,4.42645,4.415842,4.553041,savvy mate! even sober people will love it.,707
+Lou Pepe - Framboise,Lambic - Fruit,Brasserie Cantillon,6,4,80,98,1,77,5,3,8,4.423077,4.153846,4.115385,savvy mate! even sober people will love it.,13
+Mélange No. 3,Strong Ale - American,The Bruery,61,18,99,23,0,57,10,21,114,4.422727,4.063636,4.422727,savvy mate! even sober people will love it.,110
+Rise Up Coffee Stout,Stout - American,Evolution Craft Brewing Company,9,114,32,4,0,1,28,8,146,4.421053,4.184211,4.421053,savvy mate! even sober people will love it.,19
+Planet Bean,Stout - American,Spring House Brewing Company,9,133,46,9,0,8,16,5,173,4.420792,4.118812,4.123762,savvy mate! even sober people will love it.,101
+Bourbon Barrel-Aged Barley Wine,Barleywine - English,Kuhnhenn Brewing Company,94,24,99,14,1,44,8,25,123,4.419492,3.936441,4.34322,savvy mate! even sober people will love it.,118
+Old Stock Cellar Reserve (Aged In Bourbon Barrels),Old Ale,North Coast Brewing Co.,79,35,106,15,0,38,7,21,128,4.419048,3.919048,4.416667,savvy mate! even sober people will love it.,210
+Trappistes Rochefort 10,Quadrupel (Quad),Brasserie de Rochefort,46,22,90,26,0,63,13,11,88,4.418664,4.344931,4.543548,savvy mate! even sober people will love it.,2170
+Cable Car,Wild Ale,The Lost Abbey,3,6,46,132,0,85,5,10,11,4.416185,4.16474,4.526012,savvy mate! even sober people will love it.,173
+Abner,IPA - New England,Hill Farmstead Brewery,8,68,50,79,0,139,88,3,24,4.413636,4.181818,4.463636,savvy mate! even sober people will love it.,110
+Wisconsin Belgian Red,Fruit and Field Beer,New Glarus Brewing Company,8,9,81,67,0,137,16,6,32,4.412228,4.121671,4.434019,savvy mate! even sober people will love it.,826
+Duck Duck Gooze,Lambic - Gueuze,The Lost Abbey,5,5,48,137,0,65,10,1,9,4.412088,4.247253,4.57967,savvy mate! even sober people will love it.,182
+Breakfast Stout,Stout - Oatmeal,Founders Brewing Company,23,95,62,1,0,3,22,12,165,4.41207,4.364508,4.501199,savvy mate! even sober people will love it.,2502
+Bar Fly,Smoked Beer,Midnight Sun Brewing Co.,64,46,96,11,1,26,12,82,131,4.411111,4.322222,4.566667,savvy mate! even sober people will love it.,45
+Beatification,Wild Ale,Russian River Brewing Company,15,10,40,171,0,77,15,3,14,4.40483,4.130682,4.495739,savvy mate! even sober people will love it.,352
+Framboise For A Cure,Wild Ale,Russian River Brewing Company,2,5,90,135,0,102,11,0,4,4.401515,4.378788,4.310606,savvy mate! even sober people will love it.,66
+Rodenbach Alexander,Sour - Flanders Red Ale,Brouwerij Rodenbach N.V.,7,6,95,106,0,106,7,7,9,4.398148,4.12037,4.62963,savvy mate! even sober people will love it.,54
+Duet,IPA - American,Alpine Beer Company,7,60,31,56,1,77,91,6,27,4.394947,4.203457,4.316489,savvy mate! even sober people will love it.,376
+Edward,Pale Ale - American,Hill Farmstead Brewery,4,47,35,59,3,89,64,0,27,4.393805,4.115044,4.345133,savvy mate! even sober people will love it.,113
+The Great Pumpkin,Pumpkin Beer,Elysian Brewing Company,15,5,33,23,2,117,7,102,37,4.393617,3.904255,4.319149,savvy mate! even sober people will love it.,47
+Kiwi Rising - Double IPL,Lager - India Pale Lager (IPL),Jack's Abby Brewing,13,70,57,66,2,120,88,5,25,4.392857,4.071429,4.321429,savvy mate! even sober people will love it.,14
+Red Poppy,Sour - Flanders Red Ale,The Lost Abbey,11,10,66,172,1,111,22,25,45,4.392857,3.535714,4.535714,savvy mate! even sober people will love it.,14
+Parabola,Stout - Russian Imperial,Firestone Walker Brewing Co.,66,33,62,6,0,18,11,20,105,4.389076,4.288235,4.545378,savvy mate! even sober people will love it.,595
+Boat Beer,Pale Ale - American,Carton Brewing Company,14,58,33,86,6,111,106,11,62,4.388889,3.944444,4.166667,savvy mate! even sober people will love it.,9
+The Angel's Share - Bourbon Barrel-Aged,Strong Ale - American,The Lost Abbey,101,16,95,14,0,37,11,27,130,4.388577,3.898876,4.335206,savvy mate! even sober people will love it.,534
+Arctic Devil Barley Wine,Barleywine - English,Midnight Sun Brewing Co.,69,28,123,23,0,49,23,24,141,4.38756,4.119617,4.437799,savvy mate! even sober people will love it.,209
+Devil Over A Barrel Bourbon Barrel-Aged Imperial Coffee Oatmeal Porter,Porter - Imperial,Tyranena Brewing Company,63,83,47,5,0,5,12,33,199,4.379592,4.093878,4.426531,savvy mate! even sober people will love it.,245
+Lagunitas Sucks,IPA - Imperial,Lagunitas Brewing Company,10,48,53,43,0,56,62,8,39,4.376697,3.983032,4.30543,savvy mate! even sober people will love it.,442
+§ucaba,Barleywine - English,Firestone Walker Brewing Co.,74,24,105,23,0,50,19,18,112,4.376302,4.057292,4.505208,savvy mate! even sober people will love it.,384
+Weekapaug Gruit,Gruit / Ancient Herbed Ale,Magnolia Pub & Brewery,9,12,24,16,0,24,74,35,20,4.375,4,4.4375,savvy mate! even sober people will love it.,8
+Naughty 90,IPA - English,Toppling Goliath Brewing Company,21,57,54,24,0,33,73,29,102,4.375,4.625,4.75,savvy mate! even sober people will love it.,4
+Péché Mortel,Stout - American Imperial,Brasserie Dieu Du Ciel,23,114,60,4,0,10,42,29,143,4.375,4.375,4.375,savvy mate! even sober people will love it.,4
+Dark Lord Imperial Stout,Stout - Russian Imperial,Three Floyds Brewing Co. & Brewpub,24,48,102,16,0,26,5,27,110,4.374876,4.407517,4.410979,savvy mate! even sober people will love it.,1011
+Furious,IPA - American,Surly Brewing Company,5,57,45,48,0,54,96,3,61,4.374592,4.27165,4.379902,savvy mate! even sober people will love it.,1224
+Raspberry Tart,Fruit and Field Beer,New Glarus Brewing Company,14,7,193,90,0,137,11,4,16,4.371831,4.124648,4.416901,savvy mate! even sober people will love it.,710
+Nugget Nectar,Red Ale - Imperial,Tröegs Brewing Company,11,97,84,50,0,69,139,13,90,4.3711,4.212276,4.413555,savvy mate! even sober people will love it.,1955
+Hunahpu's Imperial Stout,Stout - American Imperial,Cigar City Brewing,21,42,52,9,0,17,3,90,79,4.369464,4.587413,4.564103,savvy mate! even sober people will love it.,429
+Brewer's Reserve Bourbon Barrel Barleywine,Barleywine American,Central Waters Brewing Company,94,40,142,25,0,63,23,27,133,4.369205,4.072848,4.307947,savvy mate! even sober people will love it.,302
+Blackout Stout - Barrel-Aged,Stout - Russian Imperial,Great Lakes Brewing Company,44,17,51,11,0,8,3,18,78,4.367041,4.125468,4.455056,savvy mate! even sober people will love it.,267
+Pure Hoppiness,IPA - Imperial,Alpine Beer Company,15,99,41,43,0,59,126,7,39,4.36631,4.216578,4.35205,savvy mate! even sober people will love it.,561
+Lunch,IPA - American,Maine Beer Company,15,64,56,79,0,97,102,5,49,4.36612,4.286885,4.311475,savvy mate! even sober people will love it.,183
+Consecration,Wild Ale,Russian River Brewing Company,13,10,51,109,0,97,9,9,16,4.366114,4.091232,4.473934,savvy mate! even sober people will love it.,844
+Aecht Schlenkerla Fastenbier (Lentbeer),Lager - Rauchbier,Brauerei Heller-Trum / Schlenkerla,12,55,63,7,1,9,69,121,106,4.361446,4.138554,4.295181,savvy mate! even sober people will love it.,83
+Blind Pig,IPA - American,Russian River Brewing Company,7,80,38,69,4,94,140,1,33,4.353199,4.187993,4.30894,savvy mate! even sober people will love it.,1141
+Temptation,Wild Ale,Russian River Brewing Company,7,10,53,138,4,79,20,1,20,4.35124,4.27686,4.458087,savvy mate! even sober people will love it.,847
+Schaarbeekse Kriek,Lambic - Fruit,Brouwerij Drie Fonteinen,8,2,52,116,0,100,18,7,13,4.349727,4.215847,4.387978,savvy mate! even sober people will love it.,183
+Barrel Aged Behemoth,Barleywine American,Three Floyds Brewing Co. & Brewpub,66,38,86,36,0,61,42,35,92,4.348485,4,4.469697,savvy mate! even sober people will love it.,33
+Head Hunter,IPA - American,Fat Heads Brewery & Saloon,16,71,46,63,0,97,110,6,40,4.348039,4.04902,4.303922,savvy mate! even sober people will love it.,102
+BREWtality - Espresso Black Bier,Lager - Schwarzbier,Midnight Sun Brewing Co.,40,143,92,19,0,22,39,13,214,4.347826,4.086957,4.23913,savvy mate! even sober people will love it.,23
+Cherry Adam From The Wood,Old Ale,Hair of the Dog Brewing Company / Brewery and Tasting Room,51,18,86,21,0,97,8,32,103,4.34596,3.729798,4.391414,savvy mate! even sober people will love it.,198
+Abbaye De Saint Bon-ChienBFM (Brasserie des Franches-Montagnes),Farmhouse Ale - Bière de Garde,BFM Brasserie Des Franches-Montagnes,27,6,60,113,0,74,5,6,19,4.341954,3.91092,4.344828,savvy mate! even sober people will love it.,174
+Ruination Double IPA 2.0,IPA - Imperial,Stone Brewing Co.,25,95,50,55,0,83,135,0,26,4.341531,4.179179,4.351331,savvy mate! even sober people will love it.,2704
+Framboise De Amorosa,Wild Ale,The Lost Abbey,7,2,115,154,3,110,11,9,30,4.341317,3.937126,4.287425,savvy mate! even sober people will love it.,167
+Old Numbskull - Bourbon Barrel-Aged,Barleywine American,AleSmith Brewing Company,67,26,113,20,0,36,23,25,132,4.34127,4.071429,4.349206,savvy mate! even sober people will love it.,63
+Coolship Red,Lambic - Fruit,Allagash Brewing Company,7,2,74,113,1,83,10,3,10,4.339286,4.214286,4.375,savvy mate! even sober people will love it.,28
+Hommage,Lambic - Fruit,Brouwerij Drie Fonteinen,3,5,88,103,0,102,14,1,9,4.33908,4.218391,4.494253,savvy mate! even sober people will love it.,87
+Lou Pepe - Gueuze,Lambic - Gueuze,Brasserie Cantillon,3,3,34,116,1,54,6,2,5,4.335938,4.113281,4.378906,savvy mate! even sober people will love it.,128
+Heritage Coffee Brown Ale,Brown Ale - English,Alaskan Brewing Co.,13,111,49,11,0,6,31,1,167,4.333333,4,4.166667,savvy mate! even sober people will love it.,3
+Reggae Junkie,Gruit / Ancient Herbed Ale,Upright Brewing Company,1,1,4,15,0,5,8,4,3,4.333333,3.666667,4,savvy mate! even sober people will love it.,3
+Fearless Youth,Lager - Munich Dunkel,Grimm Brothers Brewhouse,8,37,95,18,0,32,39,6,129,4.333333,4.5,4.5,savvy mate! even sober people will love it.,3
+Coolship Resurgam,Lambic - Gueuze,Allagash Brewing Company,13,22,68,185,0,127,22,11,18,4.333333,4.333333,4.333333,savvy mate! even sober people will love it.,3
+Lambiek Oud Beersel,Lambic - Traditional,Brouwerij Oud Beersel,0,8,18,87,2,39,9,2,10,4.333333,3.833333,4.333333,savvy mate! even sober people will love it.,3
+Roggenbier,Rye Beer - Roggenbier,Beaver Brewing Company,7,2,37,39,0,37,4,16,51,4.333333,4.666667,4.666667,savvy mate! even sober people will love it.,3
+Le Serpent,Sour - Flanders Oud Bruin,Snake River Brewing Company & Brewpub,4,0,34,104,0,66,2,16,12,4.333333,4,4.166667,savvy mate! even sober people will love it.,6
+Java The Stout,Stout - American,Jackie O's Pub & Brewery,6,110,53,13,0,1,28,14,174,4.333333,4.055556,4.361111,savvy mate! even sober people will love it.,18
+Obovoid,Stout - Oatmeal,Boulder Beer / Wilderness Pub,21,41,84,14,0,18,24,23,119,4.333333,4.166667,4.5,savvy mate! even sober people will love it.,3
+Boxer's Revenge,Wild Ale,Jester King Craft Brewery,49,10,93,177,2,113,23,11,27,4.333333,4,4,savvy mate! even sober people will love it.,6
+Speedway Stout,Stout - American Imperial,AleSmith Brewing Company,31,62,67,1,0,7,16,14,133,4.328924,4.40388,4.441358,savvy mate! even sober people will love it.,1134
+Oude Lambiek De Cam,Lambic - Traditional,De Cam Geuzestekerij,11,16,61,213,2,94,23,7,21,4.328125,3.96875,4.351562,savvy mate! even sober people will love it.,64
+Ola Dubh Special Reserve 40,Old Ale,Harviestoun Brewery Ltd.,71,39,95,16,2,39,26,63,102,4.328125,4.09375,4.338542,savvy mate! even sober people will love it.,96
+Deliverance,Strong Ale - American,The Lost Abbey,97,35,120,25,0,54,17,26,130,4.325521,3.992188,4.309896,savvy mate! even sober people will love it.,192
+Fantôme Saison,Farmhouse Ale - Saison,Brasserie Fantôme,14,18,66,113,1,103,27,46,32,4.323401,4.18314,4.40407,savvy mate! even sober people will love it.,688
+Abt 12,Quadrupel (Quad),Brouwerij St. Bernardus NV,59,24,117,44,0,85,27,30,84,4.318448,4.362201,4.487145,savvy mate! even sober people will love it.,2217
+Lou Pepe - Kriek,Lambic - Fruit,Brasserie Cantillon,4,2,44,96,0,74,7,5,13,4.316206,4.357708,4.462451,savvy mate! even sober people will love it.,253
+Everett Porter,Porter - American,Hill Farmstead Brewery,8,93,80,10,0,12,44,15,168,4.314607,4.303371,4.533708,savvy mate! even sober people will love it.,89
+Brewhouse Coffee Stout,Stout - American,Central Waters Brewing Company,14,121,72,6,0,10,32,13,192,4.312893,4.04717,4.290881,savvy mate! even sober people will love it.,318
+Darkness,Stout - Russian Imperial,Surly Brewing Company,30,107,118,31,0,80,74,30,163,4.312693,4.543344,4.426471,savvy mate! even sober people will love it.,646
+Coolship Cerise,Lambic - Fruit,Allagash Brewing Company,16,2,44,197,0,115,18,22,18,4.3125,3.9375,4.3125,savvy mate! even sober people will love it.,8
+Cuvee De Tomme,Wild Ale,The Lost Abbey,32,6,75,104,0,83,4,11,41,4.312112,3.790373,4.361801,savvy mate! even sober people will love it.,322
+The 50 Degrees North-4 Degrees East,Lambic - Traditional,Brasserie Cantillon,29,17,62,106,0,66,25,5,15,4.310606,4.068182,4.295455,savvy mate! even sober people will love it.,66
+Rauch Ür Bock,Lager - Rauchbier,Caldera Brewing Company,8,15,74,17,2,19,12,99,64,4.309524,3.821429,4.154762,savvy mate! even sober people will love it.,42
+Victory At Sea - Barrel-Aged,Porter - Imperial,Ballast Point Brewing Company,63,61,56,8,0,13,12,42,156,4.308824,4.485294,4.367647,savvy mate! even sober people will love it.,34
+Chocolate Stout,Stout - American,Rogue Ales,8,81,109,6,0,9,53,11,143,4.306354,4.320166,4.257735,savvy mate! even sober people will love it.,1810
+Hop JuJu,IPA - Imperial,Fat Heads Brewery & Saloon,18,67,25,48,0,66,96,5,13,4.305556,4.083333,4.222222,savvy mate! even sober people will love it.,18
+Oude Geuze,Lambic - Gueuze,Brouwerij Drie Fonteinen,9,10,50,206,2,112,24,8,19,4.305208,4.223958,4.3375,savvy mate! even sober people will love it.,480
+HefeWeizen,Wheat Beer - Hefeweizen,Live Oak Brewing Company,7,16,17,25,0,60,24,50,41,4.302795,4.21118,4.391304,savvy mate! even sober people will love it.,322
+Ramstein Winter Wheat Eisbock,Bock - Eisbock,High Point Brewing Company,63,18,105,41,0,106,9,39,114,4.3,4.111111,4.477778,savvy mate! even sober people will love it.,45
+Black Cherry Porter,Porter - Imperial,Short's Brewing Company,11,52,84,41,0,109,33,32,105,4.3,4.4,4.3,savvy mate! even sober people will love it.,5
+Uncle Rusty,Red Ale - Imperial,Columbus Brewing Company,22,127,97,79,0,126,151,8,90,4.3,4.1,4.4,savvy mate! even sober people will love it.,10
+Old Rasputin,Stout - Russian Imperial,North Coast Brewing Co.,18,68,49,9,0,17,23,11,102,4.29845,4.395349,4.352713,savvy mate! even sober people will love it.,129
+IPA,IPA - American,AleSmith Brewing Company,2,76,54,65,1,90,114,2,54,4.298209,4.300843,4.334563,savvy mate! even sober people will love it.,949
+Fourth Dementia (4D),Old Ale,Kuhnhenn Brewing Company,51,25,178,31,0,78,5,21,149,4.296657,4.118384,4.36351,savvy mate! even sober people will love it.,359
+Hefeweissbier,Wheat Beer - Hefeweizen,Bayerische Staatsbrauerei Weihenstephan,7,11,15,26,0,55,23,39,46,4.296315,4.380363,4.425038,savvy mate! even sober people will love it.,1981
+Saint Lamvinus,Lambic - Fruit,Brasserie Cantillon,13,5,101,143,3,121,13,4,16,4.296143,4.282369,4.46832,savvy mate! even sober people will love it.,363
+Ivan The Terrible Imperial Stout - Barrel-Aged,Stout - Russian Imperial,Big Sky Brewing Company,88,55,71,16,0,38,43,33,153,4.29602,4.318408,4.373134,savvy mate! even sober people will love it.,201
+Aphrodisiaque,Stout - American,Brasserie Dieu Du Ciel,20,62,63,7,2,13,32,49,108,4.293182,4.142045,4.222727,savvy mate! even sober people will love it.,440
+Smoked Porter,Porter - Smoked,Captain Lawrence Brewing Co.,0,5,4,0,0,0,3,12,12,4.293103,4.224138,4.396552,savvy mate! even sober people will love it.,29
+Citra Bitter Monk,IPA - Belgian,Anchorage Brewing Company,13,57,56,138,2,133,74,26,23,4.292035,4.309735,4.323009,savvy mate! even sober people will love it.,113
+Cascade Noyaux,Wild Ale,Cascade Brewing / Raccoon Lodge & Brewpub,20,6,130,209,1,164,13,5,30,4.291667,4.041667,4.625,savvy mate! even sober people will love it.,12
+Pannepot,Quadrupel (Quad),De Struise Brouwers,39,20,99,39,1,67,20,40,62,4.29084,4.254962,4.417557,savvy mate! even sober people will love it.,655
+Victory At Sea - Coffee And Vanilla,Porter - Imperial,Ballast Point Brewing Company,23,72,73,5,1,7,25,45,128,4.29017,4.287335,4.354442,savvy mate! even sober people will love it.,529
+Double Jack,IPA - Imperial,Firestone Walker Brewing Co.,21,53,76,77,0,118,78,3,61,4.290115,4.174785,4.247135,savvy mate! even sober people will love it.,698
+James Black Ale,IPA - Black / Cascadian Dark Ale,Hill Farmstead Brewery,7,113,51,44,0,57,123,3,90,4.289474,4.078947,4.315789,savvy mate! even sober people will love it.,19
+Rosso E Marrone,Sour - Flanders Oud Bruin,Captain Lawrence Brewing Co.,27,12,125,202,1,132,26,28,47,4.286822,3.790698,4.325581,savvy mate! even sober people will love it.,129
+Portsmouth Killer B,Braggot,Portsmouth Brewery,21,22,127,29,0,46,23,18,82,4.285714,4.357143,4.5,savvy mate! even sober people will love it.,7
+Sang Royal,Wild Ale,Cascade Brewing / Raccoon Lodge & Brewpub,12,4,67,112,0,90,6,13,15,4.285714,4.035714,4.45,savvy mate! even sober people will love it.,70
+Girardin Gueuze 1882 (Black Label),Lambic - Gueuze,Brouwerij Girardin,4,13,45,169,0,98,22,10,11,4.28355,4.176407,4.366883,savvy mate! even sober people will love it.,462
+Daisy Cutter Pale Ale,Pale Ale - American,Half Acre Beer Company,7,70,34,54,4,82,124,4,61,4.283195,4.123444,4.1639,savvy mate! even sober people will love it.,482
+Myrcenary Double IPA,IPA - Imperial,Odell Brewing Company,30,56,37,42,0,71,97,1,25,4.279456,4.123867,4.321752,savvy mate! even sober people will love it.,331
+Gratitude,Barleywine American,East End Brewing Company,31,66,124,43,1,60,77,10,108,4.278646,4.161458,4.369792,savvy mate! even sober people will love it.,192
+Oude Geuze De Cam,Lambic - Gueuze,De Cam Geuzestekerij,9,11,62,229,1,115,38,10,19,4.276786,4.142857,4.401786,savvy mate! even sober people will love it.,56
+Gueuze 100% Lambic,Lambic - Gueuze,Brasserie Cantillon,9,14,53,149,1,78,25,7,9,4.275904,4.126506,4.387952,savvy mate! even sober people will love it.,415
+Double Vision Doppelbock,Bock - Doppelbock,Grand Teton Brewing Co.,26,37,95,32,0,46,26,24,132,4.275862,4.224138,4.37931,savvy mate! even sober people will love it.,29
+Twilight Of The Idols,Porter - American,Hill Farmstead Brewery,20,88,54,12,0,14,38,83,111,4.27551,4.244898,4.397959,savvy mate! even sober people will love it.,49
+Saison-Brett,Farmhouse Ale - Saison,Boulevard Brewing Co.,29,43,72,144,3,108,72,47,43,4.273731,4.377483,4.31457,savvy mate! even sober people will love it.,453
+Valdez,Stout - American,Pisgah Brewing Co.,12,130,57,11,1,3,27,10,173,4.272222,4.2,4.236111,savvy mate! even sober people will love it.,180
+Bedlam,IPA - Belgian,Ale Asylum,12,89,54,84,0,107,91,31,33,4.270492,4.098361,4.131148,savvy mate! even sober people will love it.,61
+Schneider Weisse Tap 6 Unser Aventinus,Bock - Weizenbock,Weisses Bräuhaus G. Schneider & Sohn GmbH,48,17,95,38,1,91,17,45,107,4.269352,4.178515,4.388362,savvy mate! even sober people will love it.,1899
+Sour Reserve,Lambic - Gueuze,Upland Brewing Company,5,6,74,284,8,141,15,15,38,4.269231,3.615385,4.269231,savvy mate! even sober people will love it.,13
+Pentagram,Wild Ale,Surly Brewing Company,10,2,32,149,1,69,3,16,20,4.269231,3.846154,4.423077,savvy mate! even sober people will love it.,13
+J.W. Lees Harvest Ale (Port Cask)J.W. Lees & Co (Brewers) Ltd,Barleywine - English,J.W. Lees & Co (Brewers) Ltd,38,23,148,36,0,89,9,14,76,4.266272,3.914201,4.289941,savvy mate! even sober people will love it.,169
+Brasserie Des Rocs Triple Impériale,Strong Ale - Belgian Dark,Brasserie de l'Abbaye des Rocs s.a.,29,32,101,37,1,63,36,33,65,4.265957,4.042553,4.281155,savvy mate! even sober people will love it.,329
+La Folie,Sour - Flanders Oud Bruin,New Belgium Brewing,8,3,89,152,0,88,3,5,38,4.265646,4.065246,4.299601,savvy mate! even sober people will love it.,751
+Ola Dubh Special Reserve 30,Old Ale,Harviestoun Brewery Ltd.,72,44,89,13,3,46,29,53,115,4.263415,4.141463,4.363415,savvy mate! even sober people will love it.,205
+Abbaye Des Rocs [Brasserie Des Rocs Brune],Strong Ale - Belgian Dark,Brasserie de l'Abbaye des Rocs s.a.,28,17,92,21,1,53,18,18,72,4.261324,4.085366,4.301394,savvy mate! even sober people will love it.,287
+Yeti,Stout - American Imperial,Great Divide Brewing Company,30,137,83,16,0,10,105,10,146,4.25969,4.267442,4.399225,savvy mate! even sober people will love it.,129
+West Coast IPA,IPA - Imperial,Green Flash Brewing Co.,14,97,44,65,0,76,139,9,45,4.256998,4.110031,4.197512,savvy mate! even sober people will love it.,1286
+Coffee Oatmeal Stout,Stout - Oatmeal,Good People Brewing Company,4,129,43,11,0,10,50,4,151,4.25641,4.166667,4.294872,savvy mate! even sober people will love it.,39
+Andechser Doppelbock Dunkel,Bock - Doppelbock,Klosterbrauerei Andechs,20,31,100,21,1,55,31,7,140,4.254355,4.275261,4.43554,savvy mate! even sober people will love it.,287
+Alpha King,Pale Ale - American,Three Floyds Brewing Co. & Brewpub,6,45,37,41,1,46,78,6,55,4.253429,4.11855,4.32887,savvy mate! even sober people will love it.,1531
+Dorado,IPA - Imperial,Ballast Point Brewing Company,18,67,57,72,2,92,89,3,47,4.251534,4.145706,4.245399,savvy mate! even sober people will love it.,326
+Naughty Hildegard ESB,Bitter - English Extra Special / Strong Bitter (ESB),Driftwood Brewery,11,97,55,49,0,65,129,6,89,4.25,4.285714,4.142857,savvy mate! even sober people will love it.,14
+Hummingbird,Braggot,Mountain Sun Pub & Brewery,7,4,21,2,0,4,6,6,16,4.25,4,4,savvy mate! even sober people will love it.,4
+Helios Goya Dry,Happoshu,"Helios Distillery Co., Ltd.",3,13,8,6,0,6,14,5,7,4.25,4,4.25,savvy mate! even sober people will love it.,2
+Anger,IPA - Black / Cascadian Dark Ale,Greenbush Brewing Company,11,79,29,27,0,25,86,3,61,4.25,4,4.4375,savvy mate! even sober people will love it.,8
+Boon Lambiek,Lambic - Traditional,Brouwerij Boon,0,0,3,19,0,4,2,2,4,4.25,4.25,4.25,savvy mate! even sober people will love it.,4
+Oude Lambik,Lambic - Traditional,Brouwerij Lindemans,0,1,6,17,0,14,0,4,0,4.25,4,4,savvy mate! even sober people will love it.,2
+Mild At Heart,Mild Ale - English Dark,Wandering Star Brewing Company,8,23,31,7,0,6,15,12,77,4.25,4,4.083333,savvy mate! even sober people will love it.,6
+Smoke Signal,Porter - Smoked,Swamp Head Brewery & Tasting Room,2,23,32,6,0,4,14,78,51,4.25,4.125,4.5,savvy mate! even sober people will love it.,4
+Porter-Smoked,Porter - Smoked,COAST Brewing Company,9,35,48,3,0,7,17,101,102,4.25,4.4,4.225,savvy mate! even sober people will love it.,20
+La Trappe Quadrupel - Oak-Aged,Quadrupel (Quad),Bierbrouwerij De Koningshoeven B.V.,74,25,103,35,0,68,18,33,89,4.25,3.986111,4.326389,savvy mate! even sober people will love it.,72
+Roggenschnizzle,Rye Beer - Roggenbier,The Bier Brewery,0,0,0,0,0,0,0,2,9,4.25,4.25,4.5,savvy mate! even sober people will love it.,2
+SoBro,Sour - Flanders Oud Bruin,Three Floyds Brewing Co. & Brewpub,4,4,8,25,0,15,3,2,5,4.25,3.5,4.25,savvy mate! even sober people will love it.,2
+Ten FIDY - Bourbon Barrel Aged,Stout - American Imperial,Oskar Blues Grill & Brew,88,52,80,2,0,7,15,30,142,4.25,4.25,5,savvy mate! even sober people will love it.,2
+Dancing Man,Wheat Beer - Hefeweizen,New Glarus Brewing Company,20,9,32,50,2,92,16,69,59,4.249315,4.236986,4.335616,savvy mate! even sober people will love it.,365
+Maharaja,IPA - Imperial,Avery Brewing Company,17,59,49,60,1,56,83,5,57,4.249191,4.200324,4.215858,savvy mate! even sober people will love it.,1545
+Trappistes Rochefort 8,Strong Ale - Belgian Dark,Brasserie de Rochefort,28,18,125,34,0,68,15,28,88,4.246316,4.237988,4.36419,savvy mate! even sober people will love it.,1561
+Curmudgeon,Old Ale,Founders Brewing Company,40,50,68,21,0,34,30,15,97,4.245614,3.947368,4.307018,savvy mate! even sober people will love it.,57
+Hop Stoopid,IPA - Imperial,Lagunitas Brewing Company,15,84,42,43,0,56,98,2,36,4.244156,4.071104,4.173377,savvy mate! even sober people will love it.,1540
+Sanctification,Brett Beer,Russian River Brewing Company,5,10,36,133,6,80,16,9,20,4.242762,4.165924,4.319599,savvy mate! even sober people will love it.,449
+Double Trouble,IPA - Imperial,Founders Brewing Company,35,64,42,46,0,55,91,4,46,4.241838,4.011168,4.219072,savvy mate! even sober people will love it.,1164
+Beer Geek Brunch Weasel,Stout - American Imperial,Mikkeller ApS,23,93,92,15,1,28,19,19,174,4.24,4.351667,4.36,savvy mate! even sober people will love it.,600
+Harvest Ale,IPA - American,Founders Brewing Company,9,75,32,44,0,60,117,3,31,4.239614,3.989614,4.180267,savvy mate! even sober people will love it.,674
+Old Ruffian,Barleywine American,Great Divide Brewing Company,31,107,97,27,1,57,120,14,119,4.238552,4.318956,4.285942,savvy mate! even sober people will love it.,939
+Aecht Schlenkerla Eiche,Lager - Rauchbier,Brauerei Heller-Trum / Schlenkerla,16,25,47,11,0,13,34,95,58,4.238532,3.841743,4.158257,savvy mate! even sober people will love it.,218
+Interlude,Farmhouse Ale - Saison,Allagash Brewing Company,25,10,97,122,9,108,20,7,32,4.237569,4.074586,4.254144,savvy mate! even sober people will love it.,362
+Gumballhead,Wheat Beer - American Pale,Three Floyds Brewing Co. & Brewpub,9,41,26,44,0,54,58,8,57,4.237439,3.941248,4.247974,savvy mate! even sober people will love it.,1234
+Nelson Sauvignon (Nelson Sauvin Brut),Bière de Champagne / Bière Brut,Mikkeller ApS,10,39,86,119,2,111,47,8,22,4.236111,4.111111,4.180556,savvy mate! even sober people will love it.,36
+Celebration Stout,Stout - Irish Dry,The Porterhouse Brewing Company,26,71,85,22,0,38,49,20,115,4.235294,4.029412,4.352941,savvy mate! even sober people will love it.,17
+Haandbakk,Sour - Flanders Oud Bruin,HaandBryggeriet,13,4,43,133,0,67,4,7,14,4.234286,4.04,4.291429,savvy mate! even sober people will love it.,175
+Zoe,Red Ale - American Amber / Red,Maine Beer Company,15,70,67,40,0,61,100,10,103,4.233962,4.279245,4.226415,savvy mate! even sober people will love it.,265
+Holger Danske (with Kissmeyer),Smoked Beer,Hill Farmstead Brewery,15,48,61,7,0,1,33,111,108,4.233333,4.1,4.3,savvy mate! even sober people will love it.,15
+Barriquée (Italy Version),Sour - Flanders Red Ale,Panil,19,11,74,148,2,88,19,19,39,4.232143,4.102679,4.245536,savvy mate! even sober people will love it.,112
+La Fin Du Monde,Tripel,Unibroue,18,12,40,44,2,62,31,53,36,4.231977,4.193919,4.396093,savvy mate! even sober people will love it.,2483
+Abbaye Des Rocs Grand Cru Belgian Special Brown,Strong Ale - Belgian Dark,Brasserie de l'Abbaye des Rocs s.a.,22,16,130,53,0,79,16,27,79,4.231481,4.082305,4.290123,savvy mate! even sober people will love it.,486
+Mönchsambacher Lager,Lager - Kellerbier / Zwickelbier,Brauerei Zehendner GmbH,5,53,37,38,1,38,77,20,63,4.230769,4.288462,4.384615,savvy mate! even sober people will love it.,26
+Southampton Grand Cru,Strong Ale - Belgian Pale,Southampton Publick House,61,22,115,82,0,103,46,79,45,4.230769,4.218531,4.344406,savvy mate! even sober people will love it.,286
+The 17 Grande Réserve,Strong Ale - Belgian Dark,Unibroue,28,14,127,40,0,78,11,50,83,4.227273,4.272727,4.272727,savvy mate! even sober people will love it.,11
+B.O.R.I.S. Oatmeal Imperial Stout - Barrel-Aged,Stout - Oatmeal,Hoppin' Frog Brewery,66,53,66,9,0,19,39,21,129,4.226582,4.073418,4.297468,savvy mate! even sober people will love it.,395
+Hemel & Aarde,Smoked Beer,Brouwerij De Molen,33,44,57,4,3,13,24,62,99,4.225,4.275,4.2,savvy mate! even sober people will love it.,20
+Wake-n-Bake Coffee Oatmeal Imperial Stout,Stout - Oatmeal,Terrapin Beer Company,23,114,78,10,0,10,47,21,209,4.224891,4.125546,4.270742,savvy mate! even sober people will love it.,916
+Daymark,Rye Beer,Rising Tide Brewing Company,7,65,22,62,4,72,117,27,103,4.222222,4.125,4.027778,savvy mate! even sober people will love it.,36
+Weisse Versa Wheat,Wheat Beer - Hefeweizen,Karbach Brewing Co.,19,18,23,48,1,76,21,25,33,4.222222,3.888889,4.5,savvy mate! even sober people will love it.,9
+Ola Dubh Special Reserve 18,Old Ale,Harviestoun Brewery Ltd.,49,33,75,12,1,27,11,42,97,4.221429,4.035714,4.278571,savvy mate! even sober people will love it.,70
+Achel Trappist Extra,Strong Ale - Belgian Dark,Brouwerij der St. Benedictusabdij de Achelse,38,22,122,33,0,80,18,34,81,4.219653,4.242775,4.367052,savvy mate! even sober people will love it.,173
+Brewer's Reserve Bourbon Barrel Stout,Stout - American Imperial,Central Waters Brewing Company,78,26,50,5,0,8,12,20,112,4.219156,3.956169,4.159091,savvy mate! even sober people will love it.,308
+Oak Aged Yeti Imperial Stout,Stout - American Imperial,Great Divide Brewing Company,30,43,72,10,0,17,19,18,105,4.21785,4.452916,4.284259,savvy mate! even sober people will love it.,1423
+Drunk Monk Hefeweizen,Wheat Beer - Hefeweizen,Three Floyds Brewing Co. & Brewpub,17,12,51,35,0,90,21,52,59,4.217391,4.054348,4.26087,savvy mate! even sober people will love it.,46
+Imperial Biscotti Break,Stout - American Imperial,Evil Twin Brewing,28,66,57,7,1,12,19,34,158,4.214286,3.928571,4.142857,savvy mate! even sober people will love it.,14
+Tripel Van De Garre,Tripel,Brouwerij Van Steenberge N.V.,22,19,91,45,4,80,56,50,55,4.214286,4.392857,4.339286,savvy mate! even sober people will love it.,28
+90 Minute IPA,IPA - Imperial,Dogfish Head Brewery,13,44,40,31,1,36,56,5,42,4.213526,4.192097,4.325988,savvy mate! even sober people will love it.,3290
+Smoked Porter,Porter - Smoked,Alaskan Brewing Co.,5,37,51,7,2,10,13,81,80,4.211823,4.123768,4.249384,savvy mate! even sober people will love it.,812
+Fred From The Wood,Strong Ale - American,Hair of the Dog Brewing Company / Brewery and Tasting Room,39,26,108,24,1,46,18,49,82,4.210784,4.117647,4.272059,savvy mate! even sober people will love it.,204
+Hop Rod Rye,Rye Beer,Bear Republic Brewing Co.,19,66,47,28,0,27,107,40,132,4.20988,4.295609,4.342394,savvy mate! even sober people will love it.,1913
+Apricot Ale,Wild Ale,Cascade Brewing / Raccoon Lodge & Brewpub,4,2,111,196,3,115,8,4,12,4.208633,4.107914,4.18705,savvy mate! even sober people will love it.,139
+Rodenbach Grand Cru,Sour - Flanders Red Ale,Brouwerij Rodenbach N.V.,10,2,74,130,0,83,4,4,34,4.208385,4.094945,4.307028,savvy mate! even sober people will love it.,811
+Cuvee Freddy,Sour - Flanders Oud Bruin,Picobrouwerij Alvinne / Den Bierzolder,6,9,45,95,1,62,10,5,25,4.208333,3.875,3.958333,savvy mate! even sober people will love it.,24
+A Little Sumpin' Sumpin' Ale,IPA - American,Lagunitas Brewing Company,14,58,23,56,1,69,100,2,65,4.208235,3.995882,4.216471,savvy mate! even sober people will love it.,850
+Behemoth,Barleywine American,Three Floyds Brewing Co. & Brewpub,52,90,125,72,0,101,105,24,105,4.207373,4.123272,4.264977,savvy mate! even sober people will love it.,434
+Adam,Old Ale,Hair of the Dog Brewing Company / Brewery and Tasting Room,38,56,125,25,0,67,31,42,132,4.206027,4.175892,4.289668,savvy mate! even sober people will love it.,813
+Grande Cuvée Porter Baltique,Porter - Baltic,Les Trois Mousquetaires,21,76,120,17,0,59,49,48,155,4.204225,4.211268,4.338028,savvy mate! even sober people will love it.,71
+Traquair Jacobite,Scotch Ale / Wee Heavy,Traquair House Brewery Lld,37,32,82,19,0,52,65,20,97,4.203463,3.933983,4.222944,savvy mate! even sober people will love it.,462
+Alpha Klaus Christmas (Xmas) Porter,Porter - American,Three Floyds Brewing Co. & Brewpub,16,98,79,18,0,21,94,14,110,4.203101,4.243411,4.241085,savvy mate! even sober people will love it.,645
+Love Buzz Saison,Farmhouse Ale - Saison,Anchorage Brewing Company,20,69,68,156,1,103,95,41,32,4.202899,4.195652,4.152174,savvy mate! even sober people will love it.,69
+Oude Gueuze,Lambic - Gueuze,Hanssens Artisanaal bvba,15,8,77,197,3,117,17,9,23,4.202186,4.019126,4.255464,savvy mate! even sober people will love it.,366
+La Roja Du Kriek,Sour - Flanders Red Ale,Jolly Pumpkin Artisan Ales,9,4,75,174,0,130,13,16,25,4.2,4,4,savvy mate! even sober people will love it.,5
+Abraxas,Stout - American Imperial,Perennial Artisan Ales,46,46,73,4,2,8,16,158,126,4.2,4.1,4.3,savvy mate! even sober people will love it.,5
+CEO Stout,Stout - American,Right Brain Brewery,5,75,44,6,0,3,7,7,128,4.2,4.1,3.9,savvy mate! even sober people will love it.,10
+Coffee Bender,Brown Ale - American,Surly Brewing Company,9,139,66,16,0,10,64,15,207,4.199362,4.094099,4.181818,savvy mate! even sober people will love it.,627
+Bourbon Barrel Quad Barrel-Aged Ale (BBQ),Quadrupel (Quad),Boulevard Brewing Co.,94,13,88,28,0,76,11,26,84,4.198847,4.087896,4.272334,savvy mate! even sober people will love it.,347
+Lord Rear Admiral,Bitter - English Extra Special / Strong Bitter (ESB),Three Floyds Brewing Co. & Brewpub,13,77,118,63,1,105,110,11,117,4.198276,4.193966,4.198276,savvy mate! even sober people will love it.,116
+Iris,Lambic - Traditional,Brasserie Cantillon,16,90,59,191,4,123,100,17,56,4.197832,4.039295,4.226287,savvy mate! even sober people will love it.,369
+Doggie Claws,Barleywine American,Hair of the Dog Brewing Company / Brewery and Tasting Room,34,66,102,36,1,53,82,22,98,4.197168,3.980392,4.253813,savvy mate! even sober people will love it.,459
+Grande Réserve (Blue),Strong Ale - Belgian Dark,Bières de Chimay S.A.,27,8,65,13,0,40,5,9,45,4.196615,4.209059,4.370582,savvy mate! even sober people will love it.,2009
+Westmalle Trappist Tripel,Tripel,Brouwerij Westmalle,30,26,53,25,0,56,36,37,37,4.196031,4.306755,4.308844,savvy mate! even sober people will love it.,1436
+Espresso Oak Aged Yeti Imperial Stout,Stout - American Imperial,Great Divide Brewing Company,20,78,51,5,0,6,39,14,141,4.195504,4.41485,4.23297,savvy mate! even sober people will love it.,734
+La Roja - Grand Reserve,Sour - Flanders Red Ale,Jolly Pumpkin Artisan Ales,24,10,99,238,0,126,10,23,44,4.194915,3.957627,4.20339,savvy mate! even sober people will love it.,59
+Soft Parade,Fruit and Field Beer,Short's Brewing Company,11,5,168,68,0,154,14,6,53,4.194444,3.888889,3.861111,savvy mate! even sober people will love it.,18
+St. Amatus 12,Quadrupel (Quad),De Struise Brouwers,56,18,145,42,0,88,12,26,64,4.194444,4.111111,4.244444,savvy mate! even sober people will love it.,90
+Arctic Panzer Wolf,IPA - Imperial,Three Floyds Brewing Co. & Brewpub,13,53,57,42,0,73,78,7,38,4.191579,3.971579,4.172632,savvy mate! even sober people will love it.,475
+Wee Heavy,Scotch Ale / Wee Heavy,AleSmith Brewing Company,61,30,98,10,0,34,32,17,100,4.189944,4.104749,4.256983,savvy mate! even sober people will love it.,358
+Stormwatcher's Winterfest,Barleywine - English,Pelican Pub & Brewery,46,29,122,26,2,74,30,16,130,4.188679,4.037736,4.283019,savvy mate! even sober people will love it.,53
+ALTerior Motive,Altbier,COAST Brewing Company,11,56,61,46,0,40,77,14,110,4.1875,4.0625,4.25,savvy mate! even sober people will love it.,16
