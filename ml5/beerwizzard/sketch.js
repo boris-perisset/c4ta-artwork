@@ -156,7 +156,7 @@ function setupButtons() {
   trainButton = select("#train")
   trainButton.mousePressed( function(){
      let trainingOptions = {
-       epochs: 40,
+       epochs: 60,
        batchSize: 32
      }
 
