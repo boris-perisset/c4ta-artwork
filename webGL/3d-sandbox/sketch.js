@@ -4,8 +4,20 @@ let amount = 400
 let vec = 0
 let dots = []
 let lineMaxDist = 100;
+// let debug = true
 
-let debug = true
+let color = [
+  "#436c74", 
+  "#5d9ca8", 
+  "#78cfe0", 
+  "#95dad9", 
+  "#acdac4", 
+  "#bedbad", 
+  "#cddc97", 
+  "#d6de87", 
+  "#cfe198", 
+  "#c7e5a8"
+]
 
 /*
 =====================     S E T U P      ========================================
@@ -17,9 +29,9 @@ function setup() {
   var canvas = createCanvas(w, h, WEBGL);
   canvas.parent('pi5-canvas');
 
-  debugMode()
+  // debugMode()
   
-  
+  mainColor = random(color)
 
   for (i = 0; i < amount; i++) {
     let x = random(-w/2,w/2)
@@ -36,15 +48,16 @@ function setup() {
 function draw () {
   orbitControl()
   //pointLight(v1, v2, v3, x, y, z)
-  background(30, 10, 50)
-  pointLight(220,220,23,dots[3].vec.x,dots[3].vec.y,dots[3].vec.z)
-  pointLight(0,220,153,dots[0].vec.x,dots[0].vec.y,dots[0].vec.z)
+  // background(90, 10, 50)
+  background(mainColor)
+  pointLight(mainColor,dots[3].vec.x,dots[3].vec.y,dots[3].vec.z)
+  pointLight(mainColor,dots[0].vec.x,dots[0].vec.y,dots[0].vec.z)
   
   for(let i = 0; i < dots.length; i++) {
     // fill(0)
     dots[i].showDot()
     dots[i].updatePos()  
-    // dots[i].repel()  
+    dots[i].repel()  
   }
 
 }
