@@ -98,8 +98,8 @@ function draw () {
   //pointLight(v1, v2, v3, x, y, z)
   // background(90, 10, 50)
   background(mainColor)
-  pointLight(mainLight,dots[3].vec.x, dots[3].vec.y, dots[3].vec.z)
-  pointLight(mainLight,dots[0].vec.x, dots[0].vec.y, dots[0].vec.z)
+  directionalLight(mainLight,-(mouseX-windowWidth/2), -(mouseY-windowWidth/2), dots[3].vec.z)
+  directionalLight(mainColor,(mouseX-windowWidth/2), (mouseY-windowWidth/2), dots[0].vec.z)
   // spotLight(255, 255, 0, dots[0].vec.x, dots[0].vec.y, dots[0].vec.z, dots[1].vec.x, dots[1].vec.y, dots[1].vec.z)
 
 
@@ -116,13 +116,13 @@ function draw () {
   }
   noStroke()
   push()
-  scale(2.2)  // rotateZ(frameCount * 0.01)
-  translate((-w/2)+400, (h/2)-350, +150)
+  translate(-w/2, h/1.8, 0)
   rotateY(sin(a))
   rotateX(HALF_PI)
   push()
   // rotateZ(frameCount * 0.001)
   ambientMaterial(random(hogColor))
+  scale(3.7)  // rotateZ(frameCount * 0.01)
   model(hogwarts);
   pop()
   pop()
@@ -143,4 +143,12 @@ function mouseClicked(){
     debug = true
   }
   
+}
+
+
+function keyTyped() {
+  if (key === 's') {
+    saveCanvas('hogwarts-sky', 'jpg');
+  }
+
 }
