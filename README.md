@@ -15,7 +15,9 @@ Home Brew Beer Wizzard ML5 Neural Network Training
 https://boris-perisset.github.io/c4ta-artwork/ml5/beerwizzard
 
 
-WebGL Stuff
+**WebGL Stuff**
 Bouncing Balls
 https://boris-perisset.github.io/c4ta-artwork/webGL/3d-sandbox
+
+Hogwarts
 https://boris-perisset.github.io/c4ta-artwork/webGL/hogwarts
