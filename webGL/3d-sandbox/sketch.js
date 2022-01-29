@@ -1,6 +1,6 @@
 let w = 0
 let h = 0
-let amount = 200
+let amount = 400
 let vec = 0
 let dots = []
 let lineMaxDist = 100;
@@ -18,6 +18,7 @@ function setup() {
   canvas.parent('pi5-canvas');
 
   debugMode()
+  
   
 
   for (i = 0; i < amount; i++) {
