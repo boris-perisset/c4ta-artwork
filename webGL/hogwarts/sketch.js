@@ -98,10 +98,11 @@ function draw () {
   //pointLight(v1, v2, v3, x, y, z)
   // background(90, 10, 50)
   background(mainColor)
-  directionalLight(mainLight,-(mouseX-windowWidth/2), -(mouseY-windowWidth/2), dots[3].vec.z)
-  directionalLight(mainColor,(mouseX-windowWidth/2), (mouseY-windowWidth/2), dots[0].vec.z)
+  // background(10)
+  // directionalLight(255,(mouseY-windowWidth/2), (mouseX-windowWidth/2), dots[0].vec.z)
   // spotLight(255, 255, 0, dots[0].vec.x, dots[0].vec.y, dots[0].vec.z, dots[1].vec.x, dots[1].vec.y, dots[1].vec.z)
 
+  lightFalloff(1.2, 0, 0);
 
   for(let i = 0; i < dots.length; i++) {
     // fill(0)
@@ -121,7 +122,10 @@ function draw () {
   rotateX(HALF_PI)
   push()
   // rotateZ(frameCount * 0.001)
-  ambientMaterial(random(hogColor))
+  pointLight(mainColor,-(mouseX-windowWidth/2), -(mouseY-windowWidth/2), dots[3].vec.z)
+  // specularMaterial(random(color));
+  shininess(100)
+  ambientMaterial(random(color))
   scale(3.7)  // rotateZ(frameCount * 0.01)
   model(hogwarts);
   pop()
