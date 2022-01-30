@@ -5,24 +5,40 @@ class Particle {
       this.speedX = random(-1,1) * 1.2
       this.speedY = random(-1,1) * 1.2
       this.speedZ = random(-1,1) * 1.2
+      this.a = random(1,2)
+      this.speedRot = random(0.1, 0.001)
+      this.inc = random(PI/360, PI/700)
     }
   
     showDot() {
       push()
-      specularColor(255)
+      // specularColor(255)
       pointLight(mainColor,(mouseX-(windowWidth/2)), -(mouseY-(windowHeight/2)),this.vec.z)
 
       translate(this.vec.x, this.vec.y, this.vec.z)
       // normalMaterial()
       // emissiveMaterial(125, 0, 0)
+      
       specularMaterial(mainColor);
       shininess(20)
       // ambientMaterial(mainColor)
       noStroke()
-      rotateX(frameCount * 0.02)
-      rotateZ(frameCount * 0.005)
-      cone(this.size)
+      rotateX(frameCount * this.speedRot)
+      rotateZ(frameCount * this.speedRot * 0.7)
+      push()
+      rotateZ(frameCount * 0.01)
+      ambientMaterial(mainLight)
+      torus(this.size, this.size/20)
       pop()
+      push()
+      rotateY(HALF_PI)
+      rotateX(frameCount * 0.01)
+      ambientMaterial(mainLight)
+      torus(this.size*1.4, this.size/20)
+      pop()
+      sphere(10 + this.size/2 * sin(this.a))
+      pop()
+      this.a = this.a + this.inc
     }
 
     showFlare() {
@@ -40,7 +56,7 @@ class Particle {
 
       // ambientMaterial(mainColor)
       noStroke()
-      cone(this.size)
+      cone(this.size * sin(a))
       pop()
     }
   
@@ -54,8 +70,7 @@ class Particle {
       if (this.vec.y <= -h/2) this.speedY *= -1
       if (this.vec.y > h/2) this.speedY *= -1
       if (this.vec.z <= -500) this.speedZ *= -1
-      if (this.vec.z > 500) this.speedZ *= -1
-    }
+      if (this.vec.z > 500) this.speedZ *= -1    }
   
     //Mouse repels particles
     //Also makes sure they don't leave the canvas
