@@ -23,4 +23,4 @@ Hogwarts
 https://boris-perisset.github.io/c4ta-artwork/webGL/hogwarts
 
 Vertex 3D Vectors
-https://boris-perisset.github.io/c4ta-artwork/webGL/vertexas
+https://boris-perisset.github.io/c4ta-artwork/webGL/vertexas/
