@@ -9,14 +9,19 @@ class Particle {
   
     showDot() {
       push()
-      lightFalloff(1.2, 0, 0);
+      specularColor(255)
+      pointLight(mainColor,(mouseX-(windowWidth/2)), -(mouseY-(windowHeight/2)),this.vec.z)
+
       translate(this.vec.x, this.vec.y, this.vec.z)
       // normalMaterial()
       // emissiveMaterial(125, 0, 0)
-
-      ambientMaterial(mainColor)
+      specularMaterial(mainColor);
+      shininess(20)
+      // ambientMaterial(mainColor)
       noStroke()
-      sphere(this.size)
+      rotateX(frameCount * 0.02)
+      rotateZ(frameCount * 0.005)
+      cone(this.size)
       pop()
     }
 
