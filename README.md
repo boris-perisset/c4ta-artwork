@@ -24,3 +24,6 @@ https://boris-perisset.github.io/c4ta-artwork/webGL/hogwarts
 
 Vertex 3D Vectors
 https://boris-perisset.github.io/c4ta-artwork/webGL/vertexas/
+
+Lissajous in 3D
+https://boris-perisset.github.io/c4ta-artwork/webGL/lissajous/
