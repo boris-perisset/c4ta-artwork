@@ -1,10 +1,10 @@
 class Cloud {
     constructor(x, y, z){
-      this.size = random(4,30)
+      this.size = random(4,30) * sin(this.a)
       this.a = 0.001
       this.inc = PI/3600
       this.pos = new p5.Vector(x, y, z)
-      this.determination = sin(this.a) * random(0.05, 0.1)
+      this.determination = random(0.05, 0.1)
       this.growing = random()> 0.5 ? true : false
     }
   
