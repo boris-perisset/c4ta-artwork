@@ -86,9 +86,9 @@ function draw () {
 
   for(let i = 0; i < spreader; i++) {
     
-    let posX = (mouseX - w/2) + random(-spreader*4,spreader*4)
-    let posY = (mouseY - h/2) + random(-spreader*4,spreader*4)
-    let posZ = random(-spreader*4,spreader*4)
+    let posX = (mouseX - w/2) + random(-spreader*8,spreader*8)
+    let posY = (mouseY - h/2) + random(-spreader*8,spreader*8)
+    let posZ = random(-spreader*8,spreader*8)
     newbubble = new Cloud(posX, posY, posZ)
     bubble.push(newbubble)
   }
