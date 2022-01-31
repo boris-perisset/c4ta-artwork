@@ -88,3 +88,11 @@ function windowResized() {
 //   }
   
 // }
+
+
+function keyTyped() {
+  if (key === 's') {
+    saveCanvas('hogwarts-sky', 'jpg');
+  }
+
+}
