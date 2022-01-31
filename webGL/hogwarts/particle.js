@@ -12,13 +12,12 @@ class Particle {
   
     showDot() {
       push()
-      // specularColor(255)
+      specularColor(255)
       pointLight(mainColor,(mouseX-(windowWidth/2)), -(mouseY-(windowHeight/2)),this.vec.z)
 
       translate(this.vec.x, this.vec.y, this.vec.z)
       // normalMaterial()
       // emissiveMaterial(125, 0, 0)
-      
       specularMaterial(mainColor);
       shininess(20)
       // ambientMaterial(mainColor)

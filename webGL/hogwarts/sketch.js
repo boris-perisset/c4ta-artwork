@@ -102,7 +102,7 @@ function draw () {
   // directionalLight(255,(mouseY-windowWidth/2), (mouseX-windowWidth/2), dots[0].vec.z)
   // spotLight(255, 255, 0, dots[0].vec.x, dots[0].vec.y, dots[0].vec.z, dots[1].vec.x, dots[1].vec.y, dots[1].vec.z)
 
-  lightFalloff(1, 0, 0);
+  lightFalloff(1.2, 0, 0);
 
   for(let i = 0; i < dots.length; i++) {
     // fill(0)
