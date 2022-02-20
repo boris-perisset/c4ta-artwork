@@ -29,8 +29,8 @@ class Particle {
     }
 
     show() {
-        // stroke(colorSet.colors[this.color])
-        noStroke()
+        stroke(colorSet.colors[this.color])
+        // noStroke()
         fill(colorSet.colors[this.colorBG])
         circle(this.position.x, this.position.y, this.size * (sin(tOff)*1))
     }
@@ -43,10 +43,10 @@ class Particle {
         fill(0,2)
         noStroke()
         beginShape()
-        curveVertex(others.position.x, this.position.y, zOff)
-        curveVertex(this.position.y, this.position.x, zOff)
         curveVertex(others.position.x, others.position.y, zOff)
-        curveVertex(others.position.y, this.position.x, zOff)
+        curveVertex(this.position.y, this.position.x, zOff)
+        // curveVertex(this.position.x, others.position.y, zOff)
+        // curveVertex(others.position.y, this.position.x, zOff)
         vertex(mouseX, mouseY)
         endShape(CLOSE)
 
@@ -56,10 +56,11 @@ class Particle {
         fill(255,2)
         noStroke()
         beginShape()
-        curveVertex(others.position.x, this.position.y, zOff)
-        curveVertex(this.position.y, this.position.x, zOff)
-        curveVertex(others.position.x, others.position.y, zOff)
+        vertex(mouseY-200, mouseX+200)
+        curveVertex(this.position.x, others.position.y, zOff)
         curveVertex(others.position.y, this.position.x, zOff)
+        // curveVertex(others.position.x, others.position.y, zOff)
+        // curveVertex(others.position.y, this.position.x, zOff)
         endShape(CLOSE)
 
     }

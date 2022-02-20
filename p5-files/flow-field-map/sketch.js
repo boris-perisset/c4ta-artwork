@@ -19,7 +19,7 @@ let angle = 0
 let v
 
 let col = 0
-let amount = 100
+let amount = 200
 let shapeAmount = 1
 let particles = []
 let shapes = []
@@ -42,7 +42,7 @@ function setup() {
   cnv.parent('pi5-canvas');
   
   colorSet = random(palettes)
-  let colorBG = colorSet.lines[int(random(0, colorSet.lines.length))]
+  let colorBG = colorSet.colors[int(random(0, colorSet.colors.length))]
   background(colorBG)  
 
   leftX = int(w * -0.5)
@@ -122,14 +122,17 @@ function draw() {
     particles[i].show()
     particles[i].edges()
 
-    if (frameCount%100 == 0) {
-      initialFlowDirection = random(0, TAU)
-      if (i %3 == 0) {
-      }
-      v.setMag(10)
+    if (i %3 == 0) {
+      v.setMag(100)
     } else {
-      v.setMag(1)
+      v.setMag(10)
     }
+
+    if (frameCount%64 == 0) {
+      initialFlowDirection = random(PI, TAU)
+
+    }
+
 
     if (frameCount >= 256) {
       if (particles[i].size >= 0) {
@@ -141,14 +144,17 @@ function draw() {
 
     }
 
-    if (frameCount % 32 == 0) {
+    if (frameCount % 64 == 0) {
       push()
       blendMode(OVERLAY)
       for (let j = 0; j < 1; j++) {
         if (i != j && particles[i].combine(particles[j])) {
         }
       }
-
+      for (let j = 0; j < 1; j++) {
+        if (i != j && particles[i].combine2(particles[j])) {
+        }
+      }
       pop()
     }
 
