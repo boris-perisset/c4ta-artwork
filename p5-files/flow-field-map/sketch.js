@@ -16,6 +16,7 @@ let inc = 0.7
 let scale = 20
 let cols, rows = 0
 let angle = 0
+let v
 
 let col = 0
 let amount = 100
@@ -85,7 +86,7 @@ function draw() {
       angle = noise(xOff, yOff, zOff, tOff) * initialFlowDirection
 
       
-      let v = p5.Vector.fromAngle(angle)
+      v = p5.Vector.fromAngle(angle)
       v.setMag(1)
 
       flowField[index] = v
@@ -107,8 +108,8 @@ function draw() {
 
     }
     yOff += inc
-    zOff += 0.06
-    tOff += 0.00006
+    zOff += 0.006
+    tOff += 0.00009
 
     
 
@@ -122,25 +123,69 @@ function draw() {
     particles[i].edges()
 
     if (frameCount%100 == 0) {
-        initialFlowDirection = random(0, TAU)
+      initialFlowDirection = random(0, TAU)
+      if (i %3 == 0) {
+      }
+      v.setMag(10)
+    } else {
+      v.setMag(1)
     }
 
-    if (frameCount >= 300) {
+    if (frameCount >= 256) {
       if (particles[i].size >= 0) {
-        particles[i].closeUp() 
-      } else {
+        particles[i].closeUp()
+      }
+    if (frameCount >= 512) {
         noLoop()
       }
+
+    }
+
+    if (frameCount % 32 == 0) {
+      push()
+      blendMode(OVERLAY)
+      for (let j = 0; j < 1; j++) {
+        if (i != j && particles[i].combine(particles[j])) {
+        }
+      }
+
+      pop()
     }
 
   }
+
+  //frameCount >= 200 && frameCount <= 220
+  
+  if (frameCount % 64 == 0) {
+    push()
+    noStroke()
+    blendMode(MULTIPLY)
+    for (let i = 0; i < 10; i ++) {
+      let r = random(3, 200)
+      let x = random(0, w)
+      let y = random(0, h)
+      let s = random(10, 400)
+      let c = int(random(0, colorSet.colors.length))
+
+
+      fill(colorSet.colors[c])
+      rotate (sin(r))
+      circle(x, y, s)
+    }
+    pop()
+  }
+
+
+
+
+
 
   for (let i = 1; i < shapes.length; i++) {
     shapes[i].build()
     // shapes[i].update()
     shapes[i].show()
   }   
-console.log(frameCount)
+// console.log(frameCount)
 
 }
 
