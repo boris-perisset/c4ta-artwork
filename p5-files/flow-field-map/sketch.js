@@ -102,6 +102,14 @@ function draw() {
       rotate(v.heading())
       
       //draw a line to with the length of scale with that rotation
+      if (frameCount == 512) {
+        point (0,0)
+      }
+
+      if (frameCount == 16) {
+        circle (0, 0, scale/3, 0)
+      }
+
       // line(0, 0, scale, 0)
 
       pop()
