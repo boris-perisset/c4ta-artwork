@@ -40,7 +40,7 @@ class Particle {
     }
 
     combine(others) {
-        fill(0,1)
+        fill(0,2)
         noStroke()
         beginShape()
         curveVertex(others.position.x, this.position.y, zOff)
@@ -48,6 +48,18 @@ class Particle {
         curveVertex(others.position.x, others.position.y, zOff)
         curveVertex(others.position.y, this.position.x, zOff)
         vertex(mouseX, mouseY)
+        endShape(CLOSE)
+
+    }
+
+    combine2(others) {
+        fill(255,2)
+        noStroke()
+        beginShape()
+        curveVertex(others.position.x, this.position.y, zOff)
+        curveVertex(this.position.y, this.position.x, zOff)
+        curveVertex(others.position.x, others.position.y, zOff)
+        curveVertex(others.position.y, this.position.x, zOff)
         endShape(CLOSE)
 
     }

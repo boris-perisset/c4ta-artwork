@@ -152,15 +152,50 @@ function draw() {
       pop()
     }
 
+
+    // if (frameCount % 40 == 0) {
+    //   push()
+    //   blendMode(LIGHTEST)
+    //   for (let j = 0; j < 1; j++) {
+    //     if (i != j && particles[i].combine2(particles[j])) {
+    //     }
+    //   }
+
+    //   pop()
+    // }
+
   }
 
   //frameCount >= 200 && frameCount <= 220
   
-  if (frameCount % 64 == 0) {
+  if (frameCount == 64) {
+    push()
+    noStroke()
+    blendMode(LIGHTEST)
+    for (let i = 0; i < 60; i ++) {
+      let r = random(3, 200)
+      let x1 = random(0, w)
+      let y1 = random(0, h)
+      let x2 = random(0, w)
+      let y2 = random(0, h)
+      let x3 = random(0, w)
+      let y3 = random(0, h)
+      let s = random(10, 400)
+      let c = int(random(0, colorSet.colors.length))
+
+
+      fill(colorSet.colors[c])
+      rotate (sin(r))
+      triangle(x1, y1, x2, y2, x3, y3)
+    }
+    pop()
+  }
+
+  if (frameCount == 256) {
     push()
     noStroke()
     blendMode(MULTIPLY)
-    for (let i = 0; i < 10; i ++) {
+    for (let i = 0; i < 60; i ++) {
       let r = random(3, 200)
       let x = random(0, w)
       let y = random(0, h)
