@@ -146,13 +146,13 @@ function draw() {
       if (particles[i].size >= 0) {
         particles[i].closeUp()
       }
-    if (frameCount >= 512) {
+    if (frameCount >= 1024) {
         noLoop()
       }
 
     }
 
-    if (frameCount % 64 == 0) {
+    if (frameCount % 64 == 0  && frameCount <= 512) {
       push()
       blendMode(OVERLAY)
       for (let j = 0; j < 1; j++) {
