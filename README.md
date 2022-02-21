@@ -33,5 +33,8 @@ https://boris-perisset.github.io/c4ta-artwork/webGL/cloud/
 
 
 **P5 Paintings**
-Flow Field Map Painting
+Flow Field Map Painting (Color)
 https://boris-perisset.github.io/c4ta-artwork/p5-files/flow-field-map
+Flow Field Map Painting (Black and White)
+https://boris-perisset.github.io/c4ta-artwork/p5-files/flow-field-map-sw
+
