@@ -1,39 +1,59 @@
 class Point {
     constructor(xOff, yOff, zOff, direction, x, y, resolution, index) {
-        this.direction = direction
+        this.initialDirection = direction
         this.origin = createVector(xOff, yOff)
         this.gridPos = createVector(x, y)
         this.resolution = resolution
         this.index = index
-        this.noiseX = noise(this.origin.x) * this.direction
-        this.noiseY = noise(this.origin.y) * this.direction
-        this.noiseZ = noise(zOff) * this.direction
-        this.v = this.origin.add(this.noiseX, this.noiseY, this.noiseZ)
-        // this.angle = noise(this.origin.x, this.origin.y, zOff) * this.direction
-        // this.v = p5.Vector.fromAngle(this.angle)
+        // this.noiseX = noise(this.origin.x) * this.initialDirection
+        // this.noiseY = noise(this.origin.y) * this.initialDirection
+        // this.noiseZ = noise(zOff) * this.initialDirection
+        // this.noise = noise(this.origin.x, this.origin.y, zOff) 
+        // this.v = this.gridPos.add(this.noise)
+        // this.v = this.origin.add(this.noise)
+        this.angle = noise(this.origin.x, this.origin.y, zOff) * this.initialDirection
+        this.v = p5.Vector.fromAngle(this.angle)
     }
 
     show() {
+        // push()
+        // translate (this.gridPos.x * this.resolution, this.gridPos.y * this.resolution)
+        // stroke(200)
+        // fill(255, 0, 0, 60)
+        // // circle(0, 0, 5)
+        // rotate(this.v.heading())
+        // // translate(this.v.x, this.v.y)
+        // this.v.setMag(resolution)
+        // line(0, 0, this.v.x, this.v.y)
+        // noStroke()
+        // circle(this.v.x, this.v.y, 4)
+        // pop()
+    }
+
+    update(z) {
+        this.z = noise(z) * this.initialDirection
+        this.newAngle = noise(this.origin.x, this.origin.y, z) * this.initialDirection
+        this.v = p5.Vector.fromAngle(this.newAngle)
+        // this.z = createVector(z)
+        // this.v.add(this.z)
+
         push()
         translate (this.gridPos.x * this.resolution, this.gridPos.y * this.resolution)
-        stroke(150)
+        stroke(200)
         fill(255, 0, 0)
-        // circle(0, 0, 5)
         rotate(this.v.heading())
-        // translate(this.v.x, this.v.y)
         this.v.setMag(resolution)
+
         line(0, 0, this.v.x, this.v.y)
         noStroke()
         circle(this.v.x, this.v.y, 4)
         pop()
-    }
 
-    update(z) {
-        this.z = noise(z) * 1.02
+
         // this.z = createVector(z, z)
         // this.v.add(this.z)
-        this.angle = noise(this.v.x, this.v.y, this.z) * this.direction
-        this.v = p5.Vector.fromAngle(this.angle)
+        // this.angle = noise(this.v.x, this.v.y, this.z) * this.initialDirection
+        // this.v = p5.Vector.fromAngle(this.angle)
     }
 }
 
@@ -51,7 +71,7 @@ class Grid {
         this.xOff = 0
         this.yOff = 0
         this.zOff = 0
-        this.inc = 0.00000002
+        this.inc = 0.2
         this.x = 0
         this.y = 0
         this.flowField = []//new Array(this.numCols * this.numRows)
@@ -71,7 +91,7 @@ class Grid {
             }
             this.yOff += this.inc
         } 
-        console.log(this.flowField)
+        // console.log(this.flowField)
     }
 
     display() {
@@ -81,13 +101,13 @@ class Grid {
     }
 
     update() {
+
         for (let i = 0; i < this.flowField.length; i++) {
             this.flowField[i].dot.update(this.zOff)
-
+            this.zOff += 0.000002
         }
-        // this.xOff += this.inc
-        // this.yOff += this.inc
-        this.zOff += 0.000002
+
+        
     }
 
 

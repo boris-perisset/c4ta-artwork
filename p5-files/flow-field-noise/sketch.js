@@ -21,6 +21,7 @@ function setup() {
   grid = new Grid(w, h, resolution)
   grid.build()
 
+  
   startpointX = random(0,w)
   startpointY = random(0,h)
   startpoint = createVector( startpointX, startpointY)
@@ -37,19 +38,21 @@ function draw() {
 
   
 
+push()
+  stroke(0,255,0)
+  strokeWeight(30)
 
-//   stroke(0,255,0)
-//   strokeWeight(30)
+  beginShape()
+  curveVertex(startpoint.x, startpoint.y)
+  for (let i = 0; i < 10; i++) {
+    startpoint.setMag(11)
+    let verletPointX = startpoint.x * grid.resolution
+    let verltPointY = startpoint.y * grid.resolution
+    curveVertex(verletPointX, verltPointY)
+  }
+  endShape()
+pop()
 
-//   beginShape()
-//   curveVertex(startpoint.x, startpoint.y)
-//   for (let i = 0; i < 10; i++) {
-//     startpoint.setMag(11)
-//     let verletPointX = startpoint.x + grid.x
-//     let verltPointY = startpoint.y + grid.y
-//     curveVertex(verletPointX, verltPointY)
-//   }
-//   endShape()
 }
 
 function windowResized() {
