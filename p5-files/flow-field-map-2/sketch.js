@@ -1,5 +1,4 @@
 //////////////// G L O B A L ///////////////////////////////////////////
-let ran = 0;
 let w, h = 0
 
 let leftX = 0
@@ -17,7 +16,6 @@ let scale = 20
 let numCols, numRows = 0
 let angle = 0
 
-let col = 0
 let amount = 30
 let shapeAmount = 1
 let particles = []
@@ -26,7 +24,7 @@ let flowField = []
 let others = 0
 
 let initialFlowDirection = 0
-
+let fieldPoint = 0
 //////////////// S E T U P ///////////////////////////////////////////
 function setup() {
   
@@ -36,40 +34,43 @@ function setup() {
   const cnv = createCanvas(w, h);
   cnv.parent('pi5-canvas');
   
+  // the flow field is bigger than the canvas
   leftX = int(w * -0.5)
   rightX  = int(w * 1.5)
   topY = int(h * -0.5)
   bottomY  = int(h * 1.5)
 
-  resolution = int(w * 0.03)
+  // the grid size
+  resolution = int(w * 0.04)
+
   numCols = int((rightX - leftX) / resolution)
   numRows = int((bottomY - topY) / resolution)
   
-  flowField = new Array(numCols * numRows)
-  
+  // the array of all the vectors of the flow field
+  flowField = new Array(numCols * numRows)  
   initialFlowDirection = random(0, TAU)
-
   
   let yOff = 0
+
   for (let y = 0; y < numCols; y++) {
     let xOff = 0
     for (let x = 0; x < numCols; x++) {
 
       angle = noise(xOff, yOff) * initialFlowDirection
-      let v = p5.Vector.fromAngle(angle)
+
+      fieldPoint = new Pointfield(angle)
+      fieldPoint.show(x, y, resolution)
       
+      flowField.push(fieldPoint)
+
       xOff += inc
-      stroke(90)
-      push()
-      translate (x * resolution, y * resolution)
-      rotate(v.heading())
-      line(0, 0, resolution, 0)
-      pop()
     }
-    yOff += inc
-    zOff += 0.002
   }
 
+  // let flow = new Field()
+  // flow.build()
+  // console.log(flow.flowField)
+  console.log(flowField)
 
   translate(w/2, h/2)
 
@@ -83,8 +84,8 @@ function setup() {
   for (let i = 0; i < 10; i++) {
     curveVertex(xPoint,yPoint)
 
-    let xOffset = int(xPoint - leftX)
-    let yOffset = int(yPoint - topY)
+    let xOffset = int(xPoint)
+    let yOffset = int(yPoint)
 
     step.push(i+1)
 
@@ -101,7 +102,7 @@ function setup() {
     xPoint = xPoint + xStep
     yPoint = yPoint + yStep
     
-    curveVertex(xPoint,y)
+    curveVertex(xPoint,yPoint)
     console.log(xOffset)
 
   }
@@ -121,7 +122,8 @@ function setup() {
 //////////////// D R A W ///////////////////////////////////////////
 function draw() {
 
-  // background(0);
+  // background(255);
+  fieldPoint.update()
 
   // let yOff = 0
   // for (let y = 0; y < numCols; y++) {
